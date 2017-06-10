@@ -3,8 +3,6 @@
 #####################
 lib/*
 node_modules/*
-assets/ideas/*
-assets/files/*
 
 # Compiled source #
 ###################
