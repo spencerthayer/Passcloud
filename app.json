@@ -1,0 +1,9 @@
+{
+  "name": "Passcloud",
+  "author": "Spencer Thayer",
+  "version": "0.2.0",
+  "description": "A stateless password generator written in Javascript.",
+  "repository": "https://github.com/spencerthayer/Passcloud.git",
+  "logo": "https://raw.githubusercontent.com/spencerthayer/Passcloud/master/www/img/favicon.png",
+  "keywords": ["node", "encryption", "javascript", "password", "cordova"]
+}
