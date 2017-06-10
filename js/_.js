@@ -130,11 +130,7 @@
               length: 32,
               pool: numeric
           });
-          xkcdLength = chanceHash.integer({
-              min: 4,
-              max: 6
-          });
-          domainPassword = xkcdPass(xkcdRando, xkcdLength);
+          domainPassword = xkcdPass(xkcdRando, 4);
       }
       //
       encryptPassword = chanceEncrypt.string({
