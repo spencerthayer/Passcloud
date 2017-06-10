@@ -245,14 +245,13 @@ var xkcdWordlist = [
     "your", "yourself", "youth", "zero", "zoo"
 ];
 
-function xkcdPass(xkcdRan, count) {
+function xkcdPass(ranNum, wordNum) {
     var result = [];
     var _tmp = xkcdWordlist.slice();
-    for (var i = 0; i < count; i++) {
-        // var index = Math.ceil(Math.random() * 10) % _tmp.length;
-        var index = Math.ceil(xkcdRan * 10) % _tmp.length;
+    for (var i = 0; i < wordNum; i++) {
+        var index = Math.ceil(ranNum * 10) % _tmp.length;
         result.push(_tmp.splice(index, 1)[0]);
     }
-    var xkcdResules = result.join(" ");
-    return xkcdResules;
+    var xkcdResults = result.join(" ");
+    return xkcdResults;
 }
