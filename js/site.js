@@ -148,7 +148,7 @@
 
       function devConsole() {
           console.clear();
-          console.log("Input - - - -");
+          console.log("#Input");
           console.log(" Master: " + masterPass);
           console.log(" Name: " + siteName);
           console.log(" User: " + userProfile);
@@ -157,7 +157,7 @@
           console.log(" Seed: " + seedNum);
           console.log(" Type: " + passType);
           console.log("");
-          console.log("Options - - - -");
+          console.log("#Options");
           console.log(" Alpha: " + isAlpha);
           console.log(" Numeric: " + isNumeric);
           console.log(" Ambiguous: " + isAmbiguous);
@@ -165,14 +165,14 @@
           console.log(" Extended: " + isExtended);
           console.log(" Yearly: " + isYearly);
           console.log("");
-          console.log("Hidden - - - -");
-          console.log("Int: " + ranInt + "," + ranSyl);
-          console.log("Pool: " + poolString);
+          console.log("#Hidden");
+          console.log(" Int: " + ranInt + "," + ranSyl);
+          console.log(" Pool: " + poolString);
           console.log("");
-          console.log("Passwords - - - -");
-          console.log("Pass: " + domainPassword);
-          console.log("Uniq: " + noUnique);
-          console.log("Encryption Pass: " + encryptPassword)
+          console.log("#Passwords");
+          console.log(" Pass: " + domainPassword);
+          console.log(" Uniq: " + noUnique);
+          console.log(" Encryption Pass: " + encryptPassword)
       }
       devConsole();
 
