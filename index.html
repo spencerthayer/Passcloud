@@ -51,6 +51,32 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="input-field col s4 m2 l2">
+                        <!--<div for="countVal" style="font-size: 0.8rem;">Characters:</div>-->
+                        <select name="charLength" id="charLength" onchange="generatePassword();" onkeypress="generatePassword();">
+                                <option value="8">8</option>
+                                <option value="12">12</option>
+                                <option value="16" selected>16</option>
+                                <option value="24">24</option>
+                                <option value="32">32</option>
+                                <option value="64">64</option>
+                                <!--<option value="128">128</option>-->
+                                <!--<option value="256">256</option>-->
+                            </select>
+                        <label>Lenght:</label>
+                    </div>
+                    <div class="input-field col s4 m2 l2">
+                        <input type="number" id="year" />
+                        <label for="yearNum" id="yearLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Yearly password change.">
+                            Year:
+                            </label>
+                    </div>
+                    <div class="input-field col s4 m2 l2">
+                        <input type="number" id="seedNum" />
+                        <label for="seedNum" id="seedNumLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Change the number to generate a new password.">
+                            Seed:
+                            </label>
+                    </div>
                     <div class="input-field col s6 m3 l3">
                         <select name="passType" id="passType" onchange="generatePassword();" onkeypress="generatePassword();">
                                 <option value="password">Password</option>
@@ -113,32 +139,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="input-field col s8 m4 l2">
-                        <!--<div for="countVal" style="font-size: 0.8rem;">Characters:</div>-->
-                        <select name="charLength" id="charLength" onchange="generatePassword();" onkeypress="generatePassword();">
-                                <option value="8">8</option>
-                                <option value="12">12</option>
-                                <option value="16" selected>16</option>
-                                <option value="24">24</option>
-                                <option value="32">32</option>
-                                <option value="64">64</option>
-                                <!--<option value="128">128</option>-->
-                                <!--<option value="256">256</option>-->
-                            </select>
-                        <label>Lenght:</label>
-                    </div>
-                    <div class="input-field col s4 m2 l2">
-                        <input type="number" id="seedNum" />
-                        <label for="seedNum" id="seedNumLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Change the number to generate a new password.">
-                            Seed:
-                            </label>
-                    </div>
-                    <div class="input-field col s4 m2 l2">
-                        <input type="number" id="year" />
-                        <label for="yearNum" id="yearLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Yearly password change.">
-                            Year:
-                            </label>
-                    </div>
+                    <!--<div style="clear:both;"></div>-->
                 </div>
                 <div class="row">
                     <div class="input-field col s12 m12 l12">
