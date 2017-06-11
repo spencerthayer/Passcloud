@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="input-field col s6 m3 l4">
+                    <div class="input-field col s6 m3 l3">
                         <select name="passType" id="passType" onchange="generatePassword();" onkeypress="generatePassword();">
                                 <option value="password">Password</option>
                                 <!--<option value="username">USERNAME</option>-->
@@ -63,7 +63,7 @@
                             </select>
                         <label>Type:</label>
                     </div>
-                    <div class="input-field col s6 m3 l2">
+                    <div class="input-field col s6 m3 l3">
                         <ul class="collapsible collapsible-accordion z-depth-0">
                             <li>
                                 <a id="optionsMenu" class="collapsible-header">OPTIONS: <span class="right" id="optionsArrow">&#8675;</span></a>
@@ -105,16 +105,15 @@
                                                 Yearly
                                                 </label>
                                         </li>
-                                        <li style="padding: 4px 10px;">
-                                            <input type="number" id="year" style="text-align: center;" />
-                                        </li>
+                                        <!--<li style="padding: 4px 10px;">
+                                        </li>-->
                                         <li><br/></li>
                                     </ul>
                                 </div>
                             </li>
                         </ul>
                     </div>
-                    <div class="input-field col s8 m4 l4">
+                    <div class="input-field col s8 m4 l2">
                         <!--<div for="countVal" style="font-size: 0.8rem;">Characters:</div>-->
                         <select name="charLength" id="charLength" onchange="generatePassword();" onkeypress="generatePassword();">
                                 <option value="8">8</option>
@@ -129,10 +128,15 @@
                         <label>Lenght:</label>
                     </div>
                     <div class="input-field col s4 m2 l2">
-                        <!--<input type="checkbox" class="filled-in tooltipped" id="special" checked="checked" />-->
                         <input type="number" id="seedNum" />
                         <label for="seedNum" id="seedNumLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Change the number to generate a new password.">
                             Seed:
+                            </label>
+                    </div>
+                    <div class="input-field col s4 m2 l2">
+                        <input type="number" id="year" />
+                        <label for="yearNum" id="yearLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Yearly password change.">
+                            Year:
                             </label>
                     </div>
                 </div>
