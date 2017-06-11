@@ -1,12 +1,11 @@
 {
-  "name": "Passcloud",
-  "version": "0.2.0",
-  "description": "Passcloud",
-  "dependencies": {
-    "express": "4.8.4"
-  },
-  "devDependencies": {
-    "bower": "^1.3.3",
-    "shelljs": "^0.3.0"
-  }
+    "name": "my-Passcloud-site",
+    "version": "2.0.0",
+    "description": "Passcloud is the easiest way to generate stateless passwords.",
+    "scripts": {
+        "start": "harp server --port $PORT"
+    },
+    "dependencies": {
+        "harp": "*"
+    }
 }
