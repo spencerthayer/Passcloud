@@ -138,6 +138,14 @@
           pool: latinLower + latinUpper + numeric + symbols + special + extended + supplimentLower + supplimentUpper
       });
 
+      function uniqueString(string) {
+          return string.filter(function(itm, i, T) {
+              return T.indexOf(itm) == i;
+          });
+      }
+      //   var s1 = 'The quick red fox jumps over the lazy brown dog.';
+      var noUnique = uniqueString(domainPassword.split('')).join('')
+
       function devConsole() {
           console.clear();
           console.log("Alpha: " + isAlpha);
@@ -156,8 +164,10 @@
           console.log("Type: " + passType);
           console.log("Pool: " + poolString);
           console.log("Pass: " + domainPassword);
+          console.log("Uniq: " + noUnique);
           console.log("Encryption Pass: " + encryptPassword)
       }
       devConsole();
+
       $("#domainPassword").val(domainPassword);
   }
