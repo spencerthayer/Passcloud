@@ -729,3 +729,7 @@ main p .highlight {
 }
 
 .input-field {}
+
+.menuButton {
+    margin-top: 20px;
+}
