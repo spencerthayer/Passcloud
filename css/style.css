@@ -2,14 +2,9 @@
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url("../font/MaterialIcons-Regular.eot");
+    src: url("../fonts/material-design-icons/MaterialIcons-Regular.eot");
     /* For IE6-8 */
-    src: local('Material Icons'), local('MaterialIcons-Regular'), url("../font/MaterialIcons-Regular.woff2") format('woff2'), url("../font/MaterialIcons-Regular.woff") format('woff'), url("../font/MaterialIcons-Regular.ttf") format('truetype');
-}
-
-main {
-    min-width: 264px;
-    /*248*/
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url("../fonts/material-design-icons/MaterialIcons-Regular.woff2") format('woff2'), url("../fonts/material-design-icons/MaterialIcons-Regular.woff") format('woff'), url("../fonts/material-design-icons/MaterialIcons-Regular.ttf") format('truetype');
 }
 
 html {
@@ -22,20 +17,9 @@ body {
     flex-direction: column;
 }
 
-body {
-    /* * /
-  background: #74bddb;
-  background: -moz-linear-gradient(-45deg, #74bddb 0%, #a8d1eb 32%, #cddbf5 56%, #e4e6fb 73%, #f6f4f8 100%);
-  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #74bddb), color-stop(32%, #a8d1eb), color-stop(56%, #cddbf5), color-stop(73%, #e4e6fb), color-stop(100%, #f6f4f8));
-  background: -webkit-linear-gradient(-45deg, #74bddb 0%, #a8d1eb 32%, #cddbf5 56%, #e4e6fb 73%, #f6f4f8 100%);
-  background: -o-linear-gradient(-45deg, #74bddb 0%, #a8d1eb 32%, #cddbf5 56%, #e4e6fb 73%, #f6f4f8 100%);
-  background: -ms-linear-gradient(-45deg, #74bddb 0%, #a8d1eb 32%, #cddbf5 56%, #e4e6fb 73%, #f6f4f8 100%);
-  background: linear-gradient(135deg, #74bddb 0%, #a8d1eb 32%, #cddbf5 56%, #e4e6fb 73%, #f6f4f8 100%);
-  /* */
-}
-
 main {
     flex: 1 0 auto;
+    min-width: 264px;
 }
 
 a,
@@ -187,32 +171,6 @@ ul.side-nav.fixed li.logo img {
     height: 10vw;
     width: 10vw;
 }
-
-
-/*media="screen, projection"
-.side-nav.fixed {
-  left: none !important;
-  right: 0;
-  position: fixed;
-}*/
-
-
-/*media="screen, projection"
-.side-nav {
-  position: fixed;
-  width: 240px;
-  left: -105%;
-  top: 0;
-  margin: 0;
-  height: 100%;
-  height: calc(100% + 60px);
-  height: -moz-calc(100%);
-  padding-bottom: 60px;
-  background-color: #fff;
-  z-index: 999;
-  overflow-y: auto;
-  will-change: left;
-}*/
 
 header,
 main,
