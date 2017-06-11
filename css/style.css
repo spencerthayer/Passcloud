@@ -691,3 +691,10 @@ main p .highlight {
 .menuButton {
     margin-top: 20px;
 }
+
+.favicon {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-top;
+    margin-right: 8px;
+}
