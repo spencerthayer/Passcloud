@@ -12,29 +12,6 @@ main {
     /*248*/
 }
 
-.material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    /* Preferred icon size */
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    -webkit-font-smoothing: antialiased;
-    /* Support for all WebKit browsers. */
-    text-rendering: optimizeLegibility;
-    /* Support for Safari and Chrome. */
-    -moz-osx-font-smoothing: grayscale;
-    /* Support for Firefox. */
-    font-feature-settings: 'liga';
-    /* Support for IE. */
-}
-
 html {
     /*font-size: 3vmin;*/
 }
@@ -61,8 +38,34 @@ main {
     flex: 1 0 auto;
 }
 
-s {
-    display: none;
+a,
+.dropdown-content li,
+{
+    color: #03a9f4;
+}
+
+[type="radio"]:checked+label:after,
+[type="radio"].with-gap:checked+label:before,
+[type="radio"].with-gap:checked+label:after {
+    border: 2px solid #03a9f4;
+}
+
+[type="radio"]:checked+label:after,
+[type="radio"].with-gap:checked+label:after {
+    background-color: #03a9f4;
+}
+
+[type="checkbox"]:checked+label:before {
+    border-right: 2px solid #03a9f4;
+    border-bottom: 2px solid #03a9f4;
+}
+
+[type="checkbox"]:indeterminate+label:before {
+    border-right: 2px solid #03a9f4;
+}
+
+.collapsible-body.options {
+    padding: 0;
 }
 
 .clear {

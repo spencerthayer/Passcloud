@@ -178,3 +178,18 @@
 
       $("#domainPassword").val(domainPassword);
   }
+
+  $(".modal").modal({
+      dismissible: true,
+      opacity: .5,
+      inDuration: 300,
+      outDuration: 200,
+      startingTop: '4%',
+      endingTop: '10%',
+  });
+
+  $(".button-collapse").sideNav({
+      menuWidth: 300, // Default is 240
+      //  edge: "left", // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+  });
