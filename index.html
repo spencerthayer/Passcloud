@@ -5,54 +5,67 @@
     <title>Passcloud</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- IOS META -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="google" value="notranslate" />
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <link rel="apple-touch-icon" href="img/favicon.png" />
-    <link rel="apple-touch-icon-precomposed" href=" img/favicon.png" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="./css/materialize.min.css" />
-    <link rel="stylesheet" href="./css/style.css" />
     <!-- ICONS -->
     <link rel="icon" type="image/png" href="./img/favicon.png">
     <link rel="apple-touch-icon" href="./img/favicon.png" />
     <link rel="apple-touch-icon-precomposed" href="./img/favicon.png" />
+    <!-- FACEBOOK META -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Passcloud" />
+    <meta property="og:description" content="Passcloud" />
+    <meta property="og:url" content="https://passcloud.me" />
+    <meta property="og:image" content="./img/bg.png" />
+    <!-- TWITTER META -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="Passcloud" />
+    <meta name="twitter:title" content="Passcloud" />
+    <meta name="twitter:description" content="https://passcloud.me" />
+    <meta name="twitter:image" content="./img/bg.png>" />
+    <meta name="twitter:twitter:image:alt" content="https://passcloud.me" />
+    <!-- STYLES -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="./css/materialize.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
 
-    <body class="" onchange="generatePassword();" onkeypress="generatePassword();" onkeyup="generatePassword();">
-        <main>
-            <form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void();">
-                <header class="light-blue row">
-                    <div class="col s12 m12 l12 text-white inline">
-                        <a href="#" data-activates="slide-out" class="menuButton button-collapse circle hide-on-large-only white-text">
-                            <i class="material-icons white-text">menu</i>
-                        </a>
-                    </div>
-                    <div class="input-field masterPassword col s11 m12 l12 text-white inline">
-                        <input type="password" name="masterPass" value="" id="masterPass" class="validate fieldOn large" autocorrect="off" autocapitalize="off" tabindex="1" onfocus="$(this).select();" onclick="$(this).select();" onfocus="SelectAll('master');fieldOn('master');"
-                            onclick="SelectAll('master');fieldOn('master');" title="Choose a strong Master Password." style="" />
-                        <label for="master">Master Password:</label>
-                    </div>
-                </header>
-                <div class="row">
-                    <div class="input-field col s12 m6 l6">
-                        <input type="text" name="siteName" value="" id="siteName" class="fieldOn" autocorrect="off" autocapitalize="off" tabindex="2" onfocus="$(this).select();" onclick="$(this).select();" onfocus="SelectAll('master');fieldOn('master');" onclick="SelectAll('master');fieldOn('master');"
-                            title="Please enter a doman or sie name." style="" />
-                        <label for="site">Site Name:</label>
-                    </div>
-                    <div class="input-field col s12 m6 l6">
-                        <input type="text" name="userProfile" value="" id="userProfile" class="fieldOff" autocorrect="off" autocapitalize="off" onfocus="$(this).select();" onclick="$(this).select();" onfocus="SelectAll('master');fieldOn('master');" onclick="SelectAll('master');fieldOn('master');"
-                            title="Please enter a valid username or profile." style="" />
-                        <label for="profile">User Profile:</label>
-                    </div>
+<body class="" onchange="generatePassword();" onkeypress="generatePassword();" onkeyup="generatePassword();">
+    <main>
+        <form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void();">
+            <header class="light-blue row">
+                <div class="col s12 m12 l12 text-white inline">
+                    <a href="#" data-activates="slide-out" class="menuButton button-collapse circle hide-on-large-only white-text">
+                        <i class="material-icons white-text">menu</i>
+                    </a>
                 </div>
-                <div class="row">
-                    <div class="input-field col s4 m2 l2">
-                        <!--<div for="countVal" style="font-size: 0.8rem;">Characters:</div>-->
-                        <select name="charLength" id="charLength" onchange="generatePassword();" onkeypress="generatePassword();">
+                <div class="input-field masterPassword col s11 m12 l12 text-white inline">
+                    <input type="password" name="masterPass" value="" id="masterPass" class="validate fieldOn large" autocorrect="off" autocapitalize="off" tabindex="1" onfocus="$(this).select();" onclick="$(this).select();" onfocus="SelectAll('master');fieldOn('master');"
+                        onclick="SelectAll('master');fieldOn('master');" title="Choose a strong Master Password." style="" />
+                    <label for="master">Master Password:</label>
+                </div>
+            </header>
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <input type="text" name="siteName" value="" id="siteName" class="fieldOn" autocorrect="off" autocapitalize="off" tabindex="2" onfocus="$(this).select();" onclick="$(this).select();" onfocus="SelectAll('master');fieldOn('master');" onclick="SelectAll('master');fieldOn('master');"
+                        title="Please enter a doman or sie name." style="" />
+                    <label for="site">Site Name:</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input type="text" name="userProfile" value="" id="userProfile" class="fieldOff" autocorrect="off" autocapitalize="off" onfocus="$(this).select();" onclick="$(this).select();" onfocus="SelectAll('master');fieldOn('master');" onclick="SelectAll('master');fieldOn('master');"
+                        title="Please enter a valid username or profile." style="" />
+                    <label for="profile">User Profile:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4 m2 l2">
+                    <!--<div for="countVal" style="font-size: 0.8rem;">Characters:</div>-->
+                    <select name="charLength" id="charLength" onchange="generatePassword();" onkeypress="generatePassword();">
                                 <option value="8">8</option>
                                 <option value="12">12</option>
                                 <option value="16" selected>16</option>
@@ -62,22 +75,22 @@
                                 <!--<option value="128">128</option>-->
                                 <!--<option value="256">256</option>-->
                             </select>
-                        <label>Lenght:</label>
-                    </div>
-                    <div class="input-field col s4 m2 l2">
-                        <input type="number" id="year" />
-                        <label for="yearNum" id="yearLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Yearly password change.">
+                    <label>Lenght:</label>
+                </div>
+                <div class="input-field col s4 m2 l2">
+                    <input type="number" id="year" />
+                    <label for="yearNum" id="yearLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Yearly password change.">
                             Year:
                             </label>
-                    </div>
-                    <div class="input-field col s4 m2 l2">
-                        <input type="number" id="seedNum" />
-                        <label for="seedNum" id="seedNumLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Change the number to generate a new password.">
+                </div>
+                <div class="input-field col s4 m2 l2">
+                    <input type="number" id="seedNum" />
+                    <label for="seedNum" id="seedNumLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Change the number to generate a new password.">
                             Seed:
                             </label>
-                    </div>
-                    <div class="input-field col s6 m3 l3">
-                        <select name="passType" id="passType" onchange="generatePassword();" onkeypress="generatePassword();">
+                </div>
+                <div class="input-field col s6 m3 l3">
+                    <select name="passType" id="passType" onchange="generatePassword();" onkeypress="generatePassword();">
                                 <option value="password" class="light-blue">Password</option>
                                 <!--<option value="username">USERNAME</option>-->
                                 <option value="pin">PIN</option>
@@ -86,209 +99,210 @@
                                 <option value="xkcd">XKCD</option>
                                 <!--<option value="salt">SALT</option>-->
                             </select>
-                        <label>Type:</label>
-                    </div>
-                    <div class="input-field col s6 m3 l3">
-                        <ul class="collapsible collapsible-accordion z-depth-0">
-                            <li>
-                                <a id="optionsMenu" class="collapsible-header">OPTIONS: <span class="right" id="optionsArrow">&#8675;</span></a>
-                                <div class="collapsible-body options">
-                                    <ul>
-                                        <li>
-                                            <input type="checkbox" class="filled-in tooltipped" id="alpha" checked="checked" />
-                                            <label for="alpha" id="alphaLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="A a B b C c D d E e &#8230;">
+                    <label>Type:</label>
+                </div>
+                <div class="input-field col s6 m3 l3">
+                    <ul class="collapsible collapsible-accordion z-depth-0">
+                        <li>
+                            <a id="optionsMenu" class="collapsible-header">OPTIONS: <span class="right" id="optionsArrow">&#8675;</span></a>
+                            <div class="collapsible-body options">
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" class="filled-in tooltipped" id="alpha" checked="checked" />
+                                        <label for="alpha" id="alphaLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="A a B b C c D d E e &#8230;">
                                                 Alpha
                                                 </label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" class="filled-in tooltipped" id="numeric" checked="checked" />
-                                            <label for="numeric" id="numericLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="1 2 3 4 5 6 7 8 9 0">
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" class="filled-in tooltipped" id="numeric" checked="checked" />
+                                        <label for="numeric" id="numericLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="1 2 3 4 5 6 7 8 9 0">
                                                 Numeric
                                                 </label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" class="filled-in tooltipped" id="ambiguous" checked="checked" />
-                                            <label for="ambiguous" id="ambiguousLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="_ i I L 1 l l | o 0 O">
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" class="filled-in tooltipped" id="ambiguous" checked="checked" />
+                                        <label for="ambiguous" id="ambiguousLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="_ i I L 1 l l | o 0 O">
                                                 Similar
                                                 </label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" class="filled-in tooltipped" id="special" checked="checked" />
-                                            <label for="special" id="specialLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="! @ # $ % ^ &amp; * _ - = + ` ~ &#8230;">
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" class="filled-in tooltipped" id="special" checked="checked" />
+                                        <label for="special" id="specialLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="! @ # $ % ^ &amp; * _ - = + ` ~ &#8230;">
                                             <!-- data-tooltip="! @ # $ % ^ &amp; * _ - = + ` ~ ( ) [ ] { } ; : \ &apos; &quot; , .  < > ? / \ |" -->
                                                 Special
                                                 </label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" class="filled-in tooltipped" id="extended" />
-                                            <label for="extended" id="extendedLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="¡ ¢ £ ¤ ¥ ¦ § ¨ © ª ® ° ± µ ¿">
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" class="filled-in tooltipped" id="extended" />
+                                        <label for="extended" id="extendedLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="¡ ¢ £ ¤ ¥ ¦ § ¨ © ª ® ° ± µ ¿">
                                                 Extended
                                                 </label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" class="filled-in tooltipped" id="yearly" checked="checked" />
-                                            <label for="yearly" id="yearlyLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="Changes passwords every year.">
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" class="filled-in tooltipped" id="yearly" checked="checked" />
+                                        <label for="yearly" id="yearlyLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="Changes passwords every year.">
                                                 Yearly
                                                 </label>
-                                        </li>
-                                        <!--<li style="padding: 4px 10px;">
+                                    </li>
+                                    <!--<li style="padding: 4px 10px;">
                                         </li>-->
-                                        <li><br/></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--<div style="clear:both;"></div>-->
+                                    <li><br/></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12 m12 l12">
-                        <input type="text" class="domainPassword" name="domainPassword" id="domainPassword" placeholder="Domain Password:" autocorrect="off" autocapitalize="off" onfocus="$(this).select();" onclick="$(this).select();" style="" />
-                        <label for="result"></label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6 m3 l3">
-                        <button type="submit" class="clr small waves-effect waves-light btn light-blue z-depth-0" id="btnSave" onclick="Save();">Save</button>
-                    </div>
-                    <div class="input-field col s6 m3 l3">
-                        <button type="reset" class="clr small waves-effect waves-light btn light-blue z-depth-0" onclick="fieldOff();clearButton();">Clear</button>
-                    </div>
-                </div>
-            </form>
-        </main>
-        <footer class="white" style="margin:0;padding:1vmin 4vmin;">
-            <div class="col l6 s12">
-                <a class="right modal-trigger" href="#about"><i class="material-icons">info_outline</i></a>
+                <!--<div style="clear:both;"></div>-->
             </div>
-        </footer>
-        <section>
-            <!-- Modal Structure -->
-            <div id="about" class="modal modal-fixed-footer">
-                <div class="modal-content">
-                    <article>
-                        <h4>What is Passcloud?</h4>
-                        <p>For most people, passwords are a real problem. Remembering passwords is a pain and using the same password everywhere will eventually lead to a disaster. While traditional password managers solve this with lots of random passwords
-                            they have to save your passwords in their databases. This makes your lists of passwords vulnerable to hacking and interception.</p>
-                        <p>Passcloud attempts to solve the problem other password managers have by never storing your passwords. Instead, Passcloud generates pseudo-random passwords based on the Mersenne Twister PRNG algorithm. Users combine the same repeatable
-                            information based on a master password and always get the same unique password.</p>
-                        <p>By using Passcloud for every site you visit you're less vulnerable to security breaches, even if one password is compromised all of your other passwords generated from the same Passcloud remains secure!</p>
-                        <h5>Nothing to Hack</h5>
-                        <p>With Passcloud there is nothing to intercept since it uses client-side JavaScript and avoids sending sensitive data across a network, making it one of the most secure password managers available. Passcloud is based on a stateless
-                            algorithm which frees it from the reliance on storage of secrets.</p>
-                        <p>Since your generated passwords aren't saved to your device, there is no risk you'll be forced to divulge them to aggressive peers. And since these passwords don't need to be backed up or synchronized between devices over the network,
-                            there is no risk of them getting intercepted.</p>
-                        <p>Finally, Passcloud is free software (GPLv3), its algorithm extensively documented and does not require you to trust any external party. This is particularly interesting in a society where things like PRISM and gag orders are a
-                            real threat.</p>
-                        <h5>Always In Sync</h5>
-                        <p>No cloud provider to trust, no backups to maintain and no data connection for keeping in sync. Contrary to other password solutions, Passcloud doesn't need to send your passwords over the network to make them ubiquitously available.
-                            Just add your information into each of your devices and your passwords will be available instantly on all of them.</p>
-                        <p>No cloud provider to trust, no backups to maintain and no data connection for keeping in sync. Since Passcloud generates your passwords on-demand based on your user name and Passcloud, you don't have any of these fragile dependencies.
-                            This gives you massive availability advantages, but also helps thwart man-in-the-middle attacks, snooping and trust issues related to cloud providers.</p>
-                        <p>Since Passcloud generates your passwords on-demand based on your information and master password, you don't have any of these fragile dependencies. This gives you massive availability advantages but also helps thwart man-in-the-middle
-                            attacks, snooping and trust issues related to cloud providers.</p>
-                        <h5>For Any Purpose</h5>
-                        <p>Passcloud comes with a variety of built-in password types. These types make your password look different, become more secure or more compatible with a site's password policy.</p>
-                        <p>Passcloud also implements a solution that allows you to save custom information in the app. This information is AES encrypted using a large key derived from your master password. </p>
-                    </article>
-                </div>
-                <div class="modal-footer">
-                    <div class="col l6 s12 left">
-                        <a href="https://github.com/spencerthayer/Passcloud">Passcloud</a> N&copy;! 2009 &mdash;
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script>
-                        <!--<a href="http://spencerthayer.com/" target="_system" onClick="window.open(" http://spencerthayer.com ", "_system ");">Spencer Thayer</a>-->
-                    </div>
-                    <a href="javascript:void();" class=" modal-action modal-close waves-effect waves-blue btn-flat right">Close</a>
+            <div class="row">
+                <div class="input-field col s12 m12 l12">
+                    <input type="text" class="domainPassword" name="domainPassword" id="domainPassword" placeholder="Domain Password:" autocorrect="off" autocapitalize="off" onfocus="$(this).select();" onclick="$(this).select();" style="" />
+                    <label for="result"></label>
                 </div>
             </div>
-        </section>
-        <!--<ul id="slide-out" class="side-nav fixed">
+            <div class="row">
+                <div class="input-field col s6 m3 l3">
+                    <button type="submit" class="clr small waves-effect waves-light btn light-blue z-depth-0" id="btnSave" onclick="Save();">Save</button>
+                </div>
+                <div class="input-field col s6 m3 l3">
+                    <button type="reset" class="clr small waves-effect waves-light btn light-blue z-depth-0" onclick="fieldOff();clearButton();">Clear</button>
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer class="white" style="margin:0;padding:1vmin 4vmin;">
+        <div class="col l6 s12">
+            <a class="right modal-trigger" href="#about"><i class="material-icons">info_outline</i></a>
+        </div>
+    </footer>
+    <section>
+        <!-- Modal Structure -->
+        <div id="about" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <article>
+                    <h4>What is Passcloud?</h4>
+                    <p>For most people, passwords are a real problem. Remembering passwords is a pain and using the same password everywhere will eventually lead to a disaster. While traditional password managers solve this with lots of random passwords
+                        they have to save your passwords in their databases. This makes your lists of passwords vulnerable to hacking and interception.</p>
+                    <p>Passcloud attempts to solve the problem other password managers have by never storing your passwords. Instead, Passcloud generates pseudo-random passwords based on the Mersenne Twister PRNG algorithm. Users combine the same repeatable
+                        information based on a master password and always get the same unique password.</p>
+                    <p>By using Passcloud for every site you visit you're less vulnerable to security breaches, even if one password is compromised all of your other passwords generated from the same Passcloud remains secure!</p>
+                    <h5>Nothing to Hack</h5>
+                    <p>With Passcloud there is nothing to intercept since it uses client-side JavaScript and avoids sending sensitive data across a network, making it one of the most secure password managers available. Passcloud is based on a stateless algorithm
+                        which frees it from the reliance on storage of secrets.</p>
+                    <p>Since your generated passwords aren't saved to your device, there is no risk you'll be forced to divulge them to aggressive peers. And since these passwords don't need to be backed up or synchronized between devices over the network,
+                        there is no risk of them getting intercepted.</p>
+                    <p>Finally, Passcloud is free software (GPLv3), its algorithm extensively documented and does not require you to trust any external party. This is particularly interesting in a society where things like PRISM and gag orders are a real
+                        threat.
+                    </p>
+                    <h5>Always In Sync</h5>
+                    <p>No cloud provider to trust, no backups to maintain and no data connection for keeping in sync. Contrary to other password solutions, Passcloud doesn't need to send your passwords over the network to make them ubiquitously available.
+                        Just add your information into each of your devices and your passwords will be available instantly on all of them.</p>
+                    <p>No cloud provider to trust, no backups to maintain and no data connection for keeping in sync. Since Passcloud generates your passwords on-demand based on your user name and Passcloud, you don't have any of these fragile dependencies.
+                        This gives you massive availability advantages, but also helps thwart man-in-the-middle attacks, snooping and trust issues related to cloud providers.</p>
+                    <p>Since Passcloud generates your passwords on-demand based on your information and master password, you don't have any of these fragile dependencies. This gives you massive availability advantages but also helps thwart man-in-the-middle
+                        attacks, snooping and trust issues related to cloud providers.</p>
+                    <h5>For Any Purpose</h5>
+                    <p>Passcloud comes with a variety of built-in password types. These types make your password look different, become more secure or more compatible with a site's password policy.</p>
+                    <p>Passcloud also implements a solution that allows you to save custom information in the app. This information is AES encrypted using a large key derived from your master password. </p>
+                </article>
+            </div>
+            <div class="modal-footer">
+                <div class="col l6 s12 left">
+                    <a href="https://github.com/spencerthayer/Passcloud">Passcloud</a> N&copy;! 2009 &mdash;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    <!--<a href="http://spencerthayer.com/" target="_system" onClick="window.open(" http://spencerthayer.com ", "_system ");">Spencer Thayer</a>-->
+                </div>
+                <a href="javascript:void();" class=" modal-action modal-close waves-effect waves-blue btn-flat right">Close</a>
+            </div>
+        </div>
+    </section>
+    <!--<ul id="slide-out" class="side-nav fixed">
             <li class="logo flow-text">Passcloud</li>
         </ul>-->
-        <ul id="slide-out" class="side-nav fixed">
-            <li style="height:176px;">
-                <div class="userView" style="height:176px;">
-                    <div class="background">
-                        <img src="./img/bg.png" width="100%">
-                    </div>
-                    <!--<a href="#!user"><img class="circle" src="http://materializecss.com/images/yuna.jpg"></a>
+    <ul id="slide-out" class="side-nav fixed">
+        <li style="height:176px;">
+            <div class="userView" style="height:176px;">
+                <div class="background">
+                    <img src="./img/bg.png" width="100%">
+                </div>
+                <!--<a href="#!user"><img class="circle" src="http://materializecss.com/images/yuna.jpg"></a>
                     <a href="#!name"><span class="white-text name">John Doe</span></a>
                     <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>-->
-                </div>
-            </li>
-            <li><a><i class="material-icons">cloud</i>Passcloud 2.0 alpha</a></li>
-            <li>
-                <div class="divider"></div>
-            </li>
-            <!--<li class="search">
+            </div>
+        </li>
+        <li><a><i class="material-icons">cloud</i>Passcloud 2.0 alpha</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <!--<li class="search">
                 <div class="search-wrapper">
                     <input id="search"><i class="material-icons">search</i>
                     <div class="search-results"></div>
                 </div>
             </li>-->
-            <li>
-                <a class="subheader">Saved Sites</a>
-            </li>
-            <li>
-                <a class="waves-effect">
-                    <!--<img src="https://www.google.com/s2/favicons?domain=facebook.com" class="favicon" /> Third Link With Waves-->
-                    <img src="https://ucygetfavicon.appspot.com/http://google.com" class="favicon circle" /> Test Google
-                </a>
-            </li>
-        </ul>
-    </body>
-    <script src="./js/jquery.min.js" data-version="3.2.1" data-source="https://github.com/jquery/jquery"></script>
-    <script src="./js/materialize.min.js" data-version="0.98.2" data-source="https://github.com/dogfalo/materialize"></script>
-    <script src="./js/chance.min.js" data-version="1.0.4" data-source="https://github.com/chancejs/chancejs"></script>
-    <script src="./js/crypt.io.min.js" data-version="1.0.0" data-source="https://github.com/jas-/crypt.io"></script>
-    <script src="./js/sjcl.js" data-version="1.0.4" data-source="https://github.com/bitwiseshiftleft/sjcl"></script>
-    <!--<script src="./js/" data-version="" data-source=""></script>-->
-    <script src="./js/app.js"></script>
-    <script src="./js/xkcd.js"></script>
-    <script>
-        // var storage = cryptio,
-        //     passStore = [{
-        //         "SKU": "39-48949",
-        //         "Price": 618,
-        //         "Item": "qwdqwd!"
-        //     }, {
-        //         "SKU": "99-28128",
-        //         "Price": 78.99,
-        //         "Item": "Cleats"
-        //     }, {
-        //         "SKU": "83-38285",
-        //         "Price": 3.99,
-        //         "Item": "Hockey Puck"
-        //     }];
+        <li>
+            <a class="subheader">Saved Sites</a>
+        </li>
+        <li>
+            <a class="waves-effect">
+                <!--<img src="https://www.google.com/s2/favicons?domain=facebook.com" class="favicon" /> Third Link With Waves-->
+                <img src="https://ucygetfavicon.appspot.com/http://google.com" class="favicon circle" /> Test Google
+            </a>
+        </li>
+    </ul>
+</body>
+<script src="./js/jquery.min.js" data-version="3.2.1" data-source="https://github.com/jquery/jquery"></script>
+<script src="./js/materialize.min.js" data-version="0.98.2" data-source="https://github.com/dogfalo/materialize"></script>
+<script src="./js/chance.min.js" data-version="1.0.4" data-source="https://github.com/chancejs/chancejs"></script>
+<script src="./js/crypt.io.min.js" data-version="1.0.0" data-source="https://github.com/jas-/crypt.io"></script>
+<script src="./js/sjcl.js" data-version="1.0.4" data-source="https://github.com/bitwiseshiftleft/sjcl"></script>
+<!--<script src="./js/" data-version="" data-source=""></script>-->
+<script src="./js/app.js"></script>
+<script src="./js/xkcd.js"></script>
+<script>
+    // var storage = cryptio,
+    //     passStore = [{
+    //         "SKU": "39-48949",
+    //         "Price": 618,
+    //         "Item": "qwdqwd!"
+    //     }, {
+    //         "SKU": "99-28128",
+    //         "Price": 78.99,
+    //         "Item": "Cleats"
+    //     }, {
+    //         "SKU": "83-38285",
+    //         "Price": 3.99,
+    //         "Item": "Hockey Puck"
+    //     }];
 
-        // storage.set('passStore', passStore, function(err, results) {
-        //     if (err) throw err;
-        //     console.log(results);
-        // });
-        // var storage = cryptio;
+    // storage.set('passStore', passStore, function(err, results) {
+    //     if (err) throw err;
+    //     console.log(results);
+    // });
+    // var storage = cryptio;
 
-        // storage.get('passStore', function(err, results) {
-        //     if (err) throw err;
-        //     console.log(results);
-        // });
+    // storage.get('passStore', function(err, results) {
+    //     if (err) throw err;
+    //     console.log(results);
+    // });
 
-        // var pass = window.prompt("Please enter password...", encryptPassword);
+    // var pass = window.prompt("Please enter password...", encryptPassword);
 
-        // var options = {
-        //     passphrase: pass
-        // };
+    // var options = {
+    //     passphrase: pass
+    // };
 
-        // storage.set(options, 'passStore', passStore, function(err, results) {
-        //     if (err) throw err;
-        //     console.log(results);
-        // });
+    // storage.set(options, 'passStore', passStore, function(err, results) {
+    //     if (err) throw err;
+    //     console.log(results);
+    // });
 
-        // storage.get('passStore', function(err, results) {
-        //     if (err) throw err;
-        //     console.log(results);
-        // });
-    </script>
+    // storage.get('passStore', function(err, results) {
+    //     if (err) throw err;
+    //     console.log(results);
+    // });
+</script>
 
 </html>
