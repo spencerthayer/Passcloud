@@ -23,22 +23,40 @@
       var targetURL = $(this).attr("href");
       window.open(targetURL, "_system");
   });
+  // SETUP GLOBALSmasterPass);
+  var siteName;
+  var userProfile;
+  var charLength;
+  var year;
+  var seedNum;
+  var passType;
+  var isAlpha;
+  var isNumeric;
+  var isAmbiguous;
+  var isSpecial;
+  var isExtended;
+  var isYearly;
+  var ranSyl;
+  var poolString;
+  var domainPassword;
+  var noUnique;
+  var encryptPassword;
   // GENERATE THE PASSWORD
   function generatePassword() {
       // INPUT VALUES
-      var year = $("#year").val();
-      var masterPass = $("#masterPass").val();
-      var siteName = $("#siteName").val();
-      var userProfile = $("#userProfile").val();
-      var charLength = $("#charLength").val();
-      var passType = $("#passType").val();
-      var seedNum = $("#seedNum").val();
-      var isAlpha = $("#alpha")[0].checked;
-      var isNumeric = $("#numeric")[0].checked;
-      var isAmbiguous = $("#ambiguous")[0].checked;
-      var isSpecial = $("#special")[0].checked;
-      var isExtended = $("#extended")[0].checked;
-      var isYearly = $("#yearly")[0].checked;
+      year = $("#year").val();
+      masterPass = $("#masterPass").val();
+      siteName = $("#siteName").val();
+      userProfile = $("#userProfile").val();
+      charLength = $("#charLength").val();
+      passType = $("#passType").val();
+      seedNum = $("#seedNum").val();
+      isAlpha = $("#alpha")[0].checked;
+      isNumeric = $("#numeric")[0].checked;
+      isAmbiguous = $("#ambiguous")[0].checked;
+      isSpecial = $("#special")[0].checked;
+      isExtended = $("#extended")[0].checked;
+      isYearly = $("#yearly")[0].checked;
       // CHARACTERS STRING CREATION
       var ambiguous = "_iIL1ll|o0O";
       var numeric = "1234567890";
@@ -90,8 +108,8 @@
           seedNum
       );
       var chancePassword;
-      var ranInt = chanceHash.integer({ min: 5, max: 10 });
-      var ranSyl = chanceHash.integer({ min: 2, max: 4 });
+      ranInt = chanceHash.integer({ min: 5, max: 10 });
+      ranSyl = chanceHash.integer({ min: 2, max: 4 });
       if (passType == "password") {
           domainPassword = chanceHash.string({
               length: charLength,
@@ -144,39 +162,41 @@
           });
       }
       //   var s1 = 'The quick red fox jumps over the lazy brown dog.';
-      var noUnique = uniqueString(domainPassword.split('')).join('')
+      noUnique = uniqueString(domainPassword.split('')).join('')
 
-      function devConsole() {
-          console.clear();
-          console.log("#Input");
-          console.log(" Master: " + masterPass);
-          console.log(" Name: " + siteName);
-          console.log(" User: " + userProfile);
-          console.log(" Char: " + charLength);
-          console.log(" Year: " + year);
-          console.log(" Seed: " + seedNum);
-          console.log(" Type: " + passType);
-          console.log("");
-          console.log("#Options");
-          console.log(" Alpha: " + isAlpha);
-          console.log(" Numeric: " + isNumeric);
-          console.log(" Ambiguous: " + isAmbiguous);
-          console.log(" Special: " + isSpecial);
-          console.log(" Extended: " + isExtended);
-          console.log(" Yearly: " + isYearly);
-          console.log("");
-          console.log("#Hidden");
-          console.log(" Int: " + ranInt + "," + ranSyl);
-          console.log(" Pool: " + poolString);
-          console.log("");
-          console.log("#Passwords");
-          console.log(" Pass: " + domainPassword);
-          console.log(" Uniq: " + noUnique);
-          console.log(" Encryption Pass: " + encryptPassword)
-      }
       devConsole();
 
       $("#domainPassword").val(domainPassword);
+      return encryptPassword;
+  }
+
+  function devConsole() {
+      console.clear();
+      console.log("#Input");
+      console.log(" Master: " + masterPass);
+      console.log(" Name: " + siteName);
+      console.log(" User: " + userProfile);
+      console.log(" Char: " + charLength);
+      console.log(" Year: " + year);
+      console.log(" Seed: " + seedNum);
+      console.log(" Type: " + passType);
+      console.log("");
+      console.log("#Options");
+      console.log(" Alpha: " + isAlpha);
+      console.log(" Numeric: " + isNumeric);
+      console.log(" Ambiguous: " + isAmbiguous);
+      console.log(" Special: " + isSpecial);
+      console.log(" Extended: " + isExtended);
+      console.log(" Yearly: " + isYearly);
+      console.log("");
+      console.log("#Hidden");
+      console.log(" Int: " + ranInt + "," + ranSyl);
+      console.log(" Pool: " + poolString);
+      console.log("");
+      console.log("#Passwords");
+      console.log(" Pass: " + domainPassword);
+      console.log(" Uniq: " + noUnique);
+      console.log(" Encryption Pass: " + encryptPassword)
   }
 
   $(".modal").modal({
