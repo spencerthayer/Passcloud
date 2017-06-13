@@ -57,10 +57,13 @@ function revealPass() {
 
 
 $("#optionsMenu").click(function() {
-    $("#optionsArrow").html("&#8673;");
-    $("#optionsMenu").click(function() {
+    if ($("#optionsMenu").attr("data-open") == "no") {
+        $("#optionsMenu").attr("data-open", "yes");
+        $("#optionsArrow").html("&#8673;");
+    } else {
+        $("#optionsMenu").attr("data-open", "no");
         $("#optionsArrow").html("&#8675;");
-    });
+    }
 });;
 
 function writeYear() {
