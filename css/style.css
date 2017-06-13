@@ -17,9 +17,20 @@ body {
     flex-direction: column;
 }
 
-main {
+header,
+main,
+footer {
     flex: 1 0 auto;
     min-width: 264px;
+    padding-left: 300px;
+}
+
+@media only screen and (max-width: 992px) {
+    header,
+    main,
+    footer {
+        padding-left: 0;
+    }
 }
 
 a,
@@ -170,20 +181,6 @@ ul.side-nav.fixed li.logo {
 ul.side-nav.fixed li.logo img {
     height: 10vw;
     width: 10vw;
-}
-
-header,
-main,
-footer {
-    padding-left: 300px;
-}
-
-@media only screen and (max-width: 992px) {
-    header,
-    main,
-    footer {
-        padding-left: 0;
-    }
 }
 
 .collection {}

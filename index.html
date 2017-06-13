@@ -44,7 +44,7 @@
                         <i class="material-icons white-text">menu</i>
                     </a>
                 </div>
-                <div class="input-field masterPassword col s11 m12 l12 text-white inline">
+                <div class="input-field masterPassword col s12 m12 l12 text-white inline">
                     <input type="password" name="masterPass" value="" id="masterPass" class="validate fieldOn large" autocorrect="off" autocapitalize="off" tabindex="1" onfocus="$(this).select();" onclick="$(this).select();" onfocus="SelectAll('master');fieldOn('master');"
                         onclick="SelectAll('master');fieldOn('master');" title="Choose a strong Master Password." style="" />
                     <label for="master">Master Password:</label>
@@ -160,21 +160,17 @@
                     <label for="result"></label>
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col s6 m3 l3">
-                    <button type="submit" class="clr small waves-effect waves-light btn light-blue z-depth-0" id="btnSave" onclick="saveForm();">Save</button>
-                </div>
-                <div class="input-field col s6 m3 l3">
-                    <button type="reset" class="clr small waves-effect waves-light btn light-blue z-depth-0" onclick="clearForm();">Clear</button>
-                </div>
-            </div>
         </form>
+        <footer class="white" style="margin:0;padding:1vmin 4vmin;">
+            <div class="col s12 m12 l12">
+                <button type="submit" class="waves-effect waves-light btn light-blue z-depth-0" style="margin-right:22px;" onclick="saveForm();">Save</button>
+                <button type="reset" class="waves-effect waves-light btn light-blue z-depth-0" onclick="clearForm();">Clear</button>
+                <a class="right modal-trigger" href="#about">
+                    <i class="material-icons">info_outline</i>
+                </a>
+            </div>
+        </footer>
     </main>
-    <footer class="white" style="margin:0;padding:1vmin 4vmin;">
-        <div class="col l6 s12">
-            <a class="right modal-trigger" href="#about"><i class="material-icons">info_outline</i></a>
-        </div>
-    </footer>
     <section>
         <!-- Modal Structure -->
         <div id="about" class="modal modal-fixed-footer">
@@ -214,7 +210,7 @@
                     </script>
                     <!--<a href="http://spencerthayer.com/" target="_system" onClick="window.open(" http://spencerthayer.com ", "_system ");">Spencer Thayer</a>-->
                 </div>
-                <a href="javascript:void();" class=" modal-action modal-close waves-effect waves-blue btn-flat right">Close</a>
+                <a href="javascript:void(0);" class=" modal-action modal-close waves-effect waves-blue btn-flat right">Close</a>
             </div>
         </div>
     </section>
