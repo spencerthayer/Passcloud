@@ -32,13 +32,12 @@ var clipboard = new Clipboard("#domainPassword", {
     clipboard.on("success", function(e) {
         // console.clear();
         // console.log(e);
-        Materialize.toast("Password copied!", 300);
+        Materialize.toast("Password copied!", 500);
     });
-    clipboard.on("error", function(e) {
+    // clipboard.on("error", function(e) {
         // console.clear();
         // console.log(e);
-        Materialize.toast("Password copied!", 300);
-    });
+    // });
 
 $("#optionsMenu").click(function() {
     $("#optionsArrow").html("&#8673;");
