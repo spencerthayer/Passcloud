@@ -38,7 +38,7 @@ clipboard.on("success", function(e) {
     Materialize.toast("Password copied!", 500);
     setTimeout(function(){
         $("#domainPassword").attr("type", "password");
-    }, 1000);
+    }, 2000);
 });
 // clipboard.on("error", function(e) {
 // console.clear();
