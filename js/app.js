@@ -76,9 +76,11 @@ function generatePassword() {
     numeric = "1234567890";
     latinLower = "abcdefghijklmnopqrstuvwxyz";
     latinUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    symbols = "";
     special = "!@#$%^&*_-=+`~()[]{};:\'\",.\<\>?\/\\|";
     extended = "¡¢£¤¥¦§¨©ª®°±µ¿";
+    alchemical = "🜀🜁🜂🜃🜄🜅🜆🜇🜈🜉🜊🜋🜌🜍🜎🜏🜐🜑🜒🜓🜔🜕🜖🜗🜘🜙🜚🜛🜜🜝🜞🜟🜠🜡🜢🜣🜤🜥🜦🜧🜨🜩🜪🜫🜬🜭🜮🜯🜰🜱🜲🜳🜴🜵🜶🜷🜸🜹🜺🜻🜼🜽🜾🜿🝀🝁🝂🝃🝄🝅🝆🝇🝈🝉🝊🝋🝌🝍🝎🝏🝐🝑🝒🝓🝔🝕🝖🝗🝘🝙🝚🝛🝜🝝🝞🝟🝠🝡🝢🝣🝤🝥🝦🝧🝨🝩🝪🝫🝬🝭🝮🝯🝰🝱🝲🝳";
+    emoji = "😀😁😂😃😄😅😆😇😈😉😊😋😌😍😎😏😐😑😒😓😔😕😖😗😘😙😚😛😜😝😞😟😠😡😢😣😤😥😦😧😨😩😪😫😬😭😮😯😰😱😲😳😴😵😶😷🙁🙂🙃🙄";
+    mahjong = "🀀🀁🀂🀃🀄🀅🀆🀇🀈🀉🀊🀋🀌🀍🀎🀏🀐🀑🀒🀓🀔🀕🀖🀗🀘🀙🀚🀛🀜🀝🀞🀟🀠🀡🀢🀣🀤🀥🀦🀧🀨🀩🀪🀫";
     supplimentLower = "àáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
     supplimentUpper = "ÀÁÂÃÄÅÆÇÈÉÊËÌÌÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß";
     if (isAmbiguous == true) {
@@ -100,7 +102,7 @@ function generatePassword() {
     if (isYearly == false) {
         year = "";
     }
-    var charString = latinLower + latinUpper + numeric + symbols + special + extended;
+    var charString = latinLower + latinUpper + numeric + special + extended;
     toReplace = "[" + ambiguous + "]";
     regString = new RegExp(toReplace, "g");
     poolString = charString.replace(regString, "");
@@ -167,7 +169,7 @@ function generatePassword() {
     //
     encryptPassword = chanceEncrypt.string({
         length: 128,
-        pool: latinLower + latinUpper + numeric + symbols + special + extended + supplimentLower + supplimentUpper
+        pool: latinLower + latinUpper + numeric + special + extended + supplimentLower + supplimentUpper
     });
 
     function uniqueString(string) {
