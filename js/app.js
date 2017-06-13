@@ -24,6 +24,18 @@ $(document).ready(function() {
     $("#passType").material_select();
 });
 
+var clipboard = new Clipboard("#domainPassword", {
+        target: function() {
+            return document.querySelector("#domainPassword");
+        }
+    });
+    clipboard.on("success", function(e) {
+        console.log(e);
+    });
+    clipboard.on("error", function(e) {
+        console.log(e);
+    });
+
 $("#optionsMenu").click(function() {
     $("#optionsArrow").html("&#8673;");
     $("#optionsMenu").click(function() {
