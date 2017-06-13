@@ -37,6 +37,7 @@ var clipboard = new Clipboard("#domainPassword", {
     // clipboard.on("error", function(e) {
         // console.clear();
         // console.log(e);
+        // clipboard.destroy();
     // });
 
 $("#optionsMenu").click(function() {
