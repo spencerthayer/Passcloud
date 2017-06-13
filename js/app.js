@@ -23,22 +23,38 @@ $(document).ready(function() {
     $("#charLength").material_select();
     $("#passType").material_select();
 });
-
+//CLIPBOARD AND PASS REVEAL
 var clipboard = new Clipboard("#domainPassword", {
-        target: function() {
-            return document.querySelector("#domainPassword");
-        }
-    });
-    clipboard.on("success", function(e) {
-        // console.clear();
-        // console.log(e);
-        Materialize.toast("Password copied!", 500);
-    });
-    // clipboard.on("error", function(e) {
-        // console.clear();
-        // console.log(e);
-        // clipboard.destroy();
-    // });
+    target: function() {
+    if ($("#domainPassword").attr("type") == "password") {
+        $("#domainPassword").attr("type", "text");
+    } else {
+        $("#domainPassword").attr("type", "password");
+    }
+        return document.querySelector("#domainPassword");
+    }
+});
+clipboard.on("success", function(e) {
+    Materialize.toast("Password copied!", 500);
+    setTimeout(function(){
+        $("#domainPassword").attr("type", "password");
+    }, 1000);
+});
+// clipboard.on("error", function(e) {
+// console.clear();
+// console.log(e);
+// clipboard.destroy();
+// });
+
+
+function revealPass() {
+    // if ($("#domainPassword").attr("type") == "password") {
+    //     $("#domainPassword").attr("type", "text");
+    // } else {
+    //     $("#domainPassword").attr("type", "password");
+    // }
+}
+
 
 $("#optionsMenu").click(function() {
     $("#optionsArrow").html("&#8673;");
