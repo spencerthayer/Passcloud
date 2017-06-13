@@ -30,10 +30,14 @@ var clipboard = new Clipboard("#domainPassword", {
         }
     });
     clipboard.on("success", function(e) {
-        console.log(e);
+        // console.clear();
+        // console.log(e);
+        Materialize.toast("Password copied!", 300);
     });
     clipboard.on("error", function(e) {
-        console.log(e);
+        // console.clear();
+        // console.log(e);
+        Materialize.toast("Password copied!", 300);
     });
 
 $("#optionsMenu").click(function() {
