@@ -117,9 +117,12 @@ a,
 
 header {
     margin: 0;
-    padding: 10px 0px 0px 0px !important;
+    padding: 0px;
+    /*padding: 10px 0px 0px 0px !important;*/
     color: #FFFFFF;
     overflow: hidden;
+    padding-top: 20px;
+    background-color: #03a9f4;
 }
 
 header h1 {
@@ -213,12 +216,12 @@ ul.side-nav.fixed li.logo img {
 }
 
 .masterPassword,.masterPassword input,.masterPassword label {
-    font-size: 105% !important;
+    /*font-size: 105% !important;*/
     color: #fff !important;
     border-color:  #fff !important;
 }
 .masterPassword input {
-    font-size: 150% !important;
+    /*font-size: 150% !important;*/
 }
 
 .domainPassword {
@@ -235,14 +238,14 @@ ul.side-nav.fixed li.logo img {
 }
 
 .mp.active {
-    margin-top: 12px;
+    /*margin-top: 12px;
     font-size: 75% !important;
     -webkit-transition: margin-top 1s, font-size 1s, -webkit-transform 1s;
-    transition: margin-top 1s, font-size 1s, transform 1s;
+    transition: margin-top 1s, font-size 1s, transform 1s;*/
 }
 
 .menuButton {
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 
 .favicon {
