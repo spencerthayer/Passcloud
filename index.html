@@ -45,26 +45,75 @@
                     </a>
                 </div>
                 <div class="input-field masterPassword col s12 m12 l12 text-white inline">
-                    <input type="password" name="masterPass" value="" id="masterPass" class="validate fieldOn large" autocorrect="off" autocapitalize="off" tabindex="1" onfocus="$(this).select();" onclick="$(this).select();" onfocus="SelectAll('master');fieldOn('master');" title="Choose a strong Master Password." style="" />
+                    <input
+                        type="password"
+                        name="masterPass"
+                        value=""
+                        id="masterPass"
+                        class="validate fieldOn large"
+                        onfocus="$(this).select();"
+                        onclick="$(this).select();"
+                        title="Choose a strong Master Password."
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        tabindex="1"
+                        style=""
+                        />
                     <label for="master">Master Password:</label>
                 </div>
             </header>
             <div class="row">
                 <div class="input-field col s12 m6 l6">
-                    <input type="text" name="siteName" value="" id="siteName" class="fieldOn" autocorrect="off" autocapitalize="off" tabindex="2" onfocus="$(this).select();" onclick="$(this).select();" onfocus="SelectAll('master');fieldOn('master');" onclick="SelectAll('master');fieldOn('master');"
-                        title="Please enter a doman or site name." style="" />
+                    <input
+                        type="text"
+                        name="siteName"
+                        value=""
+                        id="siteName"
+                        class="fieldOn"
+                        onfocus="$(this).select();"
+                        onclick="$(this).select();"
+                        title="Please enter a doman or site name."
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        tabindex="2"
+                        style=""
+                        />
                     <label for="site">Site Name:</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input type="text" name="userProfile" value="" id="userProfile" class="fieldOff" autocorrect="off" autocapitalize="off" onfocus="$(this).select();" onclick="$(this).select();" onfocus="SelectAll('master');fieldOn('master');" onclick="SelectAll('master');fieldOn('master');"
-                        title="Please enter a valid username or profile." style="" />
+                    <input
+                        type="text"
+                        name="userProfile"
+                        value=""
+                        id="userProfile"
+                        class="fieldOff"
+                        onfocus="$(this).select();"
+                        onclick="$(this).select();"
+                        title="Please enter a valid username or profile."
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        tabindex="3"
+                        style=""
+                        />
                     <label for="profile">User Profile:</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s4 m2 l2">
                     <!--<div for="countVal" style="font-size: 0.8rem;">Characters:</div>-->
-                    <select name="charLength" id="charLength" onchange="generatePassword();" onkeypress="generatePassword();">
+                    <select
+                        name="charLength"
+                        id="charLength"
+                        onchange="generatePassword();"
+                        onkeypress="generatePassword();"
+                        tabindex="4"
+                        >
                                 <option value="8">8</option>
                                 <option value="12">12</option>
                                 <option value="16" selected>16</option>
@@ -77,19 +126,42 @@
                     <label>Lenght:</label>
                 </div>
                 <div class="input-field col s4 m2 l2">
-                    <input type="number" id="year" value="document.write(currentYear);" />
-                    <label for="yearNum" id="yearLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Yearly password change.">
-                            Year:
-                            </label>
+                    <input
+                        type="number"
+                        id="year"
+                        value="document.write(currentYear);"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        tabindex="5"
+                        />
+                    <labelfor="yearNum" id="yearLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Yearly password change.">
+                        Year:
+                    </label>
                 </div>
                 <div class="input-field col s4 m2 l2">
-                    <input type="number" id="seedNum" />
+                    <input
+                        type="number"
+                        id="seedNum"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                        tabindex="6"
+                        />
                     <label for="seedNum" id="seedNumLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Change the number to generate a new password.">
-                            Seed:
-                            </label>
+                        Seed:
+                    </label>
                 </div>
                 <div class="input-field col s6 m3 l3">
-                    <select name="passType" id="passType" onchange="generatePassword();" onkeypress="generatePassword();">
+                    <select
+                        name="passType"
+                        id="passType"
+                        onchange="generatePassword();"
+                        onkeypress="generatePassword();"
+                        tabindex="7"
+                        >
                                 <option value="password" class="light-blue">Password</option>
                                 <!--<option value="username">USERNAME</option>-->
                                 <option value="pin">PIN</option>
@@ -109,42 +181,39 @@
                                     <li>
                                         <input type="checkbox" class="filled-in tooltipped" id="alpha" checked="checked" />
                                         <label for="alpha" id="alphaLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="A a B b C c D d E e &#8230;">
-                                                Alpha
-                                                </label>
+                                            Alpha
+                                        </label>
                                     </li>
                                     <li>
                                         <input type="checkbox" class="filled-in tooltipped" id="numeric" checked="checked" />
                                         <label for="numeric" id="numericLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="1 2 3 4 5 6 7 8 9 0">
-                                                Numeric
-                                                </label>
+                                            Numeric
+                                        </label>
                                     </li>
                                     <li>
                                         <input type="checkbox" class="filled-in tooltipped" id="ambiguous" checked="checked" />
                                         <label for="ambiguous" id="ambiguousLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="_ i I L 1 l l | o 0 O">
-                                                Similar
-                                                </label>
+                                            Similar
+                                        </label>
                                     </li>
                                     <li>
                                         <input type="checkbox" class="filled-in tooltipped" id="special" checked="checked" />
                                         <label for="special" id="specialLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="! @ # $ % ^ &amp; * _ - = + ` ~ &#8230;">
-                                            <!-- data-tooltip="! @ # $ % ^ &amp; * _ - = + ` ~ ( ) [ ] { } ; : \ &apos; &quot; , .  < > ? / \ |" -->
-                                                Special
-                                                </label>
+                                            Special
+                                        </label>
                                     </li>
                                     <li>
                                         <input type="checkbox" class="filled-in tooltipped" id="extended" />
                                         <label for="extended" id="extendedLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="¡ ¢ £ ¤ ¥ ¦ § ¨ © ª ® ° ± µ ¿">
-                                                Extended
-                                                </label>
+                                            Extended
+                                        </label>
                                     </li>
                                     <li>
                                         <input type="checkbox" class="filled-in tooltipped" id="yearly" checked="checked" />
                                         <label for="yearly" id="yearlyLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="Changes passwords every year.">
-                                                Yearly
-                                                </label>
+                                            Yearly
+                                        </label>
                                     </li>
-                                    <!--<li style="padding: 4px 10px;">
-                                        </li>-->
                                     <li><br/></li>
                                 </ul>
                             </div>
@@ -161,11 +230,13 @@
                         name="domainPassword"
                         id="domainPassword"
                         placeholder="Domain Password:"
+                        readonly="true"
+                        autocomplete="off"
                         autocorrect="off"
                         autocapitalize="off"
-                        readonly="true"
-                        style="" />
-                        <!--onfocus="$(this).select();"-->
+                        spellcheck="false"
+                        style=""
+                        />
                     <label for="result"></label>
                 </div>
             </div>
