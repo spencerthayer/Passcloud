@@ -80,16 +80,19 @@ function clearForm() {
     writeYear();
 }
 // DISABLES ENTER KEY
-$("html").bind("keypress", function(e) {
-    if (e.keyCode == 13) {
+// $("html").bind("keypress", function(e) {
+//     if (e.keyCode == 13) {
+//         document.activeElement.blur();
+//         $("input").blur();
+//         return false
+//     };
+// });
+$("html").keypress(function(event){
+    if(event.keyCode == 13) {
         document.activeElement.blur();
         $("input").blur();
-        return false
+        return false;
     }
-    // var hideKeyboard = function() {
-    //     document.activeElement.blur();
-    //     $("input").blur();
-    // };
 });
 // CLICKING CHANGES
 // $(document).on("click", ".external", function(e) {

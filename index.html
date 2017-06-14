@@ -39,7 +39,7 @@
 
 <body class="" onchange="generatePassword();" onkeypress="generatePassword();" onkeyup="generatePassword();">
     <main>
-        <!--<form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void(0);">-->
+        <form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void(0); onsubmit="return false;"">
             <header class="light-blue row">
                 <div class="col s12 m12 l12 text-white inline">
                     <a href="#" data-activates="slide-out" class="menuButton button-collapse circle hide-on-large-only white-text">
@@ -159,7 +159,7 @@
                     <label for="result"></label>
                 </div>
             </div>
-        <!--</form>-->
+        </form>
         <footer class="white" style="margin:0;padding:1vmin 4vmin;">
             <div class="col s12 m12 l12">
                 <button type="submit" class="waves-effect waves-light btn light-blue z-depth-0" style="margin-right:22px;" onclick="saveForm();">Save</button>
