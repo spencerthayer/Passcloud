@@ -234,6 +234,13 @@ ul.side-nav.fixed li.logo img {
     margin-top: 1rem !important;
 }
 
+.mp.active {
+    margin-top: 12px;
+    font-size: 75% !important;
+    -webkit-transition: margin-top 1s, font-size 1s, -webkit-transform 1s;
+    transition: margin-top 1s, font-size 1s, transform 1s;
+}
+
 .menuButton {
     margin-top: 20px;
 }
