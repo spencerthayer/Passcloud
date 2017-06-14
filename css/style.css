@@ -226,7 +226,9 @@ ul.side-nav.fixed li.logo img {
     border-color: #ffc107 !important;
 }
 
-.input-field {}
+.input-field {
+    margin-top: 0 !important;
+    }
 
 .menuButton {
     margin-top: 20px;
