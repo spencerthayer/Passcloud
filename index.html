@@ -12,6 +12,8 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="google" value="notranslate" />
+    <meta name="apple-mobile-web-app-title" content="Passcloud" />
+    <meta name="application-name" content="Passcloud" />
     <!-- ICONS -->
     <link rel="icon" type="image/png" href="./img/favicon.png">
     <link rel="apple-touch-icon" href="./img/favicon.png" />
@@ -78,13 +80,13 @@
                     <label>Lenght:</label>
                 </div>
                 <div class="input-field col s4 m2 l2">
-                    <input type="number" id="year" value="document.write(currentYear);" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="5" />
+                    <input type="number" pattern="[0-9]*" id="year" value="document.write(currentYear);" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="5" />
                     <label for="yearNum" id="yearLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Yearly password change.">
                         Year:
                         </label>
                 </div>
                 <div class="input-field col s4 m2 l2">
-                    <input type="number" id="seedNum" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="6" />
+                    <input type="number" pattern="[0-9]*" id="seedNum" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="6" />
                     <label for="seedNum" id="seedNumLabel" class="tooltipped" data-position="right" data-delay="100" data-tooltip="Change the number to generate a new password.">
                         Seed:
                     </label>
