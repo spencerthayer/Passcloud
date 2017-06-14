@@ -230,6 +230,10 @@ ul.side-nav.fixed li.logo img {
     margin-top: 0 !important;
     }
 
+.masterPass {
+    margin-top: 1rem !important;
+}
+
 .menuButton {
     margin-top: 20px;
 }
