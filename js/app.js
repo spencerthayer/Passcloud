@@ -26,17 +26,17 @@ $(document).ready(function() {
 //CLIPBOARD AND PASS REVEAL
 var clipboard = new Clipboard("#domainPassword", {
     target: function() {
-    if ($("#domainPassword").attr("type") == "password") {
-        $("#domainPassword").attr("type", "text");
-    } else {
-        $("#domainPassword").attr("type", "password");
-    }
+        if ($("#domainPassword").attr("type") == "password") {
+            $("#domainPassword").attr("type", "text");
+        } else {
+            $("#domainPassword").attr("type", "password");
+        }
         return document.querySelector("#domainPassword");
     }
 });
 clipboard.on("success", function(e) {
     Materialize.toast("Password copied!", 1500);
-    setTimeout(function(){
+    setTimeout(function() {
         $("#domainPassword").attr("type", "password");
     }, 1500);
 });
@@ -82,8 +82,14 @@ function clearForm() {
 // DISABLES ENTER KEY
 $("html").bind("keypress", function(e) {
     if (e.keyCode == 13) {
+        document.activeElement.blur();
+        $("input").blur();
         return false
     }
+    // var hideKeyboard = function() {
+    //     document.activeElement.blur();
+    //     $("input").blur();
+    // };
 });
 // CLICKING CHANGES
 // $(document).on("click", ".external", function(e) {
