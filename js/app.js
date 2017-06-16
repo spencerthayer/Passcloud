@@ -28,7 +28,7 @@ function revealPass() {
     $("#domainPassword").attr("type", "text");
 }
 function hidePass() {
-    $("#domainPassword").attr("type", "password");
+    $("#domainPassword").attr("type", "password").focus().blur();
 }
 function copyToClipboard() {
     revealPass();
