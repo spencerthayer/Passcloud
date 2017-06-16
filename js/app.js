@@ -43,6 +43,7 @@ function copyToClipboard() {
     Materialize.toast("Password copied!", 1500);
 }
 $("#domainPassword").mousedown(copyToClipboard).mouseup(hidePass);
+$("#domainPassword").touchstart(copyToClipboard).touchend(hidePass);
 
 $("#optionsMenu").click(function() {
     if ($("#optionsMenu").attr("data-open") == "no") {
