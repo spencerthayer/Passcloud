@@ -30,9 +30,13 @@ function revealPass() {
 function hidePass() {
     $("#domainPassword").attr("type", "password").focus().blur();
 }
+/* * /
 function copyToClipboard() {
     revealPass();
+    $("#domainPassword").select();
     document.querySelector("#domainPassword").select();
+    document.queryCommandSupported("copy");
+    document.queryCommandEnabled("copy");
     document.execCommand("copy"); //cut, copy or paste
     //clear selection
     if ( document.selection ) {
@@ -41,17 +45,29 @@ function copyToClipboard() {
             window.getSelection().removeAllRanges();
         }
     Materialize.toast("Password copied!", 1500);
+    // hidePass();
 }
-// $("#domainPassword").on("mousedown tapstart", function(e) {
-//     e.preventDefault();
-//     copyToClipboard();
-// });
-// $("#domainPassword").on("mouseup tapend", function(e) {
-//     e.preventDefault();
-//     hidePass();
-// });
-// $("#domainPassword").mousedown(copyToClipboard).mouseup(hidePass);
-$("#domainPassword").tapstart(copyToClipboard).tapend(hidePass);
+$("#domainPassword").tapstart(revealPass);
+$("#domainPassword").tapend(copyToClipboard);
+*/
+var clipboard = new Clipboard("#domainPassword", {
+    target: function() {
+        if ($("#domainPassword").attr("type") == "password") {
+            revealPass();
+        } else {
+            hidePass();
+        }
+        return document.querySelector("#domainPassword");
+    }
+});
+clipboard.on("success", function(e) {
+    Materialize.toast("Password copied!", 1500);
+    setTimeout(function() {
+        hidePass();
+    }, 1500);
+});
+
+
 $("#optionsMenu").click(function() {
     if ($("#optionsMenu").attr("data-open") == "no") {
         $("#optionsMenu").attr("data-open", "yes");
