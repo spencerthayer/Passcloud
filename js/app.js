@@ -49,7 +49,7 @@ function copyToClipboard() {
 }
 $("#domainPassword").tapstart(revealPass);
 $("#domainPassword").tapend(copyToClipboard);
-*/
+/**/
 var clipboard = new Clipboard("#domainPassword", {
     target: function() {
         if ($("#domainPassword").attr("type") == "password") {
@@ -62,11 +62,9 @@ var clipboard = new Clipboard("#domainPassword", {
 });
 clipboard.on("success", function(e) {
     Materialize.toast("Password copied!", 1500);
-    setTimeout(function() {
-        hidePass();
-    }, 1500);
+    setTimeout(function() { hidePass(); }, 1500);
 });
-
+/**/
 
 $("#optionsMenu").click(function() {
     if ($("#optionsMenu").attr("data-open") == "no") {
