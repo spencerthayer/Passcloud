@@ -42,9 +42,16 @@ function copyToClipboard() {
         }
     Materialize.toast("Password copied!", 1500);
 }
-$("#domainPassword").mousedown(copyToClipboard).mouseup(hidePass);
-$("#domainPassword").touchstart(copyToClipboard).touchend(hidePass);
-
+// $("#domainPassword").on("mousedown tapstart", function(e) {
+//     e.preventDefault();
+//     copyToClipboard();
+// });
+// $("#domainPassword").on("mouseup tapend", function(e) {
+//     e.preventDefault();
+//     hidePass();
+// });
+// $("#domainPassword").mousedown(copyToClipboard).mouseup(hidePass);
+$("#domainPassword").tapstart(copyToClipboard).tapend(hidePass);
 $("#optionsMenu").click(function() {
     if ($("#optionsMenu").attr("data-open") == "no") {
         $("#optionsMenu").attr("data-open", "yes");
