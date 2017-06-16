@@ -17,45 +17,53 @@ var domainPassword;
 var noUnique;
 var encryptPassword;
 var currentYear = (new Date).getFullYear()
-    //
+
 $(document).ready(function() {
-    //   $("select").material_select();
+    // $("select").material_select();
     $("#charLength").material_select();
     $("#passType").material_select();
 });
 //CLIPBOARD AND PASS REVEAL
-var clipboard = new Clipboard("#domainPassword", {
-    target: function() {
-        if ($("#domainPassword").attr("type") == "password") {
-            $("#domainPassword").attr("type", "text");
-        } else {
-            $("#domainPassword").attr("type", "password");
-        }
-        return document.querySelector("#domainPassword");
-    }
-});
-clipboard.on("success", function(e) {
-    Materialize.toast("Password copied!", 1500);
-    setTimeout(function() {
-        $("#domainPassword").attr("type", "password");
-    }, 1500);
-});
-// clipboard.on("error", function(e) {
-// console.clear();
-// console.log(e);
-// clipboard.destroy();
-// });
-
-
 function revealPass() {
-    // if ($("#domainPassword").attr("type") == "password") {
-    //     $("#domainPassword").attr("type", "text");
-    // } else {
-    //     $("#domainPassword").attr("type", "password");
-    // }
+    $("#domainPassword").attr("type", "text");
 }
-
-
+function hidePass() {
+    $("#domainPassword").attr("type", "password");
+}
+function copyToClipboard() {
+    revealPass();
+    document.querySelector("#domainPassword").select();
+    document.execCommand("copy"); //cut, copy or paste
+    //clear selection
+    if ( document.selection ) {
+            document.selection.empty();
+        } else if ( window.getSelection ) {
+            window.getSelection().removeAllRanges();
+        }
+    Materialize.toast("Password copied!", 1500);
+}
+$("#domainPassword").mousedown(copyToClipboard).mouseup(hidePass);
+// $("#domainPassword").mousedown(copyToClipboard);
+// var clipboard = new Clipboard("#domainPassword");
+// clipboard.on("success", function(e) {
+//     Materialize.toast("Password copied!", 1500);
+// });
+// var clipboard = new Clipboard("#domainPassword", {
+//     target: function() {
+//         if ($("#domainPassword").attr("type") == "password") {
+//             revealPass();
+//         } else {
+//             hidePass();
+//         }
+//         return document.querySelector("#domainPassword");
+//     }
+// });
+// clipboard.on("success", function(e) {
+//     Materialize.toast("Password copied!", 1500);
+//     setTimeout(function() {
+//         hidePass();
+//     }, 1500);
+// });
 $("#optionsMenu").click(function() {
     if ($("#optionsMenu").attr("data-open") == "no") {
         $("#optionsMenu").attr("data-open", "yes");
@@ -87,8 +95,8 @@ function clearForm() {
 //         return false
 //     };
 // });
-$("html").keypress(function(event){
-    if(event.keyCode == 13) {
+$("html").keypress(function(event) {
+    if (event.keyCode == 13) {
         document.activeElement.blur();
         $("input").blur();
         return false;
@@ -225,10 +233,9 @@ function generatePassword() {
     }
     //   var s1 = 'The quick red fox jumps over the lazy brown dog.';
     noUnique = uniqueString(domainPassword.split('')).join('')
-
-    devConsole();
-
     $("#domainPassword").val(domainPassword);
+    $("#hiddenPassword").attr("data-clipboard-text",domainPassword);
+    devConsole();
     return encryptPassword;
 }
 
