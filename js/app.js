@@ -43,27 +43,7 @@ function copyToClipboard() {
     Materialize.toast("Password copied!", 1500);
 }
 $("#domainPassword").mousedown(copyToClipboard).mouseup(hidePass);
-// $("#domainPassword").mousedown(copyToClipboard);
-// var clipboard = new Clipboard("#domainPassword");
-// clipboard.on("success", function(e) {
-//     Materialize.toast("Password copied!", 1500);
-// });
-// var clipboard = new Clipboard("#domainPassword", {
-//     target: function() {
-//         if ($("#domainPassword").attr("type") == "password") {
-//             revealPass();
-//         } else {
-//             hidePass();
-//         }
-//         return document.querySelector("#domainPassword");
-//     }
-// });
-// clipboard.on("success", function(e) {
-//     Materialize.toast("Password copied!", 1500);
-//     setTimeout(function() {
-//         hidePass();
-//     }, 1500);
-// });
+
 $("#optionsMenu").click(function() {
     if ($("#optionsMenu").attr("data-open") == "no") {
         $("#optionsMenu").attr("data-open", "yes");
