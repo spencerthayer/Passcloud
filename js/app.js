@@ -27,6 +27,7 @@ $(document).ready(function() {
 function revealPass() {
     $("#domainPassword").attr("type", "text");
 }
+
 function hidePass() {
     $("#domainPassword").attr("type", "password").focus().blur();
 }
@@ -171,24 +172,30 @@ function generatePassword() {
         seedNum
     );
     var chanceEncrypt = new Chance(masterPass);
-    var chanceHash = new Chance(
-        year,
-        masterPass,
-        siteName,
-        userProfile,
-        charLength,
-        seedNum
-    );
+    // var chanceHash = new Chance(
+    //     year,
+    //     masterPass,
+    //     siteName,
+    //     userProfile,
+    //     charLength,
+    //     seedNum
+    // );
     var chancePassword;
     ranInt = chanceHash.integer({ min: 5, max: 10 });
     ranSyl = chanceHash.integer({ min: 2, max: 4 });
-    if (passType == "password") {
+    /*if (passType == "password") {
         domainPassword = chanceHash.string({
             length: charLength,
             pool: poolString
         });
-        //   $("#charLength").attr("disabled", false);
-        //   $("#charLength").material_select();
+        // $("#charLength").attr("disabled", false);
+        // $("#charLength").material_select();
+    }*/
+    if (passType == "password") {
+        function uniqueString(len) {
+            return chanceHash.unique(chance.character, len, { pool: poolString }).join('')
+        }
+        domainPassword = uniqueString(charLength);
     } else if (passType == "pin") {
         domainPassword = chanceHash.string({
             length: 4,
@@ -228,15 +235,15 @@ function generatePassword() {
         pool: latinLower + latinUpper + numeric + special + extended + supplimentLower + supplimentUpper
     });
 
-    function uniqueString(string) {
+    function unString(string) {
         return string.filter(function(itm, i, T) {
             return T.indexOf(itm) == i;
         });
     }
-    //   var s1 = 'The quick red fox jumps over the lazy brown dog.';
-    noUnique = uniqueString(domainPassword.split('')).join('')
+    noUnique = unString(domainPassword.split('')).join('')
+
     $("#domainPassword").val(domainPassword);
-    $("#hiddenPassword").attr("data-clipboard-text",domainPassword);
+    $("#hiddenPassword").attr("data-clipboard-text", domainPassword);
     devConsole();
     return encryptPassword;
 }
@@ -262,7 +269,7 @@ function devConsole() {
     // console.log("");
     // console.log("#Hidden");
     // console.log(" Int: " + ranInt + "," + ranSyl);
-    // console.log(" Pool: " + poolString);
+    console.log(" Pool: " + poolString);
     console.log("");
     console.log("#Passwords");
     console.log(" Pass: " + domainPassword);
