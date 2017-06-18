@@ -83,19 +83,6 @@ $("#optionsMenu").click(function() {
     }
 });;
 
-function writeYear() {
-    $("#year").val(currentYear);
-    $("#year").attr("value", currentYear);
-}
-writeYear();
-
-function saveForm() {}
-
-function clearForm() {
-    console.clear();
-    $("#formCloud").trigger("reset");
-    writeYear();
-}
 // DISABLES ENTER KEY
 // $("html").bind("keypress", function(e) {
 //     if (e.keyCode == 13) {
@@ -252,8 +239,64 @@ function generatePassword() {
     $("#domainPassword").val(domainPassword);
     $("#hiddenPassword").attr("data-clipboard-text", domainPassword);
     devConsole();
+    getPasswords();
     // flashPass();
     return encryptPassword;
+}
+
+
+function writeYear() {
+    $("#year").val(currentYear);
+    $("#year").attr("value", currentYear);
+}
+writeYear();
+
+var storage = cryptio,
+    inventory = [{
+        "SKU": "39-48949",
+        "Price": 618,
+        "Item": "Snowboard"
+    }, {
+        "SKU": "99-28128",
+        "Price": 78.99,
+        "Item": "Cleats"
+    }, {
+        "SKU": "83-38285",
+        "Price": 3.99,
+        "Item": "Hockey Puck"
+    }];
+
+function saveForm() {
+    var pass = encryptPassword;
+
+    var options = {
+        storage: "local",
+        passphrase: pass
+    };
+
+    storage.set(options, "inventory", inventory, function(err, results) {
+        if (err) throw err;
+        console.log(results);
+    });
+}
+
+function getPasswords() {
+    var storage = cryptio;
+
+    storage.get("inventory", function(err, results) {
+        if (err) throw err;
+        console.log(results);
+    });
+}
+
+function clearForm() {
+    console.clear();
+    $("#formCloud").trigger("reset");
+    writeYear();
+}
+
+function clearInput(id) {
+    $(id).val("");
 }
 
 function devConsole() {

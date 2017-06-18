@@ -35,7 +35,7 @@
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />-->
     <link rel="stylesheet" href="./css/materialize.min.css" />
     <link rel="stylesheet" href="./css/materialicons.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/app.css" />
 </head>
 
 <body class="" onchange="generatePassword();" onkeypress="generatePassword();" onkeyup="generatePassword();">
@@ -55,13 +55,11 @@
             </header>
             <div class="row">
                 <div class="input-field col s12 m6 l6">
-                    <input type="url" name="siteName" value="" id="siteName" class="fieldOn" onfocus="$(this).select();" onclick="$(this).select();" title="Please enter a doman or site name." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="2"
-                        style="" />
+                    <input type="url" name="siteName" value="" id="siteName" class="fieldOn" onfocus="$(this).select();" onclick="$(this).select();" title="Please enter a doman or site name." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="2" style="" /><button class="clearInput" onClick="clearInput(siteName);">x</button>
                     <label for="site">Site Name:</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input type="text" name="userProfile" value="" id="userProfile" class="fieldOff" onfocus="$(this).select();" onclick="$(this).select();" title="Please enter a valid username or profile." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-                        tabindex="3" style="" />
+                    <input type="text" name="userProfile" value="" id="userProfile" class="fieldOn" onfocus="$(this).select();" onclick="$(this).select();" title="Please enter a valid username or profile." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="3" style="" /><button class="clearInput" onClick="clearInput(userProfile);">x</button>
                     <label for="profile">User Profile:</label>
                 </div>
             </div>
@@ -257,7 +255,6 @@
         </li>
         <li>
             <a class="waves-effect">
-                <!--<img src="https://www.google.com/s2/favicons?domain=facebook.com" class="favicon" /> Third Link With Waves-->
                 <img src="https://ucygetfavicon.appspot.com/http://google.com" class="favicon circle" /> Test Google
             </a>
         </li>
@@ -274,47 +271,6 @@
 <script src="./js/app.js"></script>
 <script src="./js/xkcd.js"></script>
 <script>
-    // var storage = cryptio,
-    //     passStore = [{
-    //         "SKU": "39-48949",
-    //         "Price": 618,
-    //         "Item": "qwdqwd!"
-    //     }, {
-    //         "SKU": "99-28128",
-    //         "Price": 78.99,
-    //         "Item": "Cleats"
-    //     }, {
-    //         "SKU": "83-38285",
-    //         "Price": 3.99,
-    //         "Item": "Hockey Puck"
-    //     }];
-
-    // storage.set('passStore', passStore, function(err, results) {
-    //     if (err) throw err;
-    //     console.log(results);
-    // });
-    // var storage = cryptio;
-
-    // storage.get('passStore', function(err, results) {
-    //     if (err) throw err;
-    //     console.log(results);
-    // });
-
-    // var pass = window.prompt("Please enter password...", encryptPassword);
-
-    // var options = {
-    //     passphrase: pass
-    // };
-
-    // storage.set(options, 'passStore', passStore, function(err, results) {
-    //     if (err) throw err;
-    //     console.log(results);
-    // });
-
-    // storage.get('passStore', function(err, results) {
-    //     if (err) throw err;
-    //     console.log(results);
-    // });
 </script>
 
 </html>
