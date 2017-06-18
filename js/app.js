@@ -32,6 +32,11 @@ function revealPass() {
 function hidePass() {
     $("#domainPassword").attr("type", "password").focus().blur();
 }
+
+function flashPass() {
+    $("#domainPassword").attr("type", "text");
+    setTimeout(function() { $("#domainPassword").attr("type", "password"); }, 250);
+}
 /* * /
 function copyToClipboard() {
     revealPass();
@@ -247,6 +252,7 @@ function generatePassword() {
     $("#domainPassword").val(domainPassword);
     $("#hiddenPassword").attr("data-clipboard-text", domainPassword);
     devConsole();
+    // flashPass();
     return encryptPassword;
 }
 
@@ -268,6 +274,7 @@ function devConsole() {
     console.log(" Special: " + isSpecial);
     console.log(" Extended: " + isExtended);
     console.log(" Yearly: " + isYearly);
+    console.log(" Unique: " + isUnique);
     // console.log("");
     // console.log("#Hidden");
     // console.log(" Int: " + ranInt + "," + ranSyl);
