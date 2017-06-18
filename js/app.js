@@ -11,6 +11,7 @@ var isAmbiguous;
 var isSpecial;
 var isExtended;
 var isYearly;
+var isUnique;
 var ranSyl;
 var poolString;
 var domainPassword;
@@ -127,6 +128,7 @@ function generatePassword() {
     isSpecial = $("#special")[0].checked;
     isExtended = $("#extended")[0].checked;
     isYearly = $("#yearly")[0].checked;
+    isUnique = $("#unique")[0].checked;
     // CHARACTERS STRING CREATION
     ambiguous = "_iIL1ll|o0O";
     numeric = "1234567890";
@@ -183,15 +185,15 @@ function generatePassword() {
     var chancePassword;
     ranInt = chanceHash.integer({ min: 5, max: 10 });
     ranSyl = chanceHash.integer({ min: 2, max: 4 });
-    /*if (passType == "password") {
+    if (passType == "password" && isUnique == false) {
         domainPassword = chanceHash.string({
             length: charLength,
             pool: poolString
         });
         // $("#charLength").attr("disabled", false);
         // $("#charLength").material_select();
-    }*/
-    if (passType == "password") {
+    }
+    if (passType == "password" && isUnique == true) {
         function uniqueString(len) {
             return chanceHash.unique(chance.character, len, { pool: poolString }).join('')
         }

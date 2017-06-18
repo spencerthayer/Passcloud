@@ -40,7 +40,7 @@
 
 <body class="" onchange="generatePassword();" onkeypress="generatePassword();" onkeyup="generatePassword();">
     <main>
-        <form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void(0); onsubmit="return false;"">
+        <form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void(0); onsubmit=" return false; "">
             <header class="light-blue row">
                 <div class="col s12 m12 l12 text-white inline" style="margin-bottom: 10px;">
                     <a href="#" data-activates="slide-out" class="menuButton button-collapse circle hide-on-large-only white-text">
@@ -144,6 +144,12 @@
                                         <input type="checkbox" class="filled-in tooltipped" id="yearly" checked="checked" />
                                         <label for="yearly" id="yearlyLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="Changes passwords every year.">
                                             Yearly
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" class="filled-in tooltipped" id="unique" checked="checked" />
+                                        <label for="unique" id="uniqueLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="Prevent duplicate characters.">
+                                            Unique
                                         </label>
                                     </li>
                                     <li><br/></li>
