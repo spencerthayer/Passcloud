@@ -262,12 +262,23 @@ button.clearInput {
     margin-left: -25px;
     height: 25px;
     width: 25px;
-    background: #fff;
+    background: none;
     color: #03a9f4;
     border: 0;
     -webkit-appearance: none;
     cursor: pointer;
-} button.clearInput:hover {
+}
+
+button.clearInput:hover {
     background: #03a9f4;
     color: #fff;
+}
+
+.masterPassword button.clearInput {
+    color: #fff;
+}
+
+.masterPassword button.clearInput:hover {
+    background: #fff;
+    color: #03a9f4;
 }

@@ -40,7 +40,7 @@
 
 <body class="" onchange="generatePassword();" onkeypress="generatePassword();" onkeyup="generatePassword();">
     <main>
-        <form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void(0); onsubmit=" return false; "">
+        <form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void(0);" onsubmit="javascript:void(0);">
             <header class="light-blue row">
                 <div class="col s12 m12 l12 text-white inline" style="margin-bottom: 10px;">
                     <a href="#" data-activates="slide-out" class="menuButton button-collapse circle hide-on-large-only white-text">
@@ -49,17 +49,19 @@
                 </div>
                 <div class="input-field masterPassword col s12 m12 l12 text-white inline">
                     <input type="password" name="masterPass" value="" id="masterPass" class="masterPass validate fieldOn large" onfocus="$(this).select();" onclick="$(this).select();" title="Choose a strong Master Password." autocomplete="off" autocorrect="off" autocapitalize="off"
-                        spellcheck="false" tabindex="1" style="" />
+                        spellcheck="false" tabindex="1" style="" /><button class="clearInput" onClick="clearInput(masterPass);">x</button>
                     <label class="mp" for="master">Master Password:</label>
                 </div>
             </header>
             <div class="row">
                 <div class="input-field col s12 m6 l6">
-                    <input type="url" name="siteName" value="" id="siteName" class="fieldOn" onfocus="$(this).select();" onclick="$(this).select();" title="Please enter a doman or site name." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="2" style="" /><button class="clearInput" onClick="clearInput(siteName);">x</button>
+                    <input type="url" name="siteName" value="" id="siteName" class="fieldOn" onfocus="$(this).select();" onclick="$(this).select();" title="Please enter a doman or site name." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="2"
+                        style="" /><button class="clearInput" onClick="clearInput(siteName);">x</button>
                     <label for="site">Site Name:</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input type="text" name="userProfile" value="" id="userProfile" class="fieldOn" onfocus="$(this).select();" onclick="$(this).select();" title="Please enter a valid username or profile." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="3" style="" /><button class="clearInput" onClick="clearInput(userProfile);">x</button>
+                    <input type="text" name="userProfile" value="" id="userProfile" class="fieldOn" onfocus="$(this).select();" onclick="$(this).select();" title="Please enter a valid username or profile." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                        tabindex="3" style="" /><button class="clearInput" onClick="clearInput(userProfile);">x</button>
                     <label for="profile">User Profile:</label>
                 </div>
             </div>
@@ -166,7 +168,7 @@
         </form>
         <footer class="white" style="margin:0;padding:1vmin 4vmin;">
             <div class="col s12 m12 l12">
-                <button type="submit" class="waves-effect waves-light btn light-blue z-depth-0" style="margin-right:22px;" onclick="saveForm();">Save</button>
+                <button type="submit" class="waves-effect waves-light btn light-blue z-depth-0" style="margin-right:22px;" onclick="create();">Save</button>
                 <button type="reset" class="waves-effect waves-light btn light-blue z-depth-0" onclick="clearForm();">Clear</button>
                 <a class="right modal-trigger" href="#about">
                     <i class="material-icons">info_outline</i>
