@@ -16,6 +16,7 @@ var ranSyl;
 var poolString;
 var domainPassword;
 var noUnique;
+var storageID;
 var encryptPassword;
 var currentYear = (new Date).getFullYear()
 
@@ -84,13 +85,6 @@ $("#optionsMenu").click(function() {
 });;
 
 // DISABLES ENTER KEY
-// $("html").bind("keypress", function(e) {
-//     if (e.keyCode == 13) {
-//         document.activeElement.blur();
-//         $("input").blur();
-//         return false
-//     };
-// });
 $("html").keypress(function(event) {
     if (event.keyCode == 13) {
         document.activeElement.blur();
@@ -98,22 +92,17 @@ $("html").keypress(function(event) {
         return false;
     }
 });
-// CLICKING CHANGES
-// $(document).on("click", ".external", function(e) {
-//     e.preventDefault();
-//     var targetURL = $(this).attr("href");
-//     window.open(targetURL, "_system");
-// });
+
 // GENERATE THE PASSWORD
 function generatePassword() {
     // INPUT VALUES
-    year = $("#year").val();
     masterPass = $("#masterPass").val();
     siteName = $("#siteName").val();
     userProfile = $("#userProfile").val();
     charLength = $("#charLength").val();
     passType = $("#passType").val();
     seedNum = $("#seedNum").val();
+    year = $("#year").val();
     isAlpha = $("#alpha")[0].checked;
     isNumeric = $("#numeric")[0].checked;
     isAmbiguous = $("#ambiguous")[0].checked;
@@ -165,15 +154,7 @@ function generatePassword() {
         charLength,
         seedNum
     );
-    var chanceEncrypt = new Chance(masterPass);
-    // var chanceHash = new Chance(
-    //     year,
-    //     masterPass,
-    //     siteName,
-    //     userProfile,
-    //     charLength,
-    //     seedNum
-    // );
+    var chanceMaster = new Chance(masterPass);
     var chancePassword;
     ranInt = chanceHash.integer({ min: 5, max: 10 });
     ranSyl = chanceHash.integer({ min: 2, max: 4 });
@@ -224,7 +205,15 @@ function generatePassword() {
         domainPassword = xkcdPass(xkcdRando, 4);
     }
     //
-    encryptPassword = chanceEncrypt.string({
+    storageKey = chanceMaster.string({
+        length: 8,
+        pool: latinLower + latinUpper + numeric
+    });
+    storageID = chanceMaster.string({
+        length: 12,
+        pool: latinLower + latinUpper + numeric
+    });
+    encryptPassword = chanceMaster.string({
         length: 128,
         pool: latinLower + latinUpper + numeric + special + extended + supplimentLower + supplimentUpper
     });
@@ -251,40 +240,55 @@ function writeYear() {
 }
 writeYear();
 
-var storage = cryptio,
-    inventory = [{
-        "SKU": "39-48949",
-        "Price": 618,
-        "Item": "Snowboard"
-    }, {
-        "SKU": "99-28128",
-        "Price": 78.99,
-        "Item": "Cleats"
-    }, {
-        "SKU": "83-38285",
-        "Price": 3.99,
-        "Item": "Hockey Puck"
-    }];
+    // inventory = [{
+    //     "SKU": "39-48949",
+    //     "Price": 618,
+    //     "Item": "Snowboard"
+
+    // }, {
+    //     "SKU": "99-28128",
+    //     "Price": 78.99,
+    //     "Item": "Cleats"
+    // }, {
+    //     "SKU": "83-38285",
+    //     "Price": 3.99,
+    //     "Item": "Hockey Puck"
+    // }];
 
 function saveForm() {
-    var pass = encryptPassword;
-
+    var obj = [{
+        "siteName": siteName,
+        "userProfile": userProfile,
+        "charLength": charLength,
+        "passType": passType,
+        "seedNum": seedNum,
+        "year": year,
+        "isAlpha": isAlpha,
+        "isNumeric": isNumeric,
+        "isAmbiguous": isAmbiguous,
+        "isSpecial": isSpecial,
+        "isExtended": isExtended,
+        "isYearly": isYearly,
+        "isUnique": isUnique,
+    }];
+    // obj = $("#formCloud").serializeArray()
+    var JSONstringify = JSON.stringify(obj);
+    var storage = cryptio, passJSON = JSONstringify;
     var options = {
         storage: "local",
-        passphrase: pass
+        passphrase: encryptPassword
     };
-
-    storage.set(options, "inventory", inventory, function(err, results) {
-        if (err) throw err;
+    storage.set(options, storageID, passJSON, function(err, results) {
+        // if (err) throw err;
         console.log(results);
     });
+    getPasswords();
 }
 
 function getPasswords() {
     var storage = cryptio;
-
-    storage.get("inventory", function(err, results) {
-        if (err) throw err;
+    storage.get({passphrase: encryptPassword}, storageID, function(err, results) {
+        // if (err) throw err;
         console.log(results);
     });
 }
@@ -318,15 +322,13 @@ function devConsole() {
     console.log(" Extended: " + isExtended);
     console.log(" Yearly: " + isYearly);
     console.log(" Unique: " + isUnique);
-    // console.log("");
-    // console.log("#Hidden");
-    // console.log(" Int: " + ranInt + "," + ranSyl);
     console.log(" Pool: " + poolString);
     console.log("");
     console.log("#Passwords");
     console.log(" Pass: " + domainPassword);
     console.log(" Uniq: " + noUnique);
-    console.log(" Encryption Pass: " + encryptPassword)
+    console.log(" storage ID: " + storageID);
+    console.log(" Encryption Pass: " + encryptPassword);
 }
 
 $(".modal").modal({
