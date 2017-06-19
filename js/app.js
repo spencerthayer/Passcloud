@@ -105,9 +105,8 @@ function clearInput(id) {
     generatePassword();
 }
 
-// GENERATE THE PASSWORD
 function generatePassword() {
-    setVariables();
+    formVariables();
     useVariables();
     domainPasswords();
     encryptPasswords();
@@ -115,7 +114,7 @@ function generatePassword() {
     retrieve();
 }
 
-function setVariables() {
+function formVariables() {
     masterPass = $("#masterPass").val();
     siteName = $("#siteName").val();
     userProfile = $("#userProfile").val();
@@ -140,6 +139,8 @@ function setVariables() {
     supplimentLower = "àáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
     supplimentUpper = "ÀÁÂÃÄÅÆÇÈÉÊËÌÌÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß";
 }
+
+function listVariables() {}
 
 function useVariables() {
     // INPUT VALUES
@@ -168,6 +169,12 @@ function useVariables() {
     poolString = charString.replace(regString, "");
 }
 
+function generateNumber(min, max) {
+    chance = new Chance(masterPass);
+    number = chance.integer({ min: min, max: max });
+    return number;
+}
+
 function domainPasswords() {
     chance = new Chance(
         year,
@@ -177,8 +184,8 @@ function domainPasswords() {
         charLength,
         seedNum
     );
-    ranInt = chance.integer({ min: 5, max: 10 });
-    ranSyl = chance.integer({ min: 2, max: 4 });
+    numPhrase = chance.integer({ min: 4, max: 8 });
+    numNoun = chance.integer({ min: 2, max: 4 });
     if (passType == "password" && isUnique == false) {
         domainPassword = chance.string({
             length: charLength,
@@ -201,11 +208,11 @@ function domainPasswords() {
         //   $("#charLength").material_select();
     } else if (passType == "phrase") {
         domainPassword = chance.sentence({
-            words: ranInt
+            words: numPhrase
         });
     } else if (passType == "noun") {
         domainPassword = chance.word({
-            syllables: ranSyl
+            syllables: numNoun
         });
         domainPassword = chance.capitalize(domainPassword);
     } else if (passType == "username") {
@@ -241,11 +248,11 @@ function encryptPasswords() {
     // CHARACTERS STRING CREATION
     chance = new Chance(masterPass);
     storageKey = chance.string({
-        length: 6,
+        length: generateNumber(6, 10),
         pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     });
     storageID = chance.string({
-        length: 12,
+        length: generateNumber(12, 16),
         pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     });
     encryptPassword = chance.string({
@@ -284,7 +291,7 @@ function create() {
         storage: "local",
         passphrase: encryptPassword
     };
-    storage.set(options, storageID, passJSON, function(err, results) {
+    storage.set(options, storageKey, passJSON, function(err, results) {
         // if (err) throw err;
         console.log(results);
     });
@@ -293,7 +300,7 @@ function create() {
 
 function retrieve() {
     var storage = cryptio;
-    storage.get({ passphrase: encryptPassword }, storageID, function(err, results) {
+    storage.get({ passphrase: encryptPassword }, storageKey, function(err, results) {
         // if (err) throw err;
         console.log(results);
     });
@@ -331,6 +338,8 @@ function devConsole() {
     console.log("#Passwords");
     console.log(" Pass: " + domainPassword);
     console.log(" Uniq: " + noUnique);
+    console.log("");
+    console.log("#Encryption");
     console.log(" Storage Key: " + storageKey);
     console.log(" Storage ID: " + storageID);
     console.log(" Encryption Pass: " + encryptPassword);
