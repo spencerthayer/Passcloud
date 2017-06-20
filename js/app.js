@@ -169,12 +169,6 @@ function useVariables() {
     poolString = charString.replace(regString, "");
 }
 
-function generateNumber(min, max) {
-    chance = new Chance(masterPass);
-    number = chance.integer({ min: min, max: max });
-    return number;
-}
-
 function domainPasswords() {
     chance = new Chance(
         year,
@@ -242,6 +236,12 @@ function domainPasswords() {
 
     $("#domainPassword").val(domainPassword);
     // flashPass();
+}
+
+function generateNumber(min, max) {
+    chance = new Chance(masterPass);
+    number = chance.integer({ min: min, max: max });
+    return number;
 }
 
 function encryptPasswords() {

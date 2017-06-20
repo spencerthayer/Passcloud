@@ -259,6 +259,7 @@ ul.side-nav.fixed li.logo img {
 }
 
 button.clearInput {
+    position: relative;
     margin-left: -25px;
     height: 25px;
     width: 25px;
@@ -267,6 +268,7 @@ button.clearInput {
     border: 0;
     -webkit-appearance: none;
     cursor: pointer;
+    display: none;
 }
 
 button.clearInput:hover {
