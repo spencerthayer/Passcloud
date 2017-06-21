@@ -259,28 +259,31 @@ ul.side-nav.fixed li.logo img {
 }
 
 button.clearInput {
-    position: relative;
+    position: absolute;
+    float: right;
+    padding: 0;
     margin-left: -25px;
     height: 25px;
     width: 25px;
     background: none;
-    color: #03a9f4;
+    color: #03a9f4 !important;
     border: 0;
     -webkit-appearance: none;
     cursor: pointer;
-    display: none;
+    text-align: center;
+    /*display: none;*/
 }
 
 button.clearInput:hover {
     background: #03a9f4;
-    color: #fff;
+    color: #fff !important;
 }
 
 .masterPassword button.clearInput {
-    color: #fff;
+    color: #fff !important;
 }
 
 .masterPassword button.clearInput:hover {
     background: #fff;
-    color: #03a9f4;
+    color: #03a9f4 !important;
 }
