@@ -97,6 +97,7 @@ $("html").keypress(function(event) {
 function clearForm() {
     console.clear();
     $("#formCloud").trigger("reset");
+    inputErrorOff();
     writeYear();
 }
 
@@ -115,6 +116,14 @@ function generatePassword() {
     // retrieve();
 }
 
+function inputErrorOn() {
+    $("#masterPass").attr("class", "inputError");
+    $("#siteName").attr("class", "inputError");
+}
+function inputErrorOff() {
+    $("#masterPass").removeAttr("class", "inputError");
+    $("#siteName").removeAttr("class", "inputError");
+}
 function check() {
     if (masterPass == "" || siteName == "") {
         console.log("!")
@@ -125,11 +134,9 @@ function check() {
         storageName = null;
         encryptPassword = null;
         $("#domainPassword").val("");
-        $("#masterPass").attr("class", "inputError");
-        $("#siteName").attr("class", "inputError");
+        inputErrorOn();
     } else {
-        $("#masterPass").removeAttr("class", "inputError");
-        $("#siteName").removeAttr("class", "inputError");
+        inputErrorOff();
     }
 }
 
