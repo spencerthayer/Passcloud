@@ -215,23 +215,6 @@ ul.side-nav.fixed li.logo img {
     margin: 1px !important;
 }
 
-.masterPassword,
-.masterPassword input,
-.masterPassword label {
-    /*font-size: 105% !important;*/
-    color: #fff !important;
-    border-color: #fff !important;
-}
-
-.masterPassword input {
-    /*font-size: 150% !important;*/
-}
-
-.domainPassword {
-    font-size: 150% !important;
-    border-color: #ffc107 !important;
-}
-
 .input-field {
     margin-top: 0 !important;
 }
@@ -279,13 +262,34 @@ button.clearInput:hover {
     background: #03a9f4;
     color: #fff !important;
 }
-
 .masterPassword button.clearInput {
     color: #fff !important;
     margin-top: 15px;
 }
-
 .masterPassword button.clearInput:hover {
     background: #fff;
     color: #03a9f4 !important;
+}
+
+/*input:not([type]), input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="time"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="tel"], input[type="number"], input[type="search"], textarea.materialize-textarea*/
+
+.masterPassword,
+.masterPassword input,
+.masterPassword input:hover,
+.masterPassword input:focus,
+.masterPassword input[type="password"],
+.masterPassword input[type="password"]:hover,
+.masterPassword input[type="password"]:focus,
+.masterPassword label {
+    color: #fff;
+    border-color: #fff;
+}
+.inputError,.inputError:hover,.inputError:focus {
+     border-bottom: 1px solid #e53935 !important;
+     box-shadow: 0 1px 0 0 #e53935 !important;
+     /*color: #f44336 !important;*/
+}
+.domainPassword {
+    font-size: 150% !important;
+    /*border-color: #ff6f00 !important;*/
 }

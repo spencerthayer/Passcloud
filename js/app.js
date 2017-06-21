@@ -110,8 +110,27 @@ function generatePassword() {
     useVariables();
     domainPasswords();
     encryptPasswords();
+    check();
     devConsole();
-    retrieve();
+    // retrieve();
+}
+
+function check() {
+    if (masterPass == "" || siteName == "") {
+        console.log("!")
+        domainPassword = null;
+        noUnique = null;
+        storageKey = null;
+        storageID = null;
+        storageName = null;
+        encryptPassword = null;
+        $("#domainPassword").val("");
+        $("#masterPass").attr("class", "inputError");
+        $("#siteName").attr("class", "inputError");
+    } else {
+        $("#masterPass").removeAttr("class", "inputError");
+        $("#siteName").removeAttr("class", "inputError");
+    }
 }
 
 function formVariables() {
@@ -248,18 +267,27 @@ function encryptPasswords() {
     // CHARACTERS STRING CREATION
     chance = new Chance(masterPass);
     storageKey = chance.string({
-        length: generateNumber(6, 10),
+        length: 6,
         pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     });
     storageID = chance.string({
         length: generateNumber(12, 16),
         pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     });
+    chanceID = new Chance(storageID);
+    storageName = chance.string({
+        length: 32,
+        pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "_-"
+    });
     encryptPassword = chance.string({
         length: 128,
         pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "!@#$%^&*_-=+`~()[]{};:\'\",.\<\>?\/\\|" + "¡¢£¤¥¦§¨©ª®°±µ¿" + "àáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ" + "ÀÁÂÃÄÅÆÇÈÉÊËÌÌÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß"
     });
 }
+
+// sxWXZXQRA0cugV5
+// HXYvzQEqJhyvNszjYacC3Pm7aLurhQwJ
+// XYvzQEqJhyvNszjYacC3Pm7aLurhQwJF
 
 function writeYear() {
     $("#year").val(currentYear);
@@ -340,8 +368,9 @@ function devConsole() {
     console.log(" Uniq: " + noUnique);
     console.log("");
     console.log("#Encryption");
-    console.log(" Storage Key: " + storageKey);
-    console.log(" Storage ID: " + storageID);
+    console.log(" Storage Key:  " + storageKey);
+    console.log(" Storage ID:   " + storageID);
+    console.log(" Storage Name: " + storageName);
     console.log(" Encryption Pass: " + encryptPassword);
 }
 

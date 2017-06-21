@@ -35,7 +35,7 @@
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />-->
     <link rel="stylesheet" href="./css/materialize.min.css" />
     <link rel="stylesheet" href="./css/materialicons.css" />
-    <link rel="stylesheet" href="./css/app.css" />
+    <link rel="stylesheet" href="./css/app.css?1" />
 </head>
 
 <body class="" onchange="generatePassword();" onkeypress="generatePassword();" onkeyup="generatePassword();">
@@ -48,17 +48,17 @@
                     </a>
                 </div>
                 <div class="input-field masterPassword col s12 m12 l12 text-white inline">
-                    <input type="password" name="masterPass" value="" id="masterPass" class="masterPass validate fieldOn large" title="Choose a strong Master Password." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1" /><button class="clearInput" onClick="clearInput(masterPass);">&#10005;</button>
+                    <input type="password" name="masterPass" value="" id="masterPass" class="masterPass" title="Choose a strong Master Password." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1" /><button class="clearInput" onClick="clearInput(masterPass);">&#10005;</button>
                     <label class="mp" for="master">Master Password:</label>
                 </div>
             </header>
             <div class="row">
                 <div class="input-field col s12 m6 l6">
-                    <input type="url" name="siteName" value="" id="siteName" class="fieldOn"title="Please enter a doman or site name." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="2" /><button class="clearInput" onClick="clearInput(siteName);">&#10005;</button>
+                    <input type="url" name="siteName" value="" id="siteName" class="" title="Please enter a doman or site name." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="2" /><button class="clearInput" onClick="clearInput(siteName);">&#10005;</button>
                     <label for="site">Site Name:</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input type="text" name="userProfile" value="" id="userProfile" class="fieldOn" title="Please enter a valid username or profile." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="3" /><button class="clearInput" onClick="clearInput(userProfile);">&#10005;</button>
+                    <input type="text" name="userProfile" value="" id="userProfile" class="" title="Please enter a valid username or profile." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="3" /><button class="clearInput" onClick="clearInput(userProfile);">&#10005;</button>
                     <label for="profile">User Profile:</label>
                 </div>
             </div>
