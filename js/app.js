@@ -101,7 +101,7 @@ function clearForm() {
 }
 
 function clearInput(id) {
-    $(id).val("");
+    $(id).val("").focus().select();
     generatePassword();
 }
 

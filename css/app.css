@@ -262,6 +262,7 @@ button.clearInput {
     position: absolute;
     float: right;
     padding: 0;
+    margin-top: 10px;
     margin-left: -25px;
     height: 25px;
     width: 25px;
@@ -281,6 +282,7 @@ button.clearInput:hover {
 
 .masterPassword button.clearInput {
     color: #fff !important;
+    margin-top: 15px;
 }
 
 .masterPassword button.clearInput:hover {
