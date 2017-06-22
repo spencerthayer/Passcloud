@@ -19,7 +19,8 @@ var noUnique;
 var storageKey;
 var storageID;
 var encryptPassword;
-var currentYear = (new Date).getFullYear()
+var currentYear = (new Date).getFullYear();
+var selectState;
 
 $(document).ready(function() {
     // $("select").material_select();
@@ -37,21 +38,21 @@ $(document).ready(function() {
   $("#myButton").click(function() {
     
     // clear contents
-    var $selectDropdown = 
+    var selectDropdown = 
       $("#dropdownid")
         .empty()
         .html(' ');
 
     // add new value
     var value = "some value";
-    $selectDropdown.append(
+    selectDropdown.append(
       $("<option></option>")
         .attr("value",value)
         .text(value)
     );
 
     // trigger event
-    $selectDropdown.trigger('contentChanged');
+    selectDropdown.trigger('contentChanged');
   });
 
 
@@ -62,36 +63,42 @@ $(document).ready(function() {
   
 });
 */
-    function changeSelect(id,type) {
+function changeSelect(id,type) {
+    var selectDropdown;
+    if (type == "password" && selectState != "password") {
+        selectState = "password";
         $(id).material_select("destroy");
-        var $selectDropdown = $(id).empty().html(" ");
-        if (type == "password") {
-            $selectDropdown.append(
-                $("<option></option>").attr("value","8").text("8"),
-                $("<option></option>").attr("value","12").text("12"),
-                $("<option></option>").attr("value","16").attr( { value:"16", selected:"selected" } ).text("16"),
-                $("<option></option>").attr("value","24").text("24"),
-                $("<option></option>").attr("value","32").text("32"),
-                $("<option></option>").attr("value","64").text("64")
-                );
-            $selectDropdown.trigger("contentChanged");
-            $(id).material_select();
-        } else if (type == "pin") {
-            var $selectDropdown = $(id).empty().html(" ");
-            $selectDropdown.append(
-                $("<option></option>").attr( { value:"4", selected:"selected" } ).text("4"),
-                $("<option></option>").attr("value","6").text("6")
-                );
-            $selectDropdown.trigger("contentChanged");
-            $(id).material_select();
-        } else if (type == "off") {
-              $(id).material_select("destroy");
-        }
-        $(id).on("contentChanged", function() {
-            // re-initialize (update)
-            $(this).material_select();
-        });
+        selectDropdown = $(id).empty().html(" ");
+        selectDropdown.append(
+            $("<option></option>").attr("value","8").text("8"),
+            $("<option></option>").attr("value","12").text("12"),
+            $("<option></option>").attr("value","16").attr( { value:"16", selected:"selected" } ).text("16"),
+            $("<option></option>").attr("value","24").text("24"),
+            $("<option></option>").attr("value","32").text("32"),
+            $("<option></option>").attr("value","64").text("64")
+        );
+        selectDropdown.trigger("contentChanged");
+        $(id).material_select();
+    } else if (type == "pin" && selectState != "pin") {
+        selectState = "pin";
+        $(id).material_select("destroy");
+        selectDropdown = $(id).empty().html(" ");
+        selectDropdown.append(
+            $("<option></option>").attr( { value:"4", selected:"selected" } ).text("4"),
+            $("<option></option>").attr("value","6").text("6")
+        );
+        selectDropdown.trigger("contentChanged");
+        $(id).material_select();
+    } else if (type == "off") {
+        selectState = "off";
+        $(id).material_select("destroy");
+        selectDropdown = $(id).empty().html(" ");
     }
+    $(id).on("contentChanged", function() {
+        // re-initialize (update)
+        $(this).material_select();
+    });
+}
 
 //CLIPBOARD AND PASS REVEAL
 function revealPass() {
@@ -451,6 +458,9 @@ function devConsole() {
     console.log(" Storage ID:   " + storageID);
     console.log(" Storage Name: " + storageName);
     console.log(" Encryption Pass: " + encryptPassword);
+    console.log("");
+    console.log(" selectState: " + selectState);
+    
 }
 
 $(".modal").modal({
