@@ -271,8 +271,6 @@ button.clearInput:hover {
     color: #03a9f4 !important;
 }
 
-/*input:not([type]), input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="time"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="tel"], input[type="number"], input[type="search"], textarea.materialize-textarea*/
-
 .masterPassword,
 .masterPassword input,
 .masterPassword input:hover,

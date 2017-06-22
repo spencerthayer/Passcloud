@@ -118,7 +118,7 @@ function generatePassword() {
 
 function inputErrorOn() {
     $("#masterPass").attr("class", "inputError");
-    $("#siteName").attr("class", "inputError");
+    $("#siteName").attr("class", "inputError");   
 }
 function inputErrorOff() {
     $("#masterPass").removeAttr("class", "inputError");
@@ -237,7 +237,7 @@ function domainPasswords() {
         domainPassword = chance.capitalize(domainPassword);
     } else if (passType == "username") {
         domainPassword = chance.string({
-            length: 12,
+            length: generateNumber(8,12),
             pool: latinLower + numeric
         });
     } else if (passType == "salt") {
