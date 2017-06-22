@@ -305,6 +305,10 @@ function domainPasswords() {
     }
     noUnique = unString(domainPassword.split('')).join('')
 
+    storageID = chance.string({
+        length: generateNumber(4, 8),
+        pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    });
     $("#domainPassword").val(domainPassword);
     // flashPass();
 }
@@ -320,10 +324,6 @@ function encryptPasswords() {
     chance = new Chance(masterPass);
     storageKey = chance.string({
         length: 6,
-        pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    });
-    storageID = chance.string({
-        length: generateNumber(12, 16),
         pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     });
     chanceID = new Chance(storageID);
@@ -397,6 +397,7 @@ function destroy() {
 function devConsole() {
     console.clear();
     console.log("#Input");
+    console.log(" ID:   " + storageID);
     console.log(" Master: " + masterPass);
     console.log(" Name: " + siteName);
     console.log(" User: " + userProfile);
@@ -413,6 +414,7 @@ function devConsole() {
     console.log(" Extended: " + isExtended);
     console.log(" Yearly: " + isYearly);
     console.log(" Unique: " + isUnique);
+    console.log(" Select: " + selectState);
     console.log(" Pool: " + poolString);
     console.log("");
     console.log("#Passwords");
@@ -421,12 +423,9 @@ function devConsole() {
     console.log("");
     console.log("#Encryption");
     console.log(" Storage Key:  " + storageKey);
-    console.log(" Storage ID:   " + storageID);
     console.log(" Storage Name: " + storageName);
     console.log(" Encryption Pass: " + encryptPassword);
     console.log("");
-    console.log(" selectState: " + selectState);
-    
 }
 
 $(".modal").modal({
