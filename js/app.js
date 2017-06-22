@@ -396,10 +396,11 @@ function destroy() {
 
 function devConsole() {
     console.clear();
-    console.log("#Input");
-    console.log(" ID:   " + storageID);
-    console.log(" Master: " + masterPass);
+    console.log("Master: " + masterPass);
+    console.log("");
+    console.log("#JSON");
     console.log(" Name: " + siteName);
+    console.log(" ID:   " + storageID);
     console.log(" User: " + userProfile);
     console.log(" Char: " + charLength);
     console.log(" Year: " + year);
