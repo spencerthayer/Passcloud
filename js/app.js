@@ -20,11 +20,10 @@ var storageKey;
 var storageID;
 var encryptPassword;
 var generatePassword;
-var currentYear = (new Date).getFullYear();
 var selectState;
+var currentYear = (new Date).getFullYear();
 
 $(document).ready(function() {
-    // $("select").material_select();
     $("#charLength").material_select();
     $("#passType").material_select();
 });
@@ -33,6 +32,7 @@ function changeSelect(id,type) {
     var selectDropdown;
     if (type == "password" && selectState != "password") {
         selectState = "password";
+        charLength = "16";
         $(id).material_select("destroy");
         selectDropdown = $(id).empty().html(" ");
         selectDropdown.append(
@@ -45,8 +45,10 @@ function changeSelect(id,type) {
         );
         selectDropdown.trigger("contentChanged");
         $(id).material_select();
-    } else if (type == "pin" && selectState != "pin") {
+    }
+    else if (type == "pin" && selectState != "pin") {
         selectState = "pin";
+        charLength = "4";
         $(id).material_select("destroy");
         selectDropdown = $(id).empty().html(" ");
         selectDropdown.append(
@@ -55,7 +57,8 @@ function changeSelect(id,type) {
         );
         selectDropdown.trigger("contentChanged");
         $(id).material_select();
-    } else if (type == "off") {
+    }
+    else if (type == "off") {
         selectState = "off";
         $(id).material_select("destroy");
         selectDropdown = $(id).empty().html(" ");
@@ -63,6 +66,7 @@ function changeSelect(id,type) {
     $(id).on("contentChanged", function() {
         // re-initialize (update)
         $(this).material_select();
+        domainPasswords();
     });
 }
 
@@ -137,6 +141,7 @@ $("html").keypress(function(event) {
 function clearForm() {
     console.clear();
     $("#formCloud").trigger("reset");
+    changeSelect("#charLength","password");
     masterPass = "";
     domainPassword = null;
     noUnique = null;
@@ -156,9 +161,10 @@ function clearInput(id) {
 function generatePassword() {
     formVariables();
     useVariables();
+    changeSelect();
     encryptPasswords();
     domainPasswords();
-    check();
+    requireFields();
     devConsole();
     retrieve();
 }
@@ -171,7 +177,7 @@ function inputErrorOff() {
     $("#masterPass").removeAttr("class", "inputError");
     $("#siteName").removeAttr("class", "inputError");
 }
-function check() {
+function requireFields() {
     if (masterPass == "" || siteName == "") {
         domainPassword = null;
         noUnique = null;
