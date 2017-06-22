@@ -141,7 +141,6 @@ $("html").keypress(function(event) {
 function clearForm() {
     console.clear();
     $("#formCloud").trigger("reset");
-    changeSelect("#charLength","password");
     masterPass = "";
     domainPassword = null;
     noUnique = null;
@@ -149,8 +148,10 @@ function clearForm() {
     storageID = null;
     storageName = null;
     encryptPassword = null;
+    changeSelect("#charLength","password");
     inputErrorOff();
     writeYear();
+    generatePassword();
 }
 
 function clearInput(id) {
