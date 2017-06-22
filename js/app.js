@@ -137,6 +137,13 @@ $("html").keypress(function(event) {
 function clearForm() {
     console.clear();
     $("#formCloud").trigger("reset");
+    masterPass = "";
+    domainPassword = null;
+    noUnique = null;
+    storageKey = null;
+    storageID = null;
+    storageName = null;
+    encryptPassword = null;
     inputErrorOff();
     writeYear();
 }
@@ -149,11 +156,11 @@ function clearInput(id) {
 function generatePassword() {
     formVariables();
     useVariables();
-    domainPasswords();
     encryptPasswords();
+    domainPasswords();
     check();
     devConsole();
-    // retrieve();
+    retrieve();
 }
 
 function inputErrorOn() {
@@ -166,7 +173,6 @@ function inputErrorOff() {
 }
 function check() {
     if (masterPass == "" || siteName == "") {
-        console.log("!")
         domainPassword = null;
         noUnique = null;
         storageKey = null;
@@ -337,10 +343,6 @@ function encryptPasswords() {
     });
 }
 
-// sxWXZXQRA0cugV5
-// HXYvzQEqJhyvNszjYacC3Pm7aLurhQwJ
-// XYvzQEqJhyvNszjYacC3Pm7aLurhQwJF
-
 function writeYear() {
     $("#year").val(currentYear);
     $("#year").attr("value", currentYear);
@@ -348,8 +350,11 @@ function writeYear() {
 writeYear();
 
 function create() {
-    var obj = [{
+    var obj;
+    // obj = $("#formCloud").serializeArray()
+    obj = [{
         "siteName": siteName,
+        "ID": storageID,
         "userProfile": userProfile,
         "charLength": charLength,
         "passType": passType,
@@ -363,7 +368,6 @@ function create() {
         "isYearly": isYearly,
         "isUnique": isUnique,
     }];
-    // obj = $("#formCloud").serializeArray()
     var JSONstringify = JSON.stringify(obj);
     var storage = cryptio,
         passJSON = JSONstringify;
@@ -379,6 +383,7 @@ function create() {
 }
 
 function retrieve() {
+    cleanStore();
     var storage = cryptio;
     storage.get({ passphrase: encryptPassword }, storageKey, function(err, results) {
         // if (err) throw err;
@@ -392,6 +397,15 @@ function update() {
 
 function destroy() {
 
+}
+
+function cleanStore() {
+    localStorage.setItem(undefined, "");
+    localStorage.removeItem(undefined);
+    delete window.localStorage[undefined];
+    localStorage.setItem(null, "");
+    localStorage.removeItem(null);
+    delete window.localStorage[null];
 }
 
 function devConsole() {
