@@ -408,13 +408,13 @@ function devConsole() {
     console.log(" Type: " + passType);
     console.log("");
     console.log("#Options");
+    console.log(" Unique: " + isUnique);
     console.log(" Alpha: " + isAlpha);
     console.log(" Numeric: " + isNumeric);
     console.log(" Ambiguous: " + isAmbiguous);
     console.log(" Special: " + isSpecial);
     console.log(" Extended: " + isExtended);
     console.log(" Yearly: " + isYearly);
-    console.log(" Unique: " + isUnique);
     console.log(" Select: " + selectState);
     console.log(" Pool: " + poolString);
     console.log("");
