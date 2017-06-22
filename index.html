@@ -66,15 +66,17 @@
                 <div class="input-field col s4 m2 l2">
                     <!--<div for="countVal" style="font-size: 0.8rem;">Characters:</div>-->
                     <select name="charLength" id="charLength" onchange="generatePassword();" onkeypress="generatePassword();" tabindex="4">
-                                <option value="8">8</option>
-                                <option value="12">12</option>
-                                <option value="16" selected>16</option>
-                                <option value="24">24</option>
-                                <option value="32">32</option>
-                                <option value="64">64</option>
-                                <!--<option value="128">128</option>-->
-                                <!--<option value="256">256</option>-->
-                            </select>
+                        <option value="8">8</option>
+                        <option value="12">12</option>
+                        <option value="16" selected>16</option>
+                        <option value="24">24</option>
+                        <option value="32">32</option>
+                        <option value="64">64</option>
+                    </select>
+                    <!--<select name="charLength" id="charLength" onchange="generatePassword();" onkeypress="generatePassword();" tabindex="4">
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                    </select>-->
                     <label>Lenght:</label>
                 </div>
                 <div class="input-field col s4 m2 l2">
@@ -92,8 +94,8 @@
                 <div class="input-field col s6 m3 l3">
                     <select name="passType" id="passType" onchange="generatePassword();" onkeypress="generatePassword();" tabindex="7">
                                 <option value="password" class="light-blue">Password</option>
-                                <option value="username">USERNAME</option>
                                 <option value="pin">PIN</option>
+                                <option value="username">USERNAME</option>
                                 <option value="phrase">PHRASE</option>
                                 <option value="noun">NOUN</option>
                                 <option value="xkcd">XKCD</option>

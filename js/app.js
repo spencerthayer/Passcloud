@@ -26,6 +26,73 @@ $(document).ready(function() {
     $("#charLength").material_select();
     $("#passType").material_select();
 });
+
+/**
+$(document).ready(function() {
+
+  // initialize
+  $('select').material_select();
+
+  
+  $("#myButton").click(function() {
+    
+    // clear contents
+    var $selectDropdown = 
+      $("#dropdownid")
+        .empty()
+        .html(' ');
+
+    // add new value
+    var value = "some value";
+    $selectDropdown.append(
+      $("<option></option>")
+        .attr("value",value)
+        .text(value)
+    );
+
+    // trigger event
+    $selectDropdown.trigger('contentChanged');
+  });
+
+
+  $('select').on('contentChanged', function() {
+    // re-initialize (update)
+    $(this).material_select();
+  });
+  
+});
+*/
+    function changeSelect(id,type) {
+        $(id).material_select("destroy");
+        var $selectDropdown = $(id).empty().html(" ");
+        if (type == "password") {
+            $selectDropdown.append(
+                $("<option></option>").attr("value","8").text("8"),
+                $("<option></option>").attr("value","12").text("12"),
+                $("<option></option>").attr("value","16").attr( { value:"16", selected:"selected" } ).text("16"),
+                $("<option></option>").attr("value","24").text("24"),
+                $("<option></option>").attr("value","32").text("32"),
+                $("<option></option>").attr("value","64").text("64")
+                );
+            $selectDropdown.trigger("contentChanged");
+            $(id).material_select();
+        } else if (type == "pin") {
+            var $selectDropdown = $(id).empty().html(" ");
+            $selectDropdown.append(
+                $("<option></option>").attr( { value:"4", selected:"selected" } ).text("4"),
+                $("<option></option>").attr("value","6").text("6")
+                );
+            $selectDropdown.trigger("contentChanged");
+            $(id).material_select();
+        } else if (type == "off") {
+              $(id).material_select("destroy");
+        }
+        $(id).on("contentChanged", function() {
+            // re-initialize (update)
+            $(this).material_select();
+        });
+    }
+
 //CLIPBOARD AND PASS REVEAL
 function revealPass() {
     $("#domainPassword").attr("type", "text");
@@ -206,51 +273,56 @@ function domainPasswords() {
     );
     numPhrase = chance.integer({ min: 4, max: 8 });
     numNoun = chance.integer({ min: 2, max: 4 });
+    numUsername = chance.integer({ min: 12, max: 16 });
     if (passType == "password" && isUnique == false) {
         domainPassword = chance.string({
             length: charLength,
             pool: poolString
         });
-        // $("#charLength").attr("disabled", false);
-        // $("#charLength").material_select();
+        changeSelect("#charLength","password");
     }
     if (passType == "password" && isUnique == true) {
         function uniqueString(len) {
             return chance.unique(chance.character, len, { pool: poolString }).join('')
         }
         domainPassword = uniqueString(charLength);
+        changeSelect("#charLength","password");
     } else if (passType == "pin") {
         domainPassword = chance.string({
-            length: 4,
+            length: charLength,
             pool: numeric
         });
-        //   $("#charLength").attr("disabled", true);
-        //   $("#charLength").material_select();
+        changeSelect("#charLength","pin");
     } else if (passType == "phrase") {
         domainPassword = chance.sentence({
             words: numPhrase
         });
+        changeSelect("#charLength","off");
     } else if (passType == "noun") {
         domainPassword = chance.word({
             syllables: numNoun
         });
         domainPassword = chance.capitalize(domainPassword);
+        changeSelect("#charLength","off");
     } else if (passType == "username") {
         domainPassword = chance.string({
-            length: generateNumber(8,12),
+            length: numUsername,
             pool: latinLower + numeric
         });
+        changeSelect("#charLength","off");
     } else if (passType == "salt") {
         domainPassword = chance.string({
             length: 64,
             pool: latinLower + latinUpper + numeric
         });
+        changeSelect("#charLength","off");
     } else if (passType == "xkcd") {
         xkcdRando = chance.string({
             length: 32,
             pool: numeric
         });
         domainPassword = xkcdPass(xkcdRando, 4);
+        changeSelect("#charLength","off");
     }
 
     function unString(string) {
