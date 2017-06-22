@@ -19,6 +19,7 @@ var noUnique;
 var storageKey;
 var storageID;
 var encryptPassword;
+var generatePassword;
 var currentYear = (new Date).getFullYear();
 var selectState;
 
@@ -28,41 +29,6 @@ $(document).ready(function() {
     $("#passType").material_select();
 });
 
-/**
-$(document).ready(function() {
-
-  // initialize
-  $('select').material_select();
-
-  
-  $("#myButton").click(function() {
-    
-    // clear contents
-    var selectDropdown = 
-      $("#dropdownid")
-        .empty()
-        .html(' ');
-
-    // add new value
-    var value = "some value";
-    selectDropdown.append(
-      $("<option></option>")
-        .attr("value",value)
-        .text(value)
-    );
-
-    // trigger event
-    selectDropdown.trigger('contentChanged');
-  });
-
-
-  $('select').on('contentChanged', function() {
-    // re-initialize (update)
-    $(this).material_select();
-  });
-  
-});
-*/
 function changeSelect(id,type) {
     var selectDropdown;
     if (type == "password" && selectState != "password") {
