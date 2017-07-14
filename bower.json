@@ -1,6 +1,30 @@
 {
-  "name": "Passcloud",
-  "private": "true",
-  "devDependencies": {
-  }
+    "name": "Passcloud",
+    "description": "Passcloud is the easiest way to generate stateless passwords.",
+    "main": "index.html",
+    "authors": [
+        "Spencer Thayer"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "password"
+    ],
+    "homepage": "https://github.com/spencerthayer/Passcloud",
+    "private": true,
+    "ignore": [
+        "_archive",
+        "assets",
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "lib",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "crypto-js": "^3.1.9",
+        "chance": "^1.0.10",
+        "firebase": "^4.1.3",
+        "firebaseui": "^2.2.1"
+    }
 }

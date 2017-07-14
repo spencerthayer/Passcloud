@@ -33,22 +33,24 @@
     <meta name="twitter:twitter:image:alt" content="https://passcloud.me" />
     <!-- STYLES -->
     <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />-->
-    <link rel="stylesheet" href="./css/materialize.min.css" />
-    <link rel="stylesheet" href="./css/materialicons.css" />
-    <link rel="stylesheet" href="./css/app.css" />
+    <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" />
+    <link type="text/css" rel="stylesheet" href="./css/materialicons.css" />
+    <link type="text/css" rel="stylesheet" href="./lib/firebaseui/dist/firebaseui.css" />
+    <link type="text/css" rel="stylesheet" href="./css/app.css" />
 </head>
 
 <body class="" onchange="generatePassword();" onkeypress="generatePassword();" onkeyup="generatePassword();">
     <main>
         <form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void(0);" onsubmit="javascript:void(0);">
-            <header class="light-blue row">
+            <header class="row graD">
                 <div class="col s12 m12 l12 text-white inline" style="margin-bottom: 10px;">
                     <a href="#" data-activates="slide-out" class="menuButton button-collapse circle hide-on-large-only white-text">
                         <i class="material-icons white-text">menu</i>
                     </a>
                 </div>
                 <div class="input-field masterPassword col s12 m12 l12 text-white inline">
-                    <input type="password" name="masterPass" value="" id="masterPass" class="masterPass" title="Choose a strong Master Password." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1" /><button class="clearInput" onClick="clearInput(masterPass);">&#10005;</button>
+                    <input type="password" name="masterPass" value="" id="masterPass" class="masterPass" title="Choose a strong Master Password." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1" /><button class="clearInput"
+                        onClick="clearInput(masterPass);">&#10005;</button>
                     <label class="mp" for="master">Master Password:</label>
                 </div>
             </header>
@@ -58,7 +60,8 @@
                     <label for="site">Site Name:</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
-                    <input type="text" name="userProfile" value="" id="userProfile" class="" title="Please enter a valid username or profile." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="3" /><button class="clearInput" onClick="clearInput(userProfile);">&#10005;</button>
+                    <input type="text" name="userProfile" value="" id="userProfile" class="" title="Please enter a valid username or profile." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="3" /><button class="clearInput"
+                        onClick="clearInput(userProfile);">&#10005;</button>
                     <label for="profile">User Profile:</label>
                 </div>
             </div>
@@ -98,7 +101,7 @@
                                 <option value="username">USERNAME</option>
                                 <option value="phrase">PHRASE</option>
                                 <option value="noun">NOUN</option>
-                                <option value="xkcd">XKCD</option>
+                                <option value="xkcd" data-alternative="DICEWARE">XKCD</option>
                                 <!--<option value="salt">SALT</option>-->
                             </select>
                     <label>Type:</label>
@@ -167,7 +170,7 @@
         </form>
         <footer class="white" style="margin:0;padding:1vmin 4vmin;">
             <div class="col s12 m12 l12">
-                <button type="submit" class="waves-effect waves-light btn light-blue z-depth-0" style="margin-right:22px;" onclick="create();">Save</button>
+                <button type="submit" class="waves-effect waves-light btn light-blue z-depth-0" style="margin-right:22px;" onclick="saveForm();">Save</button>
                 <button type="reset" class="waves-effect waves-light btn light-blue z-depth-0" onclick="clearForm();">Clear</button>
                 <a class="right modal-trigger" href="#about">
                     <i class="material-icons">info_outline</i>
@@ -180,7 +183,8 @@
         <div id="about" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <article>
-                    <h2><a id="Passcloud_20_0"></a>Passcloud 2.0</h2>
+                    <h2>
+                        <a id="Passcloud_20_0"></a>Passcloud 2.0</h2>
                     <p>Alpha testing of 2.0: <a href="https://passcld.herokuapp.com/">https://passcld.herokuapp.com/</a></p>
                     <p>
                         <a href="https://heroku.com/deploy?template=https://github.com/spencerthayer/Passcloud"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a>
@@ -260,17 +264,19 @@
         </li>
     </ul>
 </body>
-<script src="./js/jquery.min.js" data-version="3.2.1" data-source="https://github.com/jquery/jquery"></script>
-<script src="./js/jquery.mobile-events.min.js" data-version="1.0.9" data-source="https://github.com/benmajor/jQuery-Touch-Events"></script>
-<script src="./js/materialize.min.js" data-version="0.98.2" data-source="https://github.com/dogfalo/materialize"></script>
-<script src="./js/chance.min.js" data-version="1.0.4" data-source="https://github.com/chancejs/chancejs"></script>
-<script src="./js/crypt.io.min.js" data-version="1.0.0" data-source="https://github.com/jas-/crypt.io"></script>
-<script src="./js/sjcl.js" data-version="1.0.4" data-source="https://github.com/bitwiseshiftleft/sjcl"></script>
-<script src="./js/clipboard.min.js" data-version="1.7.1" data-source="https://github.com/zenorocha/clipboard.js"></script>
 <!--<script src="./js/" data-version="" data-source=""></script>-->
+<script src="./lib/jquery/dist/jquery.min.js" data-version="3.2.1" data-source="https://github.com/jquery/jquery"></script>
+<script src="./lib/materialize/dist/js/materialize.min.js" data-version="0.98.2" data-source="https://github.com/dogfalo/materialize"></script>
+<script src="./lib/chance/dist/chance.min.js" data-version="1.0.4" data-source="https://github.com/chancejs/chancejs"></script>
+<script src="./lib/clipboard/dist/clipboard.min.js" data-version="1.7.1" data-source="https://github.com/zenorocha/clipboard.js"></script>
+<script src="./lib/crypto-js/crypto-js.js"></script>
+<script src="./lib/firebase/firebase-app.js"></script>
+<script src="./lib/firebase/firebase-auth.js"></script>
+<script src="./lib/firebase/firebase-database.js"></script>
+<script src="./lib/firebaseui/dist/firebaseui.js"></script>
 <script src="./js/app.js"></script>
-<script src="./js/xkcd.js"></script>
-<script>
-</script>
+<script src="./js/app.crypt.js"></script>
+<script src="./js/app.xkcd.js"></script>
+<script src="./js/app.firebase.js"></script>
 
 </html>

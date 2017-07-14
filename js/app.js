@@ -1,4 +1,5 @@
 // DEFINE GLOBALS
+var obj;
 var siteName;
 var userProfile;
 var charLength;
@@ -16,19 +17,24 @@ var ranSyl;
 var poolString;
 var domainPassword;
 var noUnique;
-var storageKey;
 var storageID;
+var storageKey;
+var storageUUID;
 var encryptPassword;
-var generatePassword;
 var selectState;
 var currentYear = (new Date).getFullYear();
+var formObject;
+var db;
+var uuid;
 
+// READY MATERIAL SELECTS
 $(document).ready(function() {
     $("#charLength").material_select();
     $("#passType").material_select();
 });
 
-function changeSelect(id,type) {
+// CHARACTER LENGTH SELECT CHANGES BASED ON PASSWORD TYPE
+function changeSelect(id, type) {
     var selectDropdown;
     if (type == "password" && selectState != "password") {
         selectState = "password";
@@ -36,29 +42,27 @@ function changeSelect(id,type) {
         $(id).material_select("destroy");
         selectDropdown = $(id).empty().html(" ");
         selectDropdown.append(
-            $("<option></option>").attr("value","8").text("8"),
-            $("<option></option>").attr("value","12").text("12"),
-            $("<option></option>").attr("value","16").attr( { value:"16", selected:"selected" } ).text("16"),
-            $("<option></option>").attr("value","24").text("24"),
-            $("<option></option>").attr("value","32").text("32"),
-            $("<option></option>").attr("value","64").text("64")
+            $("<option></option>").attr("value", "8").text("8"),
+            $("<option></option>").attr("value", "12").text("12"),
+            $("<option></option>").attr("value", "16").attr({ value: "16", selected: "selected" }).text("16"),
+            $("<option></option>").attr("value", "24").text("24"),
+            $("<option></option>").attr("value", "32").text("32"),
+            $("<option></option>").attr("value", "64").text("64")
         );
         selectDropdown.trigger("contentChanged");
         $(id).material_select();
-    }
-    else if (type == "pin" && selectState != "pin") {
+    } else if (type == "pin" && selectState != "pin") {
         selectState = "pin";
         charLength = "4";
         $(id).material_select("destroy");
         selectDropdown = $(id).empty().html(" ");
         selectDropdown.append(
-            $("<option></option>").attr( { value:"4", selected:"selected" } ).text("4"),
-            $("<option></option>").attr("value","6").text("6")
+            $("<option></option>").attr({ value: "4", selected: "selected" }).text("4"),
+            $("<option></option>").attr("value", "6").text("6")
         );
         selectDropdown.trigger("contentChanged");
         $(id).material_select();
-    }
-    else if (type == "off") {
+    } else if (type == "off") {
         selectState = "off";
         $(id).material_select("destroy");
         selectDropdown = $(id).empty().html(" ");
@@ -83,6 +87,7 @@ function flashPass() {
     $("#domainPassword").attr("type", "text");
     setTimeout(function() { $("#domainPassword").attr("type", "password"); }, 250);
 }
+// CLIPBOARD
 /* * /
 function copyToClipboard() {
     revealPass();
@@ -119,6 +124,7 @@ clipboard.on("success", function(e) {
 });
 /**/
 
+// CHANGE OPTIONS ARROW
 $("#optionsMenu").click(function() {
     if ($("#optionsMenu").attr("data-open") == "no") {
         $("#optionsMenu").attr("data-open", "yes");
@@ -138,27 +144,32 @@ $("html").keypress(function(event) {
     }
 });
 
+// CLEAR BUTTONS
+
+// CLEAR FORM
 function clearForm() {
     console.clear();
     $("#formCloud").trigger("reset");
     masterPass = "";
-    domainPassword = null;
-    noUnique = null;
-    storageKey = null;
-    storageID = null;
-    storageName = null;
-    encryptPassword = null;
-    changeSelect("#charLength","password");
+    domainPassword = "";
+    noUnique = "";
+    storageKey = "";
+    storageID = "";
+    storageUUID = "";
+    encryptPassword = "";
+    changeSelect("#charLength", "password");
     inputErrorOff();
     writeYear();
     generatePassword();
 }
 
+// CLEAR X's
 function clearInput(id) {
     $(id).val("").focus().select();
     generatePassword();
 }
 
+// GENERATE FORM PASSWORD
 function generatePassword() {
     formVariables();
     useVariables();
@@ -167,25 +178,33 @@ function generatePassword() {
     domainPasswords();
     requireFields();
     devConsole();
-    retrieve();
+    updateObj();
 }
 
+// MAKE INPUT RED IF EMPTY
 function inputErrorOn() {
     $("#masterPass").attr("class", "inputError");
-    $("#siteName").attr("class", "inputError");   
+    $("#siteName").attr("class", "inputError");
 }
+
 function inputErrorOff() {
     $("#masterPass").removeAttr("class", "inputError");
     $("#siteName").removeAttr("class", "inputError");
 }
+
 function requireFields() {
-    if (masterPass == "" || siteName == "") {
-        domainPassword = null;
-        noUnique = null;
-        storageKey = null;
-        storageID = null;
-        storageName = null;
-        encryptPassword = null;
+    if (masterPass == "") {
+        domainPassword = "";
+        noUnique = "";
+        storageKey = "";
+        storageID = "";
+        storageUUID = "";
+        encryptPassword = "";
+        $("#domainPassword").val("");
+    } else if (masterPass == "" || siteName == "") {
+        domainPassword = "";
+        noUnique = "";
+        storageID = "";
         $("#domainPassword").val("");
         inputErrorOn();
     } else {
@@ -218,8 +237,6 @@ function formVariables() {
     supplimentLower = "àáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
     supplimentUpper = "ÀÁÂÃÄÅÆÇÈÉÊËÌÌÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß";
 }
-
-function listVariables() {}
 
 function useVariables() {
     // INPUT VALUES
@@ -265,50 +282,50 @@ function domainPasswords() {
             length: charLength,
             pool: poolString
         });
-        changeSelect("#charLength","password");
+        changeSelect("#charLength", "password");
     }
     if (passType == "password" && isUnique == true) {
         function uniqueString(len) {
             return chance.unique(chance.character, len, { pool: poolString }).join('')
         }
         domainPassword = uniqueString(charLength);
-        changeSelect("#charLength","password");
+        changeSelect("#charLength", "password");
     } else if (passType == "pin") {
         domainPassword = chance.string({
             length: charLength,
             pool: numeric
         });
-        changeSelect("#charLength","pin");
+        changeSelect("#charLength", "pin");
     } else if (passType == "phrase") {
         domainPassword = chance.sentence({
             words: numPhrase
         });
-        changeSelect("#charLength","off");
+        changeSelect("#charLength", "off");
     } else if (passType == "noun") {
         domainPassword = chance.word({
             syllables: numNoun
         });
         domainPassword = chance.capitalize(domainPassword);
-        changeSelect("#charLength","off");
+        changeSelect("#charLength", "off");
     } else if (passType == "username") {
         domainPassword = chance.string({
             length: numUsername,
             pool: latinLower + numeric
         });
-        changeSelect("#charLength","off");
+        changeSelect("#charLength", "off");
     } else if (passType == "salt") {
         domainPassword = chance.string({
             length: 64,
             pool: latinLower + latinUpper + numeric
         });
-        changeSelect("#charLength","off");
+        changeSelect("#charLength", "off");
     } else if (passType == "xkcd") {
         xkcdRando = chance.string({
             length: 32,
             pool: numeric
         });
         domainPassword = xkcdPass(xkcdRando, 4);
-        changeSelect("#charLength","off");
+        changeSelect("#charLength", "off");
     }
 
     function unString(string) {
@@ -336,12 +353,12 @@ function encryptPasswords() {
     // CHARACTERS STRING CREATION
     chance = new Chance(masterPass);
     storageKey = chance.string({
-        length: 6,
+        length: 8,
         pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     });
-    chanceID = new Chance(storageID);
-    storageName = chance.string({
-        length: 32,
+    // chanceID = new Chance(storageID);
+    storageUUID = chance.string({
+        length: 64,
         pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "_-"
     });
     encryptPassword = chance.string({
@@ -356,98 +373,42 @@ function writeYear() {
 }
 writeYear();
 
-function create() {
-    var obj;
-    // obj = $("#formCloud").serializeArray()
-    obj = [{
-        "siteName": siteName,
-        "ID": storageID,
-        "userProfile": userProfile,
-        "charLength": charLength,
-        "passType": passType,
-        "seedNum": seedNum,
-        "year": year,
-        "isAlpha": isAlpha,
-        "isNumeric": isNumeric,
-        "isAmbiguous": isAmbiguous,
-        "isSpecial": isSpecial,
-        "isExtended": isExtended,
-        "isYearly": isYearly,
-        "isUnique": isUnique,
-    }];
-    var JSONstringify = JSON.stringify(obj);
-    var storage = cryptio,
-        passJSON = JSONstringify;
-    var options = {
-        storage: "local",
-        passphrase: encryptPassword
-    };
-    storage.set(options, storageKey, passJSON, function(err, results) {
-        // if (err) throw err;
-        console.log(results);
-    });
-    retrieve();
-}
-
-function retrieve() {
-    cleanStore();
-    var storage = cryptio;
-    storage.get({ passphrase: encryptPassword }, storageKey, function(err, results) {
-        // if (err) throw err;
-        console.log(results);
-    });
-}
-
-function update() {
-
-}
-
-function destroy() {
-
-}
-
-function cleanStore() {
-    localStorage.setItem(undefined, "");
-    localStorage.removeItem(undefined);
-    delete window.localStorage[undefined];
-    localStorage.setItem(null, "");
-    localStorage.removeItem(null);
-    delete window.localStorage[null];
-}
-
 function devConsole() {
     console.clear();
     console.log("Master: " + masterPass);
-    console.log("");
+    // console.log("");
     console.log("#JSON");
-    console.log(" Name: " + siteName);
-    console.log(" ID:   " + storageID);
-    console.log(" User: " + userProfile);
-    console.log(" Char: " + charLength);
-    console.log(" Year: " + year);
-    console.log(" Seed: " + seedNum);
-    console.log(" Type: " + passType);
-    console.log("");
+    console.log(" ID:    " + storageID);
+    console.log(" Name:  " + siteName);
+    console.log(" User:  " + userProfile);
+    console.log(" Char:  " + charLength);
+    console.log(" Year:  " + year);
+    console.log(" Type:  " + passType);
+    console.log(" Seed:  " + seedNum);
+    // console.log("");
     console.log("#Options");
-    console.log(" Unique: " + isUnique);
-    console.log(" Alpha: " + isAlpha);
-    console.log(" Numeric: " + isNumeric);
+    console.log(" Unique:    " + isUnique);
+    console.log(" Alpha:     " + isAlpha);
+    console.log(" Numeric:   " + isNumeric);
     console.log(" Ambiguous: " + isAmbiguous);
-    console.log(" Special: " + isSpecial);
-    console.log(" Extended: " + isExtended);
-    console.log(" Yearly: " + isYearly);
-    console.log(" Select: " + selectState);
-    console.log(" Pool: " + poolString);
-    console.log("");
+    console.log(" Special:   " + isSpecial);
+    console.log(" Extended:  " + isExtended);
+    console.log(" Yearly:    " + isYearly);
+    console.log(" Select:    " + selectState);
+    // console.log(" Pool:      " + poolString);
+    // console.log("");
     console.log("#Passwords");
     console.log(" Pass: " + domainPassword);
     console.log(" Uniq: " + noUnique);
-    console.log("");
+    // console.log("");
     console.log("#Encryption");
     console.log(" Storage Key:  " + storageKey);
-    console.log(" Storage Name: " + storageName);
-    console.log(" Encryption Pass: " + encryptPassword);
-    console.log("");
+    console.log(" storageUUID: " + storageUUID);
+    // console.log(" Encryption Pass: " + encryptPassword);
+    console.log(" UUID: " + uuid);
+    // console.log(encryptForm(obj));
+    // updateObj();
+    // dencryptForm();
 }
 
 $(".modal").modal({

@@ -257,6 +257,7 @@ button.clearInput {
     text-align: center;
     /*display: none;*/
 }
+
 .masterPassword button.clearInput {
     color: #fff !important;
     margin-top: 15px;
@@ -273,12 +274,20 @@ button.clearInput {
     color: #fff;
     border-color: #fff;
 }
-.inputError,.inputError:hover,.inputError:focus {
-     border-bottom: 1px solid #e53935 !important;
-     box-shadow: 0 1px 0 0 #e53935 !important;
-     /*color: #f44336 !important;*/
+
+.inputError,
+.inputError:hover,
+.inputError:focus {
+    border-bottom: 1px solid #e53935 !important;
+    box-shadow: 0 1px 0 0 #e53935 !important;
+    /*color: #f44336 !important;*/
 }
+
 .domainPassword {
     font-size: 150% !important;
     /*border-color: #ff6f00 !important;*/
+}
+
+.graD {
+    background-image: linear-gradient(125deg, #03A9F4 25%, #00aaee 50%, #2575fc 85%, #0050f5 100%);
 }
