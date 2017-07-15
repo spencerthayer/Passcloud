@@ -41,14 +41,14 @@ firebaseConnection()
 
 function signIn() {
     firebase.auth().signInAnonymously().then(function(user) {
-        console.log(user);
+        // console.log(user);
         window.uuid = user.uid;
         return window.uuid;
     }).catch(function(error) {
         console.log(error.message);
     });
     firebase.auth().onAuthStateChanged(user => {
-        console.log(user.uid);
+        // console.log(user.uid);
         window.uuid = user.uid;
         return window.uuid;
     });
@@ -63,7 +63,7 @@ function signOut() {
 function saveForm() {
     encryptForm(obj);
     firebase.database().ref(storageUUID + "/" + storageID).set({
-        ciphertext
+        storageCipher
     });
     // return firebase.database().ref().update(updates);
     return firebase.database().ref(storageUUID + "/" + storageID);
@@ -77,10 +77,9 @@ function readData() {
             snapshot.forEach(function(data) {
                 key = data.key;
                 value = data.val();
-                cypher = value.ciphertext;
-                console.log(key);
-                // console.log(cypher);
-                decryptForm(cypher);
+                cypher = value.storageCipher;
+                decrypted = decryptForm(cypher);
+                console.log(decrypted);
             });
         });
 

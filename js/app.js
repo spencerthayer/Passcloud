@@ -375,6 +375,7 @@ writeYear();
 
 function devConsole() {
     console.clear();
+    console.log("UUID:   " + uuid);
     console.log("Master: " + masterPass);
     // console.log("");
     console.log("#JSON");
@@ -404,8 +405,7 @@ function devConsole() {
     console.log("#Encryption");
     console.log(" Storage Key:  " + storageKey);
     console.log(" storageUUID: " + storageUUID);
-    // console.log(" Encryption Pass: " + encryptPassword);
-    console.log(" UUID: " + uuid);
+    console.log(" EncryptPass: " + encryptPassword);
     // console.log(encryptForm(obj));
     // updateObj();
     // dencryptForm();
