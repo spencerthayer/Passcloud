@@ -16,5 +16,5 @@ function decryptForm(xvar) {
     var decryptedData = JSON.parse(
         bytes.toString(CryptoJS.enc.Utf8)
     );
-    console.log(decryptedData);
+    // console.log(decryptedData);
 }

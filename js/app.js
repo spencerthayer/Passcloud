@@ -160,22 +160,22 @@ function clearForm() {
     changeSelect("#charLength", "password");
     inputErrorOff();
     writeYear();
-    generatePassword();
+    formInteraction();
 }
 
 // CLEAR X's
 function clearInput(id) {
     $(id).val("").focus().select();
-    generatePassword();
+    formInteraction();
 }
 
 function randSynckey() {
     chance = new Chance();
-    syncKey = chance.string({length: generateNumber(6, 10)});
+    syncKey = chance.string({length: generateNumber(6, 12)});
     var syncKey = syncKey;
     $(".syncKey").val(syncKey);
     // return syncKey;
-    generatePassword();
+    formInteraction();
     putStorage();
     hidebuttons();
 }
@@ -196,16 +196,19 @@ getStorage();
 function hidebuttons() {
     if (syncKey == "" || syncKey == undefined || syncKey == null) {
         $("#save").css("display", "none");
-        $("#sync").css("display", "none");
     } else if (storageID == "" || storageID == undefined || storageID == null) {
         $("#save").css("display", "none");
     } else {
         $("#save").css("display", "inline");
+    }
+    if (masterPass == "" || masterPass == undefined || masterPass == null) {
+        $("#sync").css("display", "none");
+    } else {
         $("#sync").css("display", "inline");
     }
 }
 // GENERATE FORM PASSWORD
-function generatePassword() {
+function formInteraction() {
     formVariables();
     useVariables();
     changeSelect();

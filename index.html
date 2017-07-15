@@ -39,7 +39,7 @@
     <link type="text/css" rel="stylesheet" href="./css/app.css" />
 </head>
 
-<body class="" onchange="generatePassword();" onkeypress="generatePassword();" onkeyup="generatePassword();">
+<body class="" onchange="formInteraction();" onkeypress="formInteraction();" onkeyup="formInteraction();">
     <main>
         <form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void(0);" onsubmit="javascript:void(0);">
             <header class="row graD">
@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="input-field col s4 m2 l2">
                     <!--<div for="countVal" style="font-size: 0.8rem;">Characters:</div>-->
-                    <select name="charLength" id="charLength" onchange="generatePassword();" onkeypress="generatePassword();" tabindex="4">
+                    <select name="charLength" id="charLength" onchange="formInteraction();" onkeypress="formInteraction();" tabindex="4">
                         <option value="8">8</option>
                         <option value="12">12</option>
                         <option value="16" selected>16</option>
@@ -76,7 +76,7 @@
                         <option value="32">32</option>
                         <option value="64">64</option>
                     </select>
-                    <!--<select name="charLength" id="charLength" onchange="generatePassword();" onkeypress="generatePassword();" tabindex="4">
+                    <!--<select name="charLength" id="charLength" onchange="formInteraction();" onkeypress="formInteraction();" tabindex="4">
                         <option value="4">4</option>
                         <option value="6">6</option>
                     </select>-->
@@ -95,7 +95,7 @@
                     </label>
                 </div>
                 <div class="input-field col s6 m3 l3">
-                    <select name="passType" id="passType" onchange="generatePassword();" onkeypress="generatePassword();" tabindex="7">
+                    <select name="passType" id="passType" onchange="formInteraction();" onkeypress="formInteraction();" tabindex="7">
                                 <option value="password" class="light-blue">Password</option>
                                 <option value="pin">PIN</option>
                                 <option value="username">USERNAME</option>
@@ -276,6 +276,7 @@
             </li>-->
         <li>
             <a class="subheader">Saved Sites</a>
+            <button class="waves-effect waves-light btn light-blue z-depth-0" id="sync" style="margin-left:22px;" onclick="sync();">Sync</button>
         </li>
         <li>
             <a class="waves-effect">
