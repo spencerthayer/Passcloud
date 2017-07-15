@@ -18,7 +18,7 @@ var poolString;
 var domainPassword;
 var noUnique;
 var storageID;
-var storageKey;
+var syncKey;
 var storageUUID;
 var encryptPassword;
 var selectState;
@@ -153,7 +153,6 @@ function clearForm() {
     masterPass = "";
     domainPassword = "";
     noUnique = "";
-    storageKey = "";
     storageID = "";
     storageUUID = "";
     encryptPassword = "";
@@ -168,6 +167,27 @@ function clearInput(id) {
     $(id).val("").focus().select();
     generatePassword();
 }
+
+function randSynckey() {
+    chance = new Chance();
+    syncKey = chance.string({length: generateNumber(6, 10)});
+    var syncKey = syncKey;
+    $(".syncKey").val(syncKey);
+    // return syncKey;
+    generatePassword();
+    putStorage();
+}
+
+function putStorage() {
+    localStorage.setItem("synckeyStore", syncKey);
+    $(".syncKey").val(syncKey);
+}
+
+function getStorage() {
+    var syncKey = localStorage.getItem("synckeyStore");
+    $(".syncKey").val(syncKey);
+}
+getStorage();
 
 // GENERATE FORM PASSWORD
 function generatePassword() {
@@ -196,7 +216,6 @@ function requireFields() {
     if (masterPass == "") {
         domainPassword = "";
         noUnique = "";
-        storageKey = "";
         storageID = "";
         storageUUID = "";
         encryptPassword = "";
@@ -213,6 +232,7 @@ function requireFields() {
 }
 
 function formVariables() {
+    syncKey = $("#syncKey").val();
     masterPass = $("#masterPass").val();
     siteName = $("#siteName").val();
     userProfile = $("#userProfile").val();
@@ -351,17 +371,18 @@ function generateNumber(min, max) {
 
 function encryptPasswords() {
     // CHARACTERS STRING CREATION
-    chance = new Chance(masterPass);
-    storageKey = chance.string({
-        length: 8,
-        pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    });
+    chancePass = new Chance(masterPass);
+    chanceKey = new Chance(masterPass + syncKey);
+    // syncKey = chance.string({
+    //     length: 8,
+    //     pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    // });
     // chanceID = new Chance(storageID);
-    storageUUID = chance.string({
+    storageUUID = chanceKey.string({
         length: 64,
         pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "_-"
     });
-    encryptPassword = chance.string({
+    encryptPassword = chancePass.string({
         length: 128,
         pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "!@#$%^&*_-=+`~()[]{};:\'\",.\<\>?\/\\|" + "¡¢£¤¥¦§¨©ª®°±µ¿" + "àáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ" + "ÀÁÂÃÄÅÆÇÈÉÊËÌÌÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß"
     });
@@ -403,7 +424,7 @@ function devConsole() {
     console.log(" Uniq: " + noUnique);
     // console.log("");
     console.log("#Encryption");
-    console.log(" Storage Key:  " + storageKey);
+    console.log(" syncKey:     " + syncKey);
     console.log(" storageUUID: " + storageUUID);
     console.log(" EncryptPass: " + encryptPassword);
     // console.log(encryptForm(obj));

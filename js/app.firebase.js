@@ -62,16 +62,15 @@ function signOut() {
 
 function saveForm() {
     encryptForm(obj);
-    firebase.database().ref(storageUUID + "/" + storageID).set({
+    firebase.database().ref("data/" + storageUUID + "/" + storageID).set({
         storageCipher
     });
     // return firebase.database().ref().update(updates);
     return firebase.database().ref(storageUUID + "/" + storageID);
 }
 
-
 function readData() {
-    var query = firebase.database().ref(storageUUID).orderByKey();
+    var query = firebase.database().ref("data/" + storageUUID).orderByKey();
     query.once("value")
         .then(function(snapshot) {
             snapshot.forEach(function(data) {
@@ -84,7 +83,6 @@ function readData() {
         });
 
 }
-
 
 // function writeUserData(userId, name, email, imageUrl) {
 //     firebase.database().ref('data/' + userId).set({

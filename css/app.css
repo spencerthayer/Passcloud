@@ -241,7 +241,31 @@ ul.side-nav.fixed li.logo img {
     margin-right: 8px;
 }
 
+.syncKey {
+    text-indent: 20px !important;
+}
+button.syncInput {
+    font: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    position: absolute;
+    float: right;
+    padding: 0;
+    margin-top: 10px;
+    margin-left: -30px;
+    height: 25px;
+    width: 25px;
+    color: #fff;
+    background: #03a9f4 !important;
+    border: 0;
+    vertical-align: text-top;
+    -webkit-appearance: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 0px;
+}
+
 button.clearInput {
+    font: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: absolute;
     float: right;
     padding: 0;
