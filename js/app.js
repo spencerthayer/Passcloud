@@ -1,5 +1,6 @@
 // DEFINE GLOBALS
 var obj;
+var masterPass;
 var siteName;
 var userProfile;
 var charLength;
@@ -176,6 +177,7 @@ function randSynckey() {
     // return syncKey;
     generatePassword();
     putStorage();
+    hidebuttons();
 }
 
 function putStorage() {
@@ -184,11 +186,24 @@ function putStorage() {
 }
 
 function getStorage() {
-    var syncKey = localStorage.getItem("synckeyStore");
+    syncKey = localStorage.getItem("synckeyStore");
     $(".syncKey").val(syncKey);
+    hidebuttons();
+    return syncKey;
 }
 getStorage();
 
+function hidebuttons() {
+    if (syncKey == "" || syncKey == undefined || syncKey == null) {
+        $("#save").css("display", "none");
+        $("#sync").css("display", "none");
+    } else if (storageID == "" || storageID == undefined || storageID == null) {
+        $("#save").css("display", "none");
+    } else {
+        $("#save").css("display", "inline");
+        $("#sync").css("display", "inline");
+    }
+}
 // GENERATE FORM PASSWORD
 function generatePassword() {
     formVariables();
@@ -199,6 +214,7 @@ function generatePassword() {
     requireFields();
     devConsole();
     updateObj();
+    hidebuttons();
 }
 
 // MAKE INPUT RED IF EMPTY

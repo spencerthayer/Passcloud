@@ -241,24 +241,42 @@ ul.side-nav.fixed li.logo img {
     margin-right: 8px;
 }
 
-.syncKey {
-    text-indent: 20px !important;
+
+.inputCloud {
+    position: absolute;
+    color: #03a9f4;
+    top: 10px;
+    left: 4px;
+}
+
+input.syncKey {
+    text-indent: 40px !important;
+    font-size: 20px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.infoSynckey {
+    font-size: 10px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.26);
+    padding: 0 6px !important;
+    margin: 0 !important;
+    margin-top: -20px !important;
 }
 button.syncInput {
     font: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     position: absolute;
     float: right;
-    padding: 0;
+    padding: 0 !important;
     margin-top: 10px;
-    margin-left: -30px;
-    height: 25px;
-    width: 25px;
+    margin-left: -35px;
+    height: 30px;
+    width: 30px;
     color: #fff;
     background: #03a9f4 !important;
     border: 0;
     vertical-align: text-top;
-    -webkit-appearance: none;
     cursor: pointer;
     text-align: center;
     line-height: 0px;
@@ -276,7 +294,6 @@ button.clearInput {
     background: none;
     color: #03a9f4 !important;
     border: 0;
-    -webkit-appearance: none;
     cursor: pointer;
     text-align: center;
     /*display: none;*/

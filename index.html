@@ -170,8 +170,8 @@
         </form>
         <footer class="white" style="margin:0;padding:1vmin 4vmin;">
             <div class="col s12 m12 l12">
-                <button type="submit" class="waves-effect waves-light btn light-blue z-depth-0" style="margin-right:22px;" onclick="saveForm();">Save</button>
-                <button type="reset" class="waves-effect waves-light btn light-blue z-depth-0" onclick="clearForm();">Clear</button>
+                <button type="submit" class="waves-effect waves-light btn light-blue z-depth-0" id="save" style="margin-right:22px;" onclick="saveForm();">Save</button>
+                <button type="reset" class="waves-effect waves-light btn light-blue z-depth-0" id="clear" onclick="clearForm();">Clear</button>
                 <a class="right modal-trigger" href="#about">
                     <i class="material-icons">info_outline</i>
                 </a>
@@ -243,9 +243,10 @@
                     <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>-->
             </div>
         </li>
-        <li><a><i class="material-icons">cloud</i>Passcloud 2.0 alpha</a></li>
+        <!-- <li><a><i class="material-icons">cloud</i>Passcloud 2.0 alpha</a></li> -->
         <li>
-            <div class="input-field"> 
+            <div class="input-field">
+                <i class="material-icons inputCloud">cloud</i>
                 <input
                     type="text"
                     name="syncKey"
@@ -257,9 +258,11 @@
                     autocorrect="off"
                     autocapitalize="off"
                     spellcheck="false"
-                    onkeypress="putStorage()";
+                    onkeypress="putStorage()"
+                    disabled="disabled"
                     /><button class="syncInput" onClick="randSynckey();">&#8634;</button> 
                 <!-- <label for="syncKey">Sync Key:</label> -->
+                <div class="infoSynckey">USE THIS SYNC CODE TO SYNC DATA ACROSS DEVICES</div>
             </div>
         </li>
         <!-- <li>
@@ -281,11 +284,10 @@
         </li>
     </ul>
 </body>
-<!--<script src="./js/" data-version="" data-source=""></script>-->
-<script src="./lib/jquery/dist/jquery.min.js" data-version="3.2.1" data-source="https://github.com/jquery/jquery"></script>
-<script src="./lib/materialize/dist/js/materialize.min.js" data-version="0.98.2" data-source="https://github.com/dogfalo/materialize"></script>
-<script src="./lib/chance/dist/chance.min.js" data-version="1.0.4" data-source="https://github.com/chancejs/chancejs"></script>
-<script src="./lib/clipboard/dist/clipboard.min.js" data-version="1.7.1" data-source="https://github.com/zenorocha/clipboard.js"></script>
+<script src="./lib/jquery/dist/jquery.min.js"></script>
+<script src="./lib/materialize/dist/js/materialize.min.js"></script>
+<script src="./lib/chance/dist/chance.min.js"></script>
+<script src="./lib/clipboard/dist/clipboard.min.js"></script>
 <script src="./lib/crypto-js/crypto-js.js"></script>
 <script src="./lib/firebase/firebase-app.js"></script>
 <script src="./lib/firebase/firebase-auth.js"></script>
