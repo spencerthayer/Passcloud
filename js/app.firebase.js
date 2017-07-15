@@ -76,12 +76,17 @@ function readData() {
             snapshot.forEach(function(data) {
                 key = data.key;
                 value = data.val();
-                cypher = value.storageCipher;
-                decrypted = decryptForm(cypher);
+                storageCipher = value.storageCipher;
+                decrypted = decryptForm(storageCipher);
+                console.log(key + ":" + storageCipher);
                 console.log(decrypted);
             });
         });
 
+}
+
+function sync() {
+    readData();
 }
 
 // function writeUserData(userId, name, email, imageUrl) {

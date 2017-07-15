@@ -171,7 +171,10 @@ function clearInput(id) {
 
 function randSynckey() {
     chance = new Chance();
-    syncKey = chance.string({length: generateNumber(6, 12)});
+    syncKey = chance.string({
+        length: generateNumber(6, 12),
+        pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    });
     var syncKey = syncKey;
     $(".syncKey").val(syncKey);
     // return syncKey;
@@ -403,7 +406,7 @@ function encryptPasswords() {
     });
     encryptPassword = chancePass.string({
         length: 128,
-        pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "!@#$%^&*_-=+`~()[]{};:\'\",.\<\>?\/\\|" + "¡¢£¤¥¦§¨©ª®°±µ¿" + "àáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ" + "ÀÁÂÃÄÅÆÇÈÉÊËÌÌÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß"
+        pool: "1234567890" + "abcdefghijklmnopqrstuvwxyz" + "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "!@#$%^&*_-=+`~()[]{};:,.?|" + "¡¢£¤¥¦§¨©ª®°±µ¿" + "àáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ" + "ÀÁÂÃÄÅÆÇÈÉÊËÌÌÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß"
     });
 }
 
