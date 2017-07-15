@@ -81,6 +81,7 @@ function readData() {
                 value = data.val();
                 storageCipher = value.storageCipher;
                 decrypted = decryptForm(storageCipher);
+                console.clear();
                 console.log(key + ":" + storageCipher);
                 console.log(decrypted);
             });
