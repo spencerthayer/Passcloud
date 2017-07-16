@@ -1,6 +1,5 @@
 // DEFINE GLOBALS
 var obj;
-var masterPass;
 var siteName;
 var userProfile;
 var charLength;
@@ -180,7 +179,6 @@ function randSynckey() {
     // return syncKey;
     formInteraction();
     putStorage();
-    hidebuttons();
 }
 
 function putStorage() {
@@ -189,13 +187,12 @@ function putStorage() {
 }
 
 function getStorage() {
-    syncKey = localStorage.getItem("synckeyStore");
+    var syncKey = localStorage.getItem("synckeyStore");
     $(".syncKey").val(syncKey);
-    hidebuttons();
-    return syncKey;
 }
 getStorage();
 
+<<<<<<< HEAD
 function hidebuttons() {
     if (syncKey == "" || syncKey == undefined || syncKey == null) {
         $("#save").css("display", "none");
@@ -210,6 +207,8 @@ function hidebuttons() {
         $("#sync").css("display", "inline");
     }
 }
+=======
+>>>>>>> parent of d13ecac... Sync setup.
 // GENERATE FORM PASSWORD
 function formInteraction() {
     formVariables();
@@ -220,7 +219,6 @@ function formInteraction() {
     requireFields();
     devConsole();
     updateObj();
-    hidebuttons();
 }
 
 // MAKE INPUT RED IF EMPTY
