@@ -7,8 +7,12 @@ function encryptForm(xvar) {
 
 function decryptForm(xvar) {
     var bytes = CryptoJS.AES.decrypt(xvar.toString(),encryptPassword);
+<<<<<<< HEAD
     var decryptedData = JSON.parse(
         bytes.toString(CryptoJS.enc.Utf8)
     );
+=======
+    var decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+>>>>>>> origin/master
     console.log(decryptedData);
 }
