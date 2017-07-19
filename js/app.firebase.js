@@ -1,5 +1,5 @@
 function updateObj() {
-    obj = {
+    var obj = {
         "ID": storageID,
         "siteName": siteName,
         "userProfile": userProfile,
@@ -14,6 +14,7 @@ function updateObj() {
         "isExtended": isExtended,
         "isYearly": isYearly
     };
+    return obj;
 }
 
 function initializeFirebase() {
@@ -61,11 +62,14 @@ function signOut() {
 // signOut();
 
 function saveForm() {
-    encryptForm(obj);
+    // updateObj();
+    // data = obj;
+    encryptForm(updateObj());
     firebase.database().ref("data/" + storageUUID + "/" + storageID).set({
-        storageCipher
+        ciphertext
     });
-    // return firebase.database().ref().update(updates);
+    console.log(storageUUID);
+    console.log(storageID + ":" + ciphertext);
     return firebase.database().ref(storageUUID + "/" + storageID);
 }
 
@@ -74,12 +78,15 @@ function readData() {
     query.once("value")
         .then(function(snapshot) {
             snapshot.forEach(function(data) {
+                console.clear();
                 key = data.key;
+                console.log(key);
                 value = data.val();
-                storageCipher = value.storageCipher;
-                decrypted = decryptForm(storageCipher);
-                console.log(key + ":" + storageCipher);
-                console.log(decrypted);
+                console.log(value);
+                data = value.ciphertext;
+                console.log(data);
+                decryptForm(data);
+                // console.log(decrypted);
             });
         });
 
