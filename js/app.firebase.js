@@ -81,15 +81,15 @@ function readData() {
     query.once("value")
         .then(function(snapshot) {
             snapshot.forEach(function(data) {
-                console.clear();
+                // console.clear();
                 key = data.key;
-                console.log(key);
+                // console.log(key);
                 value = data.val();
-                console.log(value);
+                // console.log(value);
                 data = value.ciphertext;
-                console.log(data);
+                // console.log(data);
                 decryptForm(data);
-                // console.log(decrypted);
+                console.log(decryptedData);
             });
         });
 

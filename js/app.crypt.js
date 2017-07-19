@@ -1,4 +1,22 @@
-function testEncryption() {
+function encryptForm(data) {
+    // console.clear();
+    // console.log(data);
+    cipherobject = CryptoJS.AES.encrypt(JSON.stringify(data), encryptPassword);
+    // console.log(cipherobject);
+    ciphertext = cipherobject.toString();
+    // console.log(ciphertext);
+    return ciphertext;
+}
+
+function decryptForm(ciphertext) {
+    bytes = CryptoJS.AES.decrypt(ciphertext.toString(), encryptPassword);
+    // console.log(bytes);
+    decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    // console.log(decryptedData);
+    return decryptedData;
+}
+
+/* function testEncryption() {
     console.clear();
     console.log("1__________")
     console.log(encryptPassword);
@@ -20,21 +38,4 @@ function testEncryption() {
     // var decryptedData = bytes.toString(CryptoJS.enc.Utf8);
     decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
     console.log(decryptedData);
-}
-
-function encryptForm(data) {
-    console.clear();
-    console.log(data);
-    cipherobject = CryptoJS.AES.encrypt(JSON.stringify(data), encryptPassword);
-    console.log(cipherobject);
-    ciphertext = cipherobject.toString();
-    console.log(ciphertext);
-    return ciphertext;
-}
-
-function decryptForm(ciphertext) {
-    bytes = CryptoJS.AES.decrypt(ciphertext.toString(), encryptPassword);
-    console.log(bytes);
-    decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
-    console.log(decryptedData);
-}
+} */

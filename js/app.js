@@ -182,12 +182,13 @@ function randSynckey() {
 }
 
 function putStorage() {
-    localStorage.setItem("synckeyStore", syncKey);
+    // storageUUID
+    localStorage.setItem("syncKey", syncKey);
     $(".syncKey").val(syncKey);
 }
 
 function getStorage() {
-    var syncKey = localStorage.getItem("synckeyStore");
+    var syncKey = localStorage.getItem("syncKey");
     $(".syncKey").val(syncKey);
 }
 getStorage();
