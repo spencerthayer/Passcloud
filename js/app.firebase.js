@@ -33,7 +33,11 @@ function firebaseConnection() {
             console.clear();
             console.log("Connected to database!");
             Materialize.toast("Connected to database!", 1500);
-
+            getStorage();
+            console.log(syncKey);
+            console.log(storageUUID);
+            console.log(encryptPassword);
+            readData();
         } else {
             console.clear();
             console.log("Disconnected from database!");
@@ -71,7 +75,7 @@ function saveForm() {
     firebase.database().ref("data/" + storageUUID + "/" + storageID).set({
         ciphertext
     });
-    console.log(storageUUID);
+    // console.log(storageUUID);
     console.log(storageID + ":" + ciphertext);
     return firebase.database().ref(storageUUID + "/" + storageID);
 }
@@ -89,6 +93,7 @@ function readData() {
                 data = value.ciphertext;
                 // console.log(data);
                 decryptForm(data);
+                putObjects(key, decryptedData);
                 console.log(decryptedData);
             });
         });

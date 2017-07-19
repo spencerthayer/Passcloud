@@ -1,4 +1,5 @@
 // DEFINE GLOBALS
+var masterPass;
 var obj;
 var siteName;
 var userProfile;
@@ -159,7 +160,7 @@ function clearForm() {
     changeSelect("#charLength", "password");
     inputErrorOff();
     writeYear();
-    formInteraction();
+    // formInteraction();
 }
 
 // CLEAR X's
@@ -178,17 +179,30 @@ function randSynckey() {
     $(".syncKey").val(syncKey);
     // return syncKey;
     formInteraction();
-    putStorage();
+    putSyncKey();
 }
 
-function putStorage() {
-    // storageUUID
+function putStorageUUID() {
+    localStorage.setItem("storageUUID", storageUUID);
+    localStorage.setItem("encryptPassword", encryptPassword);
+    // putSyncKey();
+}
+
+function putSyncKey() {
     localStorage.setItem("syncKey", syncKey);
     $(".syncKey").val(syncKey);
+    // putStorageUUID();
+}
+
+function putObjects(key, value) {
+    // localStorage.setItem(key, value);
+    localStorage.setItem("_" + key, JSON.stringify(value));
 }
 
 function getStorage() {
-    var syncKey = localStorage.getItem("syncKey");
+    window.syncKey = localStorage.getItem("syncKey");
+    window.storageUUID = localStorage.getItem("storageUUID");
+    window.encryptPassword = localStorage.getItem("encryptPassword");
     $(".syncKey").val(syncKey);
 }
 getStorage();
@@ -207,6 +221,8 @@ function hidebuttons() {
         $("#sync").css("display", "inline");
     }
 }
+hidebuttons();
+
 // GENERATE FORM PASSWORD
 function formInteraction() {
     formVariables();
@@ -217,6 +233,8 @@ function formInteraction() {
     requireFields();
     devConsole();
     updateObj();
+    // hidebuttons();
+    putStorageUUID();
 }
 
 // MAKE INPUT RED IF EMPTY
