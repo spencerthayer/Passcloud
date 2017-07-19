@@ -30,10 +30,13 @@ function firebaseConnection() {
     var connectedRef = firebase.database().ref(".info/connected");
     connectedRef.on("value", function(snap) {
         if (snap.val() === true) {
-            // alert("connected");
+            console.clear();
+            console.log("Connected to database!");
             Materialize.toast("Connected to database!", 1500);
+
         } else {
-            // alert("not connected");
+            console.clear();
+            console.log("Disconnected from database!");
             Materialize.toast("Disconnected from database!", 1500);
         }
     });
