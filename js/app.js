@@ -192,7 +192,6 @@ function getStorage() {
 }
 getStorage();
 
-<<<<<<< HEAD
 function hidebuttons() {
     if (syncKey == "" || syncKey == undefined || syncKey == null) {
         $("#save").css("display", "none");
@@ -207,8 +206,6 @@ function hidebuttons() {
         $("#sync").css("display", "inline");
     }
 }
-=======
->>>>>>> parent of d13ecac... Sync setup.
 // GENERATE FORM PASSWORD
 function formInteraction() {
     formVariables();

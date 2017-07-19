@@ -36,4 +36,5 @@ function decryptForm(ciphertext) {
     bytes = CryptoJS.AES.decrypt(ciphertext.toString(), encryptPassword);
     console.log(bytes);
     decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    console.log(decryptedData);
 }
