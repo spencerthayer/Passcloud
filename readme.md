@@ -1,6 +1,6 @@
 # Passcloud 2.0
 
-Alpha testing of 2.0: https://passcld.herokuapp.com/
+Alpha testing of 2.0: http://dev.passcloud.me
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/Passcloud)
 
