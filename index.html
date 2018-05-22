@@ -166,7 +166,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12 m12 l12">
-                    <input type="password" class="domainPassword" id="domainPassword" name="domainPassword" placeholder="Domain Password:" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="" />
+                    <input type="password" class="domainPassword" id="domainPassword" name="domainPassword" placeholder="Domain Password:" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onkeydown="return false" style="" />
                 </div>
             </div>
         </form>
@@ -255,5 +255,8 @@
         document.getElementById("readme").innerHTML =
             marked(data);
          }, "html");
+    $(".domainPassword").on("focus",function(){
+        $(this).trigger("blur");
+    });
 </script>
 </html>
