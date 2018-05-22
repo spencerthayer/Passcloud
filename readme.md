@@ -30,7 +30,7 @@ Only the following repeatable information is stored:
 - If the password uses Extended Characters
 - Year the password was created 
 - If the password is to change Yearly
-- If the uses Unique characters only
+- If the password uses only Unique characters
 
 ## For Any Purpose
 
