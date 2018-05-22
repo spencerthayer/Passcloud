@@ -1,6 +1,7 @@
 
 # Ignore Directories #
 #####################
+_gsdata_/*
 lib/*
 node_modules/*
 
