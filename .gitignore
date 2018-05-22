@@ -1,8 +1,6 @@
 
 # Ignore Directories #
 #####################
-_gsdata_
-_gsdata_/
 _gsdata_/*
 lib/*
 node_modules/*
@@ -43,9 +41,4 @@ node_modules/*
 ehthumbs.db
 Thumbs.db
 *.webloc
-
 passcloud alias
-
-_gsdata_/_file_state_v4._gs
-
-_gsdata_/_insync_v4.gsl
