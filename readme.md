@@ -19,18 +19,18 @@ Passcloud only stores your repeatable information used to generate your password
 ### What data is stored?
 
 Only the following repeatable information is stored:
-- Site Name
-- User Profile
+- Site name
+- User profile
 - Length of the password 
-- Seed Number
-- Password Type
-- If the password uses Alpha Numerics
-- If the password is Ambiguous
-- If the password uses Special Characters
-- If the password uses Extended Characters
-- Year the password was created 
-- If the password is to change Yearly
-- If the password uses only Unique characters
+- Seed number
+- Password type
+- If the password uses alpha numerics
+- If the password is removes ambiguous characters
+- If the password uses special characters
+- If the password uses extended characters
+- If the password uses only unique characters
+- If the password changes yearly
+- The year the password was created 
 
 ## For Any Purpose
 
