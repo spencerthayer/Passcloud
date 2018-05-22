@@ -4,7 +4,7 @@ For most people, passwords are a real problem. Remembering passwords is a pain a
 
 **This makes your passwords vulnerable to interception and hacks!**
 
-Passcloud deals with this problem by _never storing your passwords_. Instead, Passcloud generates repeatable pseudo-random passwords based on the [Mersenne Twister PRNG algorithm](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html). Passcloud uses this stateless algorithm to free you from the danger of storing your passwords, as long as you can remember same repeatable information you will always get the same unique password. It's amazing, really.
+Passcloud deals with this problem by _never storing your passwords_. Instead, Passcloud generates repeatable pseudo-random passwords based on the [Mersenne Twister PRNG algorithm](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html). Passcloud uses this stateless algorithm to free you from the danger of storing your passwords, as long as you can remember the same repeatable information you will always get the same unique password. It's amazing, really.
 
 ## Nothing to Hack
 
