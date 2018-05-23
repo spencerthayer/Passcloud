@@ -69,7 +69,7 @@ You'll also need to create a Firebase database in the [Firebase console](https:/
  - UI/UX changes using Material design methods.
  - Added new passwords types.
  - Added several new password customizations.
-- Firebase database syncing.
+ - Firebase database syncing.
 - v1.9 - Fixes
 - v1.8 - UI updates. Abandoning mobile development.
 - v1.7 - Attempt to integrate to Android.
