@@ -107,46 +107,6 @@
                             </select>
                     <label>Type:</label>
                 </div>
-                <!-- <div>
-                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Filled in</label>
-
-                    <input type="checkbox" class="filled-in tooltipped" id="unique" checked="checked" />
-                    <label for="unique" id="uniqueLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="Prevent duplicate characters.">
-                        Unique
-                    </label>
-
-                    <input type="checkbox" class="filled-in tooltipped" id="alpha" checked="checked" />
-                    <label for="alpha" id="alphaLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="A a B b C c D d E e &#8230;">
-                        Alpha
-                    </label>
-
-                    <input type="checkbox" class="filled-in tooltipped" id="numeric" checked="checked" />
-                    <label for="numeric" id="numericLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="1 2 3 4 5 6 7 8 9 0">
-                        Numeric
-                    </label>
-                    
-                    <input type="checkbox" class="filled-in tooltipped" id="ambiguous" checked="checked" />
-                    <label for="ambiguous" id="ambiguousLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="_ i I L 1 l l | o 0 O">
-                        Similar
-                    </label>
-
-                    <input type="checkbox" class="filled-in tooltipped" id="special" checked="checked" />
-                    <label for="special" id="specialLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="! @ # $ % ^ &amp; * _ - = + ` ~ &#8230;">
-                        Special
-                    </label>
-
-                    <input type="checkbox" class="filled-in tooltipped" id="extended" />
-                    <label for="extended" id="extendedLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="¡ ¢ £ ¤ ¥ ¦ § ¨ © ª ® ° ± µ ¿">
-                        Extended
-                    </label>
-                    
-                    <input type="checkbox" class="filled-in tooltipped" id="yearly" />
-                    <label for="yearly" id="yearlyLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="Changes passwords every year.">
-                        Yearly
-                    </label>
-
-                </div> -->
                 <div class="col s6 m3 l3">
                     <ul class="collapsible collapsible-accordion z-depth-0" id="optionsMenu" data-open="no">
                         <li>
@@ -223,7 +183,8 @@
         <!-- Modal Structure -->
         <div id="about" class="modal modal-fixed-footer">
             <div class="modal-content">
-                <article id="readme" class="markdown-body"></article>
+                <article id="readme" class="markdown-body">
+                </article>
             </div>
             <div class="modal-footer">
                 <div class="col l6 s12 left">
@@ -246,9 +207,11 @@
                 <div class="background">
                     <img src="./img/bg.png" width="100%">
                 </div>
-                <!--<a href="#!user"><img class="circle" src="http://materializecss.com/images/yuna.jpg"></a>
+                <!--
+                    <a href="#!user"><img class="circle" src="http://materializecss.com/images/yuna.jpg"></a>
                     <a href="#!name"><span class="white-text name">John Doe</span></a>
-                    <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>-->
+                    <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                -->
             </div>
         </li>
         <li>
@@ -269,13 +232,13 @@
         </li>
     </ul>
 </body>
-<!--<script src="./js/" data-version="" data-source=""></script>-->
 <script src="./library/jquery/dist/jquery.min.js" data-version="3.2.1" data-source="https://github.com/jquery/jquery"></script>
 <script src="./library/materialize/js/materialize.min.js" data-version="0.100.2" data-source="https://github.com/dogfalo/materialize"></script>
 <script src="./library/chance/dist/chance.min.js" data-version="1.0.4" data-source="https://github.com/chancejs/chancejs"></script>
 <script src="./library/clipboard/dist/clipboard.min.js" data-version="1.7.1" data-source="https://github.com/zenorocha/clipboard.js"></script>
 <script src="./library/crypto-js/crypto-js.js"></script>
 <script src="./library/marked/marked.min.js" data-version="0.3.18" data-source="https://github.com/markedjs/marked"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> -->
 <script src="./library/firebase/firebase-app.js"></script>
 <script src="./library/firebase/firebase-auth.js"></script>
 <script src="./library/firebase/firebase-database.js"></script>
@@ -293,7 +256,7 @@
         document.getElementById("readme").innerHTML =
             marked(data);
          }, "html");
-    // $(".domainPassword").on("focus",function(){
+      // $(".domainPassword").on("focus",function(){
     //     $(this).trigger("blur");
     // });
 </script>

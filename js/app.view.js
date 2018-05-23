@@ -44,9 +44,9 @@ function flashPass() {
     setTimeout(function() { $("#domainPassword").attr("type", "password"); }, 250);
 }
 
-function suppressKeyboard() {
-        $("#domainPassword").blur();
-}
+// function suppressKeyboard() {
+//         $("#domainPassword").blur();
+// }
 
 // CLIPBOARD
 var clipboard = new Clipboard("#domainPassword", {
@@ -57,7 +57,6 @@ var clipboard = new Clipboard("#domainPassword", {
             hidePass();
         }
         return document.querySelector("#domainPassword");
-        suppressKeyboard();
     }
 });
 clipboard.on("success", function(e) {

@@ -1,0 +1,14 @@
+<html>
+    <div id="readme">OFF</div>
+</html>
+<script src="./library/jquery/dist/jquery.min.js" data-version="3.2.1" data-source="https://github.com/jquery/jquery"></script>
+<script>
+var textDate;
+function readFiles() {
+    $.get("./readme.md", function(data) {
+        var textDate = data;
+    }, "html");
+}
+readFiles();
+console.log(textDate);
+</script>
