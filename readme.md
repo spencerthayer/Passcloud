@@ -4,7 +4,7 @@ For most people, passwords are a real problem. Remembering passwords is a pain a
 
 **This makes your passwords vulnerable to interception and hacks!**
 
-Passcloud deals with this problem by _never storing your passwords_. Instead, Passcloud generates repeatable pseudo-random passwords based on the [Mersenne Twister PRNG algorithm](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html). Passcloud uses this stateless algorithm to free you from the danger of storing your passwords, as long as you can remember same repeatable information you will always get the same unique password. It's amazing, really.
+Passcloud deals with this problem by _never storing your passwords_. Instead, Passcloud generates repeatable pseudo-random passwords based on the [Mersenne Twister PRNG algorithm](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html). Passcloud uses this stateless algorithm to free you from the danger of storing your passwords, as long as you can remember the same repeatable information you will always get the same unique password. It's amazing, really.
 
 ## Nothing to Hack
 
@@ -14,23 +14,23 @@ With Passcloud there is no risk of hacking since it uses client-side JavaScript 
 
 Sometimes security must be sacrificed for convenience, this is why Passcloud has an optional and unique sync system. Even with the sync feature enabled Passcloud remains one of the most clever and secure password managers available on the market. 
 
-Passcloud only stores your repeatable information used to generate your passwords and never your passwords, master password, or your sync key. Your repeatable information is uniquely anonymized and encrypted using a huge key derived from your master password and sync key based on the AES256 protocol so that your data, even if breached, can _never be used to expose you to any risk_. Without knowing your sync key and your master password, your data is inaccessible, indecipherable, and unusable. **There is simply no way to extract useful information.**
+Passcloud only stores your repeatable information used to generate your passwords and never your passwords, master password, or your sync key. Your repeatable information is uniquely anonymized and encrypted using a huge key derived from your master password and sync key based on the AES256 protocol. Using this over the top methodology you can rest easy knowing your data, even if breached, can _never be used to expose you to any risk_. Without knowing your sync key and your master password, your data is inaccessible, indecipherable, and unusable. **There is simply no way to extract useful information.**
 
 ### What data is stored?
 
 Only the following repeatable information is stored:
-- Site Name
-- User Profile
+- Site name
+- User profile
 - Length of the password 
-- Seed Number
-- Password Type
-- If the password uses Alpha Numerics
-- If the password is Ambiguous
-- If the password uses Special Characters
-- If the password uses Extended Characters
-- Year the password was created 
-- If the password is to change Yearly
-- If the uses Unique characters only
+- Seed number
+- Password type
+- If the password uses alpha numerics
+- If the password is removes ambiguous characters
+- If the password uses special characters
+- If the password uses extended characters
+- If the password uses only unique characters
+- If the password changes yearly
+- The year the password was created 
 
 ## For Any Purpose
 

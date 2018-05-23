@@ -33,11 +33,10 @@
     <meta name="twitter:image" content="./img/bg.png>" />
     <meta name="twitter:twitter:image:alt" content="https://passcloud.co" />
     <!-- STYLES -->
-    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />-->
-    <!-- <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" /> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />-->
+    <link type="text/css" rel="stylesheet" href="./library/materialize/css/materialize.min.css" />
     <link type="text/css" rel="stylesheet" href="./css/materialicons.css" />
-    <link type="text/css" rel="stylesheet" href="./lib/github-markdown-css/github-markdown.css" />
+    <link type="text/css" rel="stylesheet" href="./library/github-markdown-css/github-markdown.css" />
     <link type="text/css" rel="stylesheet" href="./css/app.css" />
 </head>
 
@@ -108,7 +107,47 @@
                             </select>
                     <label>Type:</label>
                 </div>
-                <div class="input-field col s6 m3 l3">
+                <!-- <div>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Filled in</label>
+
+                    <input type="checkbox" class="filled-in tooltipped" id="unique" checked="checked" />
+                    <label for="unique" id="uniqueLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="Prevent duplicate characters.">
+                        Unique
+                    </label>
+
+                    <input type="checkbox" class="filled-in tooltipped" id="alpha" checked="checked" />
+                    <label for="alpha" id="alphaLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="A a B b C c D d E e &#8230;">
+                        Alpha
+                    </label>
+
+                    <input type="checkbox" class="filled-in tooltipped" id="numeric" checked="checked" />
+                    <label for="numeric" id="numericLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="1 2 3 4 5 6 7 8 9 0">
+                        Numeric
+                    </label>
+                    
+                    <input type="checkbox" class="filled-in tooltipped" id="ambiguous" checked="checked" />
+                    <label for="ambiguous" id="ambiguousLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="_ i I L 1 l l | o 0 O">
+                        Similar
+                    </label>
+
+                    <input type="checkbox" class="filled-in tooltipped" id="special" checked="checked" />
+                    <label for="special" id="specialLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="! @ # $ % ^ &amp; * _ - = + ` ~ &#8230;">
+                        Special
+                    </label>
+
+                    <input type="checkbox" class="filled-in tooltipped" id="extended" />
+                    <label for="extended" id="extendedLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="¡ ¢ £ ¤ ¥ ¦ § ¨ © ª ® ° ± µ ¿">
+                        Extended
+                    </label>
+                    
+                    <input type="checkbox" class="filled-in tooltipped" id="yearly" />
+                    <label for="yearly" id="yearlyLabel" class="tooltipped" data-position="left" data-delay="100" data-tooltip="Changes passwords every year.">
+                        Yearly
+                    </label>
+
+                </div> -->
+                <div class="col s6 m3 l3">
                     <ul class="collapsible collapsible-accordion z-depth-0" id="optionsMenu" data-open="no">
                         <li>
                             <a class="collapsible-header">OPTIONS: <span class="right" id="optionsArrow">&#8675;</span></a>
@@ -166,7 +205,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12 m12 l12">
-                    <input type="password" class="domainPassword" id="domainPassword" name="domainPassword" placeholder="Domain Password:" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="" />
+                    <input type="password" class="domainPassword" id="domainPassword" name="domainPassword" placeholder="Domain Password:" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onkeydown="return false" style="" />
                 </div>
             </div>
         </form>
@@ -224,24 +263,23 @@
         </li>
         <li>
             <a class="waves-effect">
-                    <!-- <img src="https://ucygetfavicon.appspot.com/http://google.com" class="favicon circle" /> Test Google -->
-                    <img src="https://logo.clearbit.com/google.com" class="favicon circle" style="margin-top: 2px;" /> Test Google
+                    <!-- <img src="https://ucygetfavicon.appspot.com/http://google.com" class="favicon circle" /> -->
+                    <!-- <img src="https://logo.clearbit.com/google.com" class="favicon circle" style="margin-top: 2px;" /> Test Google -->
             </a>
         </li>
     </ul>
 </body>
 <!--<script src="./js/" data-version="" data-source=""></script>-->
-<script src="./lib/jquery/dist/jquery.min.js" data-version="3.2.1" data-source="https://github.com/jquery/jquery"></script>
-<!-- <script src="./lib/materialize/dist/js/materialize.min.js" data-version="0.98.2" data-source="https://github.com/dogfalo/materialize"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<script src="./lib/chance/dist/chance.min.js" data-version="1.0.4" data-source="https://github.com/chancejs/chancejs"></script>
-<script src="./lib/clipboard/dist/clipboard.min.js" data-version="1.7.1" data-source="https://github.com/zenorocha/clipboard.js"></script>
-<script src="./lib/crypto-js/crypto-js.js"></script>
-<script src="./lib/marked/marked.min.js" data-version="0.3.18" data-source="https://github.com/markedjs/marked"></script>
-<script src="./lib/firebase/firebase-app.js"></script>
-<script src="./lib/firebase/firebase-auth.js"></script>
-<script src="./lib/firebase/firebase-database.js"></script>
-<script src="./lib/firebaseui/dist/firebaseui.js"></script>
+<script src="./library/jquery/dist/jquery.min.js" data-version="3.2.1" data-source="https://github.com/jquery/jquery"></script>
+<script src="./library/materialize/js/materialize.min.js" data-version="0.100.2" data-source="https://github.com/dogfalo/materialize"></script>
+<script src="./library/chance/dist/chance.min.js" data-version="1.0.4" data-source="https://github.com/chancejs/chancejs"></script>
+<script src="./library/clipboard/dist/clipboard.min.js" data-version="1.7.1" data-source="https://github.com/zenorocha/clipboard.js"></script>
+<script src="./library/crypto-js/crypto-js.js"></script>
+<script src="./library/marked/marked.min.js" data-version="0.3.18" data-source="https://github.com/markedjs/marked"></script>
+<script src="./library/firebase/firebase-app.js"></script>
+<script src="./library/firebase/firebase-auth.js"></script>
+<script src="./library/firebase/firebase-database.js"></script>
+<script src="./library/firebaseui/dist/firebaseui.js"></script>
 <script src="./js/app.js"></script>
 <script src="./js/app.model.js"></script>
 <script src="./js/app.storage.js"></script>
@@ -255,5 +293,8 @@
         document.getElementById("readme").innerHTML =
             marked(data);
          }, "html");
+    // $(".domainPassword").on("focus",function(){
+    //     $(this).trigger("blur");
+    // });
 </script>
 </html>
