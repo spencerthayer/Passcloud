@@ -1,5 +1,5 @@
 {
-    "name": "my-Passcloud-site",
+    "name": "Passcloud",
     "version": "2.0.0",
     "description": "Passcloud is the easiest way to generate stateless passwords.",
     "scripts": {
