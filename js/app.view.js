@@ -124,3 +124,9 @@ function inputErrorOff() {
     $("#masterPass").removeAttr("class", "inputError");
     $("#siteName").removeAttr("class", "inputError");
 }
+
+// PARSE AND RENDER READ ME FILE 
+$.get("./readme.md", function(data) {
+    document.getElementById("readme").innerHTML =
+        marked(data);
+     }, "html");

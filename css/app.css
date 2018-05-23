@@ -315,3 +315,7 @@ button.clearInput {
 .graD {
     background-image: linear-gradient(125deg, #03A9F4 25%, #00aaee 50%, #2575fc 85%, #0050f5 100%);
 }
+
+.markdown-body li {
+    list-style-type: disc !important;
+}

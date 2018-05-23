@@ -47,9 +47,17 @@ Development testing, which means it's likely broken, can be found at https://pas
 
 ### Run Your Own Passcloud
 
-Passcloud was made to with strict security culture in mind. As such you shouldn't implicitly trust Passcloud. The Passcloud creator encourages users to deploy their own versions of Passcloud to their own servers. Security starts with taking responsibility so just click the button below to begin.
+Passcloud was made to with strict security culture in mind. As such you shouldn't implicitly trust Passcloud. The Passcloud creator encourages users to deploy their own versions of Passcloud to their own servers. Security starts with taking responsibility for your security. 
 
- [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/Passcloud)
+To begin you'll need to host your own Passcloud. Luckily it's easier than ever to host your own free Passcloud. Simply click the button below and follow the instructions on Heroku.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/Passcloud)
+
+You'll also need to create a Firebase database in the [Firebase console](https://console.firebase.google.com/).
+- If you don't have an existing Firebase project, sign up, and then click **Add project** and enter either an existing Google Cloud Platform project name or a new project name.
+- If you already have apps in your project, click **Add Another App** from the project overview page.
+- From the project overview page in the [Firebase console](https://console.firebase.google.com/), click **Add Firebase to your web app**.
+- Copy and paste your project's apiKey and databaseURL in the **settings** within your new app.
 
 ### Version Information
 
