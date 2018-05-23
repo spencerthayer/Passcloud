@@ -238,7 +238,6 @@
 <script src="./library/clipboard/dist/clipboard.min.js" data-version="1.7.1" data-source="https://github.com/zenorocha/clipboard.js"></script>
 <script src="./library/crypto-js/crypto-js.js"></script>
 <script src="./library/marked/marked.min.js" data-version="0.3.18" data-source="https://github.com/markedjs/marked"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> -->
 <script src="./library/firebase/firebase-app.js"></script>
 <script src="./library/firebase/firebase-auth.js"></script>
 <script src="./library/firebase/firebase-database.js"></script>
@@ -252,10 +251,6 @@
 <script src="./js/app.crypt.js"></script>
 <script src="./js/app.firebase.js"></script>
 <script>
-    $.get("./readme.md", function(data) {
-        document.getElementById("readme").innerHTML =
-            marked(data);
-         }, "html");
       // $(".domainPassword").on("focus",function(){
     //     $(this).trigger("blur");
     // });

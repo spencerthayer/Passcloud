@@ -1,4 +1,4 @@
-# What is Passcloud v2.0.23?
+# What is Passcloud?
 
 For most people, passwords are a real problem. Remembering passwords is a pain and using the same password everywhere will eventually lead to disaster. While traditional password managers attempt to solve this with randomized passwords they sacrifice your security by saving your passwords to a database.
 
@@ -41,7 +41,7 @@ By using Passcloud for every site you visit you're less vulnerable to security b
 
 ## Licensing Information
 
-Finally, Passcloud is free software (GPLv3), its algorithm, dependencies, and code have been extensively documented for nearly 10 years. You can view the code for Passcloud yourself over at it's [GitHub](https://github.com/spencerthayer/Passcloud) page, where you are able to provide feedback, submit issues, or even contribute to the code yourself! 
+Passcloud is free software (GPLv3), its algorithm, dependencies, and code have been extensively documented for nearly 10 years. You can view the code for Passcloud yourself over at it's [GitHub](https://github.com/spencerthayer/Passcloud) page, where you are able to provide feedback, submit issues, or even contribute to the code yourself! 
 
 Development testing, which means it's likely broken, can be found at https://passcld.herokuapp.com.
 
@@ -50,3 +50,8 @@ Development testing, which means it's likely broken, can be found at https://pas
 Passcloud was made to with strict security culture in mind. As such you shouldn't implicitly trust Passcloud. The Passcloud creator encourages users to deploy their own versions of Passcloud to their own servers. Security starts with taking responsibility so just click the button below to begin.
 
  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/Passcloud)
+
+### Version Information
+
+- v2.0.3 - General fixes.
+- v2.0.2 - Updates to the Material CSS interface.
