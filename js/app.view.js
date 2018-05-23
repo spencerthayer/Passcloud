@@ -57,7 +57,6 @@ var clipboard = new Clipboard("#domainPassword", {
             hidePass();
         }
         return document.querySelector("#domainPassword");
-        suppressKeyboard();
     }
 });
 clipboard.on("success", function(e) {
