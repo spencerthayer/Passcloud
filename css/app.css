@@ -33,7 +33,7 @@ footer {
     }
 }
 
-a,
+/* a,
 .dropdown-content li,
 {
     color: #03a9f4;
@@ -57,7 +57,7 @@ a,
 
 [type="checkbox"]:indeterminate+label:before {
     border-right: 2px solid #03a9f4;
-}
+} */
 
 .collapsible-body.options {
     padding: 0;
@@ -318,4 +318,9 @@ button.clearInput {
 
 .markdown-body li {
     list-style-type: disc !important;
+}
+
+.passchecks {
+    padding-left: 20px !important;
+    padding-top: 20px !important;
 }

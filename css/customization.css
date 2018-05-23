@@ -1,0 +1,296 @@
+ .teal.lighten-1 {
+    background-color: #03a9f4 !important;
+  }
+  .teal-text.text-lighten-1 {
+    color: #03a9f4 !important;
+  }
+  .collection .collection-item.active {
+    background-color: #03a9f4;
+    color: #eafaf9;
+  }
+  .collection a.collection-item {
+    display: block;
+    -webkit-transition: .25s;
+    transition: .25s;
+    color: #03a9f4;
+  }
+  .secondary-content {
+    float: right;
+    color: #03a9f4;
+  }
+  .progress .determinate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #03a9f4;
+    -webkit-transition: width .3s linear;
+    transition: width .3s linear;
+  }
+  .progress .indeterminate {
+    background-color: #03a9f4;
+  }
+  span.badge.new {
+    font-weight: 300;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #03a9f4;
+    border-radius: 2px;
+  }
+  .btn, .btn-large {
+    text-decoration: none;
+    color: #fff;
+    background-color: #03a9f4;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: .2s ease-out;
+    transition: .2s ease-out;
+    cursor: pointer;
+  }
+  .btn-floating {
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    background-color: #03a9f4;
+    border-radius: 50%;
+    -webkit-transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  .btn-floating:hover {
+    background-color: #03a9f4;
+  }
+  .fixed-action-btn .fab-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 40px;
+    height: 40px;
+    background-color: #03a9f4;
+    border-radius: 50%;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  .dropdown-content li > a, .dropdown-content li > span {
+    font-size: 16px;
+    color: #03a9f4;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+  }
+  .chips.focus {
+    border-bottom: 1px solid #03a9f4;
+    -webkit-box-shadow: 0 1px 0 0 #03a9f4;
+            box-shadow: 0 1px 0 0 #03a9f4;
+  }
+  .chips .chip.selected {
+    background-color: #03a9f4;
+    color: #fff;
+  }
+  input:not([type]):focus:not([readonly]),
+  input[type=text]:not(.browser-default):focus:not([readonly]),
+  input[type=password]:not(.browser-default):focus:not([readonly]),
+  input[type=email]:not(.browser-default):focus:not([readonly]),
+  input[type=url]:not(.browser-default):focus:not([readonly]),
+  input[type=time]:not(.browser-default):focus:not([readonly]),
+  input[type=date]:not(.browser-default):focus:not([readonly]),
+  input[type=datetime]:not(.browser-default):focus:not([readonly]),
+  input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+  input[type=tel]:not(.browser-default):focus:not([readonly]),
+  input[type=number]:not(.browser-default):focus:not([readonly]),
+  input[type=search]:not(.browser-default):focus:not([readonly]),
+  textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #03a9f4;
+    -webkit-box-shadow: 0 1px 0 0 #03a9f4;
+            box-shadow: 0 1px 0 0 #03a9f4;
+  }
+  input:not([type]):focus:not([readonly]) + label,
+  input[type=text]:not(.browser-default):focus:not([readonly]) + label,
+  input[type=password]:not(.browser-default):focus:not([readonly]) + label,
+  input[type=email]:not(.browser-default):focus:not([readonly]) + label,
+  input[type=url]:not(.browser-default):focus:not([readonly]) + label,
+  input[type=time]:not(.browser-default):focus:not([readonly]) + label,
+  input[type=date]:not(.browser-default):focus:not([readonly]) + label,
+  input[type=datetime]:not(.browser-default):focus:not([readonly]) + label,
+  input[type=datetime-local]:not(.browser-default):focus:not([readonly]) + label,
+  input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
+  input[type=number]:not(.browser-default):focus:not([readonly]) + label,
+  input[type=search]:not(.browser-default):focus:not([readonly]) + label,
+  textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #03a9f4;
+  }
+  .input-field .prefix.active {
+    color: #03a9f4;
+  }
+  [type="radio"]:checked + label:after,
+  [type="radio"].with-gap:checked + label:before,
+  [type="radio"].with-gap:checked + label:after {
+    border: 2px solid #03a9f4;
+  }
+  [type="radio"]:checked + label:after,
+  [type="radio"].with-gap:checked + label:after {
+    background-color: #03a9f4;
+  }
+  [type="checkbox"]:checked + label:before {
+    top: -4px;
+    left: -5px;
+    width: 12px;
+    height: 22px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid #03a9f4;
+    border-bottom: 2px solid #03a9f4;
+    -webkit-transform: rotate(40deg);
+            transform: rotate(40deg);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+  /* Indeterminate checkbox */
+  [type="checkbox"]:indeterminate + label:before {
+    top: -11px;
+    left: -12px;
+    width: 10px;
+    height: 22px;
+    border-top: none;
+    border-left: none;
+    border-right: 2px solid #03a9f4;
+    border-bottom: none;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+  [type="checkbox"].filled-in:checked + label:after {
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #03a9f4;
+    background-color: #03a9f4;
+    z-index: 0;
+  }
+  [type="checkbox"].filled-in.tabbed:checked:focus + label:after {
+    border-radius: 2px;
+    background-color: #03a9f4;
+    border-color: #03a9f4;
+  }
+  .switch label input[type=checkbox]:checked + .lever:after {
+    background-color: #03a9f4;
+  }
+  input[type=range] + .thumb {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    border: none;
+    height: 0;
+    width: 0;
+    border-radius: 50%;
+    background-color: #03a9f4;
+    margin-left: 7px;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  input[type=range] + .thumb .value {
+    display: block;
+    width: 30px;
+    text-align: center;
+    color: #03a9f4;
+    font-size: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: #03a9f4;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    margin: -5px 0 0 0;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: #03a9f4;
+    margin-top: -5px;
+  }
+  input[type=range]::-ms-thumb {
+    border: none;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: #03a9f4;
+  }
+  .side-nav li > a.btn-floating:hover {
+    background-color: #03a9f4;
+  }
+  .spinner-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-color: #03a9f4;
+  }
+  .picker__date-display {
+    text-align: left;
+    background-color: #03a9f4;
+    color: #fff;
+    padding: 18px;
+    font-weight: 300;
+  }
+  .picker__day.picker__day--today {
+    color: #03a9f4;
+  }
+  .picker__day.picker__day--today {
+    color: #03a9f4;
+  }
+  .picker__day--selected,
+  .picker__day--selected:hover,
+  .picker--focused .picker__day--selected {
+    border-radius: 50%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    background-color: #03a9f4;
+    color: #ffffff;
+  }
+  .picker__close, .picker__today, .picker__clear {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    color: #03a9f4;
+  }
+  .clockpicker-canvas-bearing {
+    stroke: none;
+    fill: #03a9f4;
+  }
+  .clockpicker-canvas-bg {
+    stroke: none;
+    fill: #03a9f4;
+  }
+  .clockpicker-canvas-bg-trans {
+    fill: #03a9f4;
+  }
+  .clockpicker-canvas line {
+    stroke: #03a9f4;
+    stroke-width: 4;
+    stroke-linecap: round;
+    /*shape-rendering: crispEdges;*/
+  }

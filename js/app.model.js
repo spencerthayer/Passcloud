@@ -20,7 +20,7 @@ function formVariables() {
     latinLower = "abcdefghijklmnopqrstuvwxyz";
     latinUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     special = "!@#$%^&*_-=+`~()[]{};:\'\",.\<\>?\/\\|";
-    extended = "¡¢£¤¥¦§¨©ª®°±µ¿";
-    supplimentLower = "àáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ";
-    supplimentUpper = "ÀÁÂÃÄÅÆÇÈÉÊËÌÌÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞß";
+    extended = "¡¢£¤¥¦§¨™©®ª°±µ¿×÷";
+    supplimentLower = "àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ";
+    supplimentUpper = "ÀÁÂÃÄÅÆÇÈÉÊËÌÌÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞß";
 }
