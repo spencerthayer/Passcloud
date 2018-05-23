@@ -24,3 +24,4 @@ function formVariables() {
     supplimentLower = "àáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ";
     supplimentUpper = "ÀÁÂÃÄÅÆÇÈÉÊËÌÌÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞß";
 }
+//https://www.grc.com/haystack.htm

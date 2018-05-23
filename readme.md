@@ -63,3 +63,29 @@ You'll also need to create a Firebase database in the [Firebase console](https:/
 
 - v2.0.3 - General fixes.
 - v2.0.2 - Updates to the Material CSS interface.
+- v2.0.1 - Changes to an error in the password creation.
+- v2.0.0 - Major upgrades:
+ - Implementation of the peer-reviewed Mersenne Twister PRNG algorithm.
+ - UI/UX changes using Material design methods.
+ - Added new passwords types.
+ - Added several new password customizations.
+- Firebase database syncing.
+- v1.9 - Fixes
+- v1.8 - UI updates. Abandoning mobile development.
+- v1.7 - Attempt to integrate to Android.
+- v1.6 - Attempt to integrate to IOS.
+- v1.5 - Changes to get ready for mobile production.
+- v1.4 - Changes to the UI, abandoning "Web2.0" look.
+- v1.3 - Adding special characters to the passwords.
+- v1.2 - XKCD passwords are not a thing!
+- v1.1 - PINS! Now all of my debit cards are secure!
+- v1.0 - NO MORE PHP! All client-side javascript.
+- v0.9 - Almost all PHP has been removed.
+- v0.8 - Abandoning PHP framework entirely.
+- v0.7 - Experimenting with a working PHP/Javascript combo. 
+- v0.6 - Custom javascript PRNG algorithm. 
+- v0.5 - Transitioning from PHP  to javascript.
+- v0.4 - Password creation customizations.
+- v0.3 - Basic features are set up.
+- v0.2 - Most bugs are fixed, focus on adding features. 
+- v0.1 - Working version, lots of bugs to fix.

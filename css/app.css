@@ -324,3 +324,7 @@ button.clearInput {
     padding-left: 20px !important;
     padding-top: 20px !important;
 }
+.pusharrowsright {
+    left: 25px;
+    position: relative;  
+}
