@@ -14,7 +14,7 @@ With Passcloud there is no risk of hacking since it uses client-side JavaScript 
 
 Sometimes security must be sacrificed for convenience, this is why Passcloud has an optional and unique sync system. Even with the sync feature enabled Passcloud remains one of the most clever and secure password managers available on the market. 
 
-Passcloud only stores your repeatable information used to generate your passwords and never your passwords, master password, or your sync key. Your repeatable information is uniquely anonymized and encrypted using a huge key derived from your master password and sync key based on the AES256 protocol. Using this over the top methodology you can rest easy knowing your data, even if breached, can _never be used to expose you to any risk_. Without knowing your sync key and your master password, your data is inaccessible, indecipherable, and unusable. **There is simply no way to extract useful information.**
+Passcloud only stores your repeatable information used to generate your passwords and never your passwords, master password, or your sync key. Your repeatable information is uniquely anonymized and encrypted using a huge key derived from your master password and sync key based on the AES256 protocol so that your data, even if breached, can _never be used to expose you to any risk_. Without knowing your sync key and your master password, your data is inaccessible, indecipherable, and unusable. **There is simply no way to extract useful information.**
 
 ### What data is stored?
 
