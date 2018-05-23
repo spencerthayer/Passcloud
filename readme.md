@@ -47,6 +47,6 @@ Development testing, which means it's likely broken, can be found at https://pas
 
 ### Run Your Own Passcloud
 
-Passcloud was made with strict security culture in mind. As such you shouldn't implicitly trust Passcloud. The Passcloud creator encourages users to deploy their own versions of Passcloud to their own servers. Security starts with taking responsibility so just click the button below to begin.
+Passcloud was made to with strict security culture in mind. As such you shouldn't implicitly trust Passcloud. The Passcloud creator encourages users to deploy their own versions of Passcloud to their own servers. Security starts with taking responsibility so just click the button below to begin.
 
  [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/spencerthayer/Passcloud)
