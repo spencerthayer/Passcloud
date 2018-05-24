@@ -37,13 +37,7 @@ Only the following repeatable information is stored:
 - If the password uses only unique characters
 - If the password is forced to change yearly
 
-## Licensing Information
-
-Passcloud is free software (GPLv3), its algorithm, dependencies, and code have been extensively documented for nearly 10 years. You can view the code for Passcloud yourself over at it's [GitHub](https://github.com/spencerthayer/Passcloud) page, where you are able to provide feedback, submit issues, or even contribute to the code yourself! 
-
-Development testing, which means it's likely broken, can be found at https://passcld.herokuapp.com.
-
-### Run Your Own Passcloud
+## Run Your Own Passcloud
 
 Passcloud was made to with strict security culture in mind. As such you shouldn't implicitly trust Passcloud. The Passcloud creator encourages users to deploy their own versions of Passcloud to their own servers. 
 
@@ -59,6 +53,12 @@ You'll also need to create a Firebase database in the [Firebase console](https:/
 - From the project overview page in the [Firebase console](https://console.firebase.google.com/), click **Add Firebase to your web app**.
 - Copy and paste your project's `apiKey` and `databaseURL` in the **settings** within your new app.
 
+# Licensing Information
+
+Passcloud is free software (GPLv3), its algorithm, dependencies, and code have been extensively documented for nearly 10 years. You can view the code for Passcloud yourself over at it's [GitHub](https://github.com/spencerthayer/Passcloud) page, where you are able to provide feedback, submit issues, or even contribute to the code yourself! 
+
+Development testing, which means it's likely broken, can be found at https://passcld.herokuapp.com.
+
 ## Terms of Service
 
 These terms are made available under a [Creative Commons Attribution-ShareAlike license](http://creativecommons.org/licenses/by-sa/3.0/).
@@ -73,7 +73,7 @@ COLLECTION AND USE: Passcloud collects only the information the user chooses to 
 
 Passcloud fully anonymizes and encrypts all user information and interactions. As such Passcloud does not, and could not, share or sell any information to third parties.
 
-### Version Information
+# Version Information
 
 - v2.0.3 - General fixes.
 - v2.0.2 - Updates to the Material CSS interface.
