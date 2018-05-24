@@ -1,4 +1,10 @@
-::-webkit-contacts-auto-fill-button, ::-webkit-credentials-auto-fill-button {
+::-webkit-contacts-auto-fill-button,
+::-webkit-credentials-auto-fill-button,
+::-webkit-textfield-decoration-container,
+::-webkit-caps-lock-indicator,
+::-ms-clear,
+::-ms-reveal {
+    display: none;
     visibility: hidden;
     pointer-events: none;
     position: absolute;
