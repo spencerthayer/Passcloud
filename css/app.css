@@ -345,18 +345,16 @@ button.clearInput {
     background: -webkit-linear-gradient(125deg, #FEE18F 0%, #F46424 100%);
     background: linear-gradient(125deg, #FEE18F 0%, #F46424 100%);
 }
-/* ffca28 */
 .menuButton,h1.logo-wrapper {
 }
 .logo-wrapper {
-    float: right;
-    /* display: contents; */
-    padding-left: 24px;
+    float:right;
+    margin-top: -2px;
+    margin-left: 24px;
 }
 .logo-text {
-    font-family: "Roboto", sans-serif;
     font-weight: 100;
-    font-size: 32px;
+    font-size: 34px;
     padding-left: 8px;
     visibility: visible;
     opacity: 1;
