@@ -74,7 +74,7 @@ COLLECTION AND USE: Passcloud collects only the information the user chooses to 
 Passcloud fully anonymizes and encrypts all user information and interactions. As such Passcloud does not, and could not, share or sell any information to third parties.
 
 # Version Information
-
+- v2.0.4 - Fixing the mobile icon issues.
 - v2.0.3 - General fixes.
 - v2.0.2 - Updates to the Material CSS interface.
 - v2.0.1 - Changes to an error in the password creation.
