@@ -34,6 +34,7 @@
     <meta name="twitter:twitter:image:alt" content="https://passcloud.co" />
     <!-- STYLES -->
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="./library/materialize/css/materialize.min.css" />
     <link type="text/css" rel="stylesheet" href="./css/materialicons.css" />
     <link type="text/css" rel="stylesheet" href="./library/github-markdown-css/github-markdown.css" />
@@ -44,11 +45,18 @@
 <body class="" onchange="formInteraction();" onkeypress="formInteraction();" onkeyup="formInteraction();">
     <main>
         <form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void(0);" onsubmit="javascript:void(0);">
-            <header class="row graD">
+            <header class="row graD page-topbar">
                 <div class="col s12 m12 l12 text-white inline" style="margin-bottom: 10px;">
-                    <a href="#" data-activates="slide-out" class="menuButton button-collapse circle hide-on-large-only white-text">
-                        <i class="material-icons white-text">menu</i>
+                    <a href="#" data-activates="slide-out" class="menuButton button-collapse sidebar-collapse btn-floating btn-medium waves-effect waves-light accent-2 card gradient-45deg-amber-amber">
+                        <i class="material-icons">menu</i>
                     </a>
+                    <!-- <a href="#" data-activates="slide-out" class="menuButton button-collapse circle hide-on-large-only white-text">
+                        <i class="material-icons white-text">menu</i>
+                    </a> -->
+                    <div class="logo-wrapper noselect">
+                            <img src="./img/logo.png" class="brand-logo" alt="Passcloud brand logo.">
+                            <span class="logo-text">Passcloud</span>
+                    </div>
                 </div>
                 <div class="input-field masterPassword col s12 m12 l12 text-white inline">
                     <input type="password" name="masterPass" value="" id="masterPass" class="masterPass" title="Choose a strong Master Password." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="1" /><button class="clearInput"
@@ -166,7 +174,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12 m12 l12">
-                    <input type="password" class="domainPassword" id="domainPassword" name="domainPassword" placeholder="Domain Password:" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onkeydown="return false" style="" />
+                    <input type="password" class="domainPassword noselect" id="domainPassword" name="domainPassword" placeholder="Domain Password:" readonly="true" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onkeydown="return false" style="" />
                 </div>
             </div>
         </form>

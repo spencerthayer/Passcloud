@@ -25,6 +25,17 @@ footer {
     padding-left: 300px;
 }
 
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }
+  
+
 @media only screen and (max-width: 992px) {
     header,
     main,
@@ -327,4 +338,38 @@ button.clearInput {
 .pusharrowsright {
     left: 25px;
     position: relative;  
+}
+
+.gradient-45deg-amber-amber {
+    background: #F46424;
+    background: -webkit-linear-gradient(125deg, #FEE18F 0%, #F46424 100%);
+    background: linear-gradient(125deg, #FEE18F 0%, #F46424 100%);
+}
+/* ffca28 */
+.menuButton,h1.logo-wrapper {
+}
+.logo-wrapper {
+    float: right;
+    /* display: contents; */
+    padding-left: 24px;
+}
+.logo-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 32px;
+    padding-left: 8px;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s linear;
+}
+
+.page-topbar {
+    box-sizing: inherit;
+}
+
+.brand-logo {
+    position: relative;
+    top: 10px;
+    height: 42px;
+    width: 42px;
 }
