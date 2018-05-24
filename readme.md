@@ -59,6 +59,20 @@ You'll also need to create a Firebase database in the [Firebase console](https:/
 - From the project overview page in the [Firebase console](https://console.firebase.google.com/), click **Add Firebase to your web app**.
 - Copy and paste your project's `apiKey` and `databaseURL` in the **settings** within your new app.
 
+## Terms of Service
+
+These terms are made available under a [Creative Commons Attribution-ShareAlike license](http://creativecommons.org/licenses/by-sa/3.0/).
+
+The user acknowledges and agrees that Passcloud neither makes any representations or warranties with respect to Passcloud products and services nor assumes any liability with respect to its use.
+
+## Privacy Policy
+
+This Privacy Statement for Passcloud products and services describes the details on information that Passcloud collects, uses, shares, and stores; including personal information (i.e., information that personally identifies users, such as name, email address, billing information, or other data that can be reasonably used to infer this information).
+
+COLLECTION AND USE: Passcloud collects only the information the user chooses to send to the Passcloud Firebase server. This information is used to provide users with the Passcloud sync features and is highly encrypted using the AES256 protocol. Connection to the Passcloud Firebase server is strictly anonymous and does not allow anyone to understand who users are, how they use Passcloud or provide any actionable analytics that is relevant to advertisers.
+
+Passcloud fully anonymizes and encrypts all user information and interactions. As such Passcloud does not, and could not, share or sell any information to third parties.
+
 ### Version Information
 
 - v2.0.3 - General fixes.
