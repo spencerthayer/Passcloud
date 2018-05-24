@@ -15,10 +15,18 @@
     <meta name="apple-mobile-web-app-title" content="Passcloud" />
     <meta name="application-name" content="Passcloud" />
     <!-- ICONS -->
-    <link rel="icon" type="image/png" href="./img/favicon.png">
-    <link rel="apple-touch-icon" href="./img/favicon.png" />
-    <link rel="apple-touch-icon-precomposed" href="./img/favicon.png" />
-    <meta property="og:logo" content="./img/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png?v=M4ypg2nw0q">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png?v=M4ypg2nw0q">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png?v=M4ypg2nw0q">
+    <link rel="manifest" href="/img/icons/site.webmanifest?v=M4ypg2nw0q">
+    <link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg?v=2.0.3" color="#3d5063">
+    <link rel="shortcut icon" href="/img/icons/favicon.ico?v=M4ypg2nw0q">
+    <meta name="apple-mobile-web-app-title" content="Passcloud">
+    <meta name="application-name" content="Passcloud">
+    <meta name="msapplication-TileColor" content="#3d5063">
+    <meta name="msapplication-TileImage" content="/img/icons/mstile-144x144.png?v=M4ypg2nw0q">
+    <meta name="msapplication-config" content="/img/browserconfig.xml?v=M4ypg2nw0q">
+    <meta name="theme-color" content="#3D5063">
     <!-- FACEBOOK META -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Passcloud" />
@@ -47,13 +55,13 @@
         <form name="formCloud" class="formCloud col s12" id="formCloud" action="javascript:void(0);" onsubmit="javascript:void(0);">
             <header class="row graD page-topbar">
                 <div class="col s12 m12 l12 text-white inline" style="margin-bottom: 10px;">
-                    <a href="#" data-activates="slide-out" class="menuButton button-collapse sidebar-collapse btn-floating btn-medium waves-effect waves-light accent-2 card gradient-45deg-amber-amber">
+                    <a href="#" data-activates="slide-out" class="menuButton button-collapse sidebar-collapse btn-floating btn-medium waves-effect waves-light accent-2 card gradient-45deg-amber-amber hide-on-large-only">
                         <i class="material-icons">menu</i>
                     </a>
                     <!-- <a href="#" data-activates="slide-out" class="menuButton button-collapse circle hide-on-large-only white-text">
                         <i class="material-icons white-text">menu</i>
                     </a> -->
-                    <div class="logo-wrapper noselect">
+                    <div class="logo-wrapper noselect hide-on-large-only">
                             <img src="./img/logo.png" class="brand-logo" alt="Passcloud brand logo.">
                             <span class="logo-text">Passcloud</span>
                     </div>
@@ -224,6 +232,21 @@
             </div>
         </li>
         <li>
+
+  <!-- Dropdown Trigger -->
+  <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
+
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">one</a></li>
+    <li><a href="#!">two</a></li>
+    <li class="divider"></li>
+    <li><a href="#!">three</a></li>
+    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+  </ul>
+        </li>
+        <li>
             <div class="input-field">
                 <input type="text" name="syncKey" value="" id="syncKey" class="syncKey" title="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onkeypress="putSyncKey()" /*disabled="disabled" */ /><button class="syncInput"
                     onClick="randSynckey();">&#8634;</button>
@@ -263,5 +286,18 @@
       // $(".domainPassword").on("focus",function(){
     //     $(this).trigger("blur");
     // });
+
+
+  $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: false, // Activate on hover
+      gutter: 01, // Spacing from edge
+      belowOrigin: false, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+    }
+  );  
 </script>
 </html>
