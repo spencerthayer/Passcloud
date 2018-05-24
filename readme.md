@@ -105,6 +105,8 @@ Passcloud fully anonymizes and encrypts all user information and interactions. A
 - v0.1 - Working version, lots of bugs to fix.
 
 ## To Do
-- [] Move slider to the right.
-- [] Integrate two sections to slider: `data` and `settings`.
-- [] Retreive and manage data stored on Firebase.
+* [ ] Move slider to the right.
+* [ ] Integrate two sections to slider: `data` and `settings`.
+* [ ] Retreive and manage data stored on Firebase.
+* [ ] Create launch images.
+* [ ] Create fav icons.
