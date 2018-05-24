@@ -1,3 +1,10 @@
+::-webkit-contacts-auto-fill-button, ::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+}
+
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
@@ -22,7 +29,8 @@ main,
 footer {
     flex: 1 0 auto;
     min-width: 264px;
-    padding-left: 300px;
+    /* padding-left: 300px; */
+    padding-right: 300px;
 }
 
 .noselect {
@@ -40,7 +48,7 @@ footer {
     header,
     main,
     footer {
-        padding-left: 0;
+        padding: 0;
     }
 }
 
@@ -167,7 +175,7 @@ header h1 {
     stroke: #03a9f4;
     stroke-width: 10;
     fill: #FFFFFF;
-    z-index: 0:
+    z-index: 0;
 }
 
 footer,
@@ -242,7 +250,8 @@ ul.side-nav.fixed li.logo img {
 }
 
 .menuButton {
-    /*margin-top: 20px;*/
+    position: absolute !important;
+    right: 20px;
 }
 
 .favicon {
@@ -348,26 +357,21 @@ button.clearInput {
 .menuButton,h1.logo-wrapper {
 }
 .logo-wrapper {
-    float:right;
-    margin-top: -2px;
-    margin-left: 24px;
-}
-.logo-text {
-    font-weight: 100;
-    font-size: 34px;
-    padding-left: 8px;
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.2s linear;
+    /* float:right; */
+    /* margin-top: -2px; */
+    /* margin-left: 24px; */
 }
 
 .page-topbar {
     box-sizing: inherit;
 }
-
 .brand-logo {
     position: relative;
-    top: 10px;
+    top: 3px;
     height: 42px;
     width: 42px;
+}
+.logo-text {
+    font-weight: 100;
+    font-size: 34px;
 }

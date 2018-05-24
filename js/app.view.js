@@ -25,9 +25,12 @@ $(".modal").modal({
 
 $(".button-collapse").sideNav({
     menuWidth: 300,
-    edge: "left",
+    edge: "right",
     closeOnClick: false,
-    draggable: true
+    draggable: true,
+    onOpen: function(el) { /* Do Stuff */ }, // A function to be called when sideNav is opened
+    onClose: function(el) { /* Do Stuff */ } // A function to be called when sideNav is closed
+
 });
 
 //CLIPBOARD AND PASS REVEAL
