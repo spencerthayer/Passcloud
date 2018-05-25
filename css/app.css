@@ -31,7 +31,7 @@ select:-webkit-autofill:focus {
 }
 
 html {
-    /*font-size: 2.5vmin;*/
+    font-size: 100%;
 }
 
 body {
@@ -383,11 +383,11 @@ button.clearInput {
 }
 .brand-logo {
     position: relative;
-    top: 3px;
+    top: 4px;
     height: 42px;
     width: 42px;
 }
 .logo-text {
     font-weight: 100;
-    font-size: 34px;
+    font-size: 42px;
 }

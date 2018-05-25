@@ -133,3 +133,7 @@ $.get("./readme.md", function(data) {
     document.getElementById("readme").innerHTML =
         marked(data);
      }, "html");
+
+$(document).ready(function() {
+$('select').material_select();
+});
