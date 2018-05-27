@@ -35,10 +35,22 @@ html {
 }
 
 body {
-    display: flex;
+    /* display: flex;
     min-height: 100vh;
-    flex-direction: column;
+    flex-direction: column; */
 }
+
+html, body {
+  position: fixed;
+  overflow: hidden;
+}
+
+.mainwrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
 
 header,
 main,

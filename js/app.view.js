@@ -135,5 +135,5 @@ $.get("./readme.md", function(data) {
      }, "html");
 
 $(document).ready(function() {
-$('select').material_select();
+    $("select").material_select();
 });

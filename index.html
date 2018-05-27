@@ -53,7 +53,7 @@
 </head>
 
 <body class="" onchange="formInteraction();" onkeypress="formInteraction();" onkeyup="formInteraction();">
-    <main>
+    <main class="mainwrapper">
         <form name="formCloud" class="formCloud" id="formCloud" action="javascript:void(0);" onsubmit="javascript:void(0);" autocomplete="off">
             <header class="row graD page-topbar">
                 <div class="col s12 m12 l12 text-white inline" style="margin-bottom: 10px;">
@@ -292,19 +292,17 @@
 <script src="./js/app.crypt.js"></script>
 <script src="./js/app.firebase.js"></script>
 <script>
-      // $(".domainPassword").on("focus",function(){
+    // $(".domainPassword").on("focus",function(){
     //     $(this).trigger("blur");
     // });
-
-
-  $('.dropdown-button').dropdown({
+  $(".dropdown-button").dropdown({
       inDuration: 300,
       outDuration: 225,
       constrainWidth: false, // Does not change width of dropdown to that of the activator
       hover: false, // Activate on hover
       gutter: 01, // Spacing from edge
       belowOrigin: false, // Displays dropdown below the button
-      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      alignment: "left", // Displays dropdown with edge aligned to the left of button
       stopPropagation: false // Stops event propagation
     }
   );  
