@@ -295,16 +295,23 @@
     // $(".domainPassword").on("focus",function(){
     //     $(this).trigger("blur");
     // });
-  $(".dropdown-button").dropdown({
-      inDuration: 300,
-      outDuration: 225,
-      constrainWidth: false, // Does not change width of dropdown to that of the activator
-      hover: false, // Activate on hover
-      gutter: 01, // Spacing from edge
-      belowOrigin: false, // Displays dropdown below the button
-      alignment: "left", // Displays dropdown with edge aligned to the left of button
-      stopPropagation: false // Stops event propagation
-    }
-  );  
+    $(".dropdown-button").dropdown({
+        inDuration: 300,
+        outDuration: 225,
+        constrainWidth: false, // Does not change width of dropdown to that of the activator
+        hover: false, // Activate on hover
+        gutter: 01, // Spacing from edge
+        belowOrigin: false, // Displays dropdown below the button
+        alignment: "left", // Displays dropdown with edge aligned to the left of button
+        stopPropagation: false // Stops event propagation
+    });
+    // $('body').on('touchmove', function (e) {
+    //     if (!$('.scrollable').has($(e.target)).length) e.preventDefault();
+    // });
+    // document.body.addEventListener('touchmove',function(e){
+    //     if(!$(e.target).hasClass("scrollable")) {
+    //     e.preventDefault();
+    //     }
+    // });
 </script>
 </html>
